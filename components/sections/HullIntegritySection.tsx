@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 interface BarSpec {
@@ -17,7 +20,7 @@ interface MaterialSpec {
     specs: { icon: string; label: string; value: string }[];
     barLabel: [string, string];
     bars: BarSpec[];
-    animDelay: string;
+    animDelay: number;
 }
 
 const MATERIALS: MaterialSpec[] = [
@@ -25,8 +28,7 @@ const MATERIALS: MaterialSpec[] = [
         name: "Ceramic Shield",
         subtitle: "Thermal Class A",
         icon: "solar:layers-minimalistic-linear",
-        image:
-            "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/44d41d4e-32d5-4432-bf2b-95b01b1df21f_320w.webp",
+        image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/44d41d4e-32d5-4432-bf2b-95b01b1df21f_320w.webp",
         imageAlt: "Concrete Texture",
         tier: "Tier S",
         specs: [
@@ -49,14 +51,13 @@ const MATERIALS: MaterialSpec[] = [
             { height: "55%", duration: "1.5s", delay: "-1.4s" },
             { height: "40%", duration: "2.4s", delay: "-0.6s" },
         ],
-        animDelay: "0.25s",
+        animDelay: 0.15,
     },
     {
         name: "Solar Array",
         subtitle: "Efficiency 48%",
         icon: "solar:tree-linear",
-        image:
-            "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a5122f84-43cb-4170-94c3-aded75f0d3ed_320w.webp",
+        image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a5122f84-43cb-4170-94c3-aded75f0d3ed_320w.webp",
         imageAlt: "Timber Texture",
         tier: "Tier A",
         specs: [
@@ -79,14 +80,13 @@ const MATERIALS: MaterialSpec[] = [
             { height: "50%", duration: "1.9s", delay: "-0.6s" },
             { height: "48%", duration: "2.2s", delay: "-1.9s" },
         ],
-        animDelay: "0.4s",
+        animDelay: 0.3,
     },
     {
         name: "Graphene Weave",
         subtitle: "Tensile Strength S+",
         icon: "solar:atom-linear",
-        image:
-            "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7de1229a-6a54-423d-a41c-2377d871bf2c_320w.jpg",
+        image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7de1229a-6a54-423d-a41c-2377d871bf2c_320w.jpg",
         imageAlt: "Graphene Texture",
         tier: "Tier X",
         specs: [
@@ -109,7 +109,7 @@ const MATERIALS: MaterialSpec[] = [
             { height: "98%", duration: "1.6s", delay: "-1.1s" },
             { height: "99%", duration: "2.5s", delay: "-1.9s" },
         ],
-        animDelay: "0.55s",
+        animDelay: 0.45,
     },
 ];
 
@@ -126,13 +126,7 @@ export default function HullIntegritySection() {
 
             <div className="z-10 w-full max-w-5xl mr-auto ml-auto relative">
                 {/* Header */}
-                <AnimateOnScroll
-                    className="text-center mb-16"
-                    style={{
-                        animation:
-                            "fanSlideIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both",
-                    }}
-                >
+                <AnimateOnScroll className="text-center mb-16">
                     <h3 className="text-3xl md:text-5xl font-bricolage font-light text-white mb-4 tracking-tight">
                         Hull Integrity
                     </h3>
@@ -143,83 +137,76 @@ export default function HullIntegritySection() {
 
                 <div className="flex flex-col gap-4">
                     {MATERIALS.map((mat) => (
-                        <AnimateOnScroll
-                            key={mat.name}
-                            className="group grid grid-cols-1 md:grid-cols-12 gap-6 items-center p-4 md:p-6 bg-white/5 hover:bg-white/10 border border-white/5 rounded-2xl transition-all duration-300"
-                            style={{
-                                animation: `fanSlideIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) ${mat.animDelay} both`,
-                            }}
-                        >
-                            {/* Image & Name */}
-                            <div className="col-span-1 md:col-span-4 flex items-center gap-6">
-                                <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl overflow-hidden shrink-0 relative flex items-center justify-center">
-                                    <Image
-                                        src={mat.image}
-                                        alt={mat.imageAlt}
-                                        fill
-                                        className="object-cover"
-                                    />
+                        <AnimateOnScroll key={mat.name} delay={mat.animDelay}>
+                            <motion.div
+                                className="group grid grid-cols-1 md:grid-cols-12 gap-6 items-center p-4 md:p-6 bg-white/5 hover:bg-white/10 border border-white/5 rounded-2xl transition-all duration-300"
+                                whileHover={{ y: -3, borderColor: "rgba(255,255,255,0.15)" }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            >
+                                {/* Image & Name */}
+                                <div className="col-span-1 md:col-span-4 flex items-center gap-6">
+                                    <motion.div
+                                        className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl overflow-hidden shrink-0 relative flex items-center justify-center"
+                                        whileHover={{ scale: 1.08, rotate: 2 }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                                    >
+                                        <Image src={mat.image} alt={mat.imageAlt} fill className="object-cover" />
+                                    </motion.div>
+                                    <div>
+                                        {/* @ts-expect-error iconify-icon is a web component */}
+                                        <iconify-icon icon={mat.icon} width="32" className="text-white/60 mb-1" />
+                                        <h4 className="text-xl text-white font-bricolage font-light">{mat.name}</h4>
+                                        <p className="text-xs text-white/40 mt-1 uppercase tracking-wider">{mat.subtitle}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon
-                                        icon={mat.icon}
-                                        width="32"
-                                        className="text-white/60 mb-1"
-                                    />
-                                    <h4 className="text-xl text-white font-bricolage font-light">
-                                        {mat.name}
-                                    </h4>
-                                    <p className="text-xs text-white/40 mt-1 uppercase tracking-wider">
-                                        {mat.subtitle}
-                                    </p>
-                                </div>
-                            </div>
 
-                            {/* Tech Specs */}
-                            <div className="col-span-1 md:col-span-6 grid gap-y-4 gap-x-2 border-l border-white/10 pl-6 grid-cols-2 sm:grid-cols-3">
-                                {mat.specs.map((spec) => (
-                                    <div key={spec.label} className="flex flex-col gap-1">
-                                        <div className="flex items-center gap-1.5 text-white/50 text-xs uppercase tracking-wide">
-                                            {/* @ts-expect-error iconify-icon is a web component */}
-                                            <iconify-icon icon={spec.icon} width="14" />
-                                            {spec.label}
+                                {/* Tech Specs */}
+                                <div className="col-span-1 md:col-span-6 grid gap-y-4 gap-x-2 border-l border-white/10 pl-6 grid-cols-2 sm:grid-cols-3">
+                                    {mat.specs.map((spec) => (
+                                        <div key={spec.label} className="flex flex-col gap-1">
+                                            <div className="flex items-center gap-1.5 text-white/50 text-xs uppercase tracking-wide">
+                                                {/* @ts-expect-error iconify-icon is a web component */}
+                                                <iconify-icon icon={spec.icon} width="14" />
+                                                {spec.label}
+                                            </div>
+                                            <span className="text-white text-sm">{spec.value}</span>
                                         </div>
-                                        <span className="text-white text-sm">{spec.value}</span>
-                                    </div>
-                                ))}
-                                {/* Equalizer bars */}
-                                <div className="col-span-3 mt-2">
-                                    <div className="flex items-center justify-between text-xs text-white/30 mb-1">
-                                        <span>{mat.barLabel[0]}</span>
-                                        <span>{mat.barLabel[1]}</span>
-                                    </div>
-                                    <div className="w-full h-8 flex items-end gap-0.5 opacity-50">
-                                        {mat.bars.map((bar, j) => (
-                                            <div
-                                                key={j}
-                                                className="w-1 bg-white rounded-t-sm bar-anim"
-                                                style={{
-                                                    height: bar.height,
-                                                    animationDuration: bar.duration,
-                                                    animationDelay: bar.delay,
-                                                }}
-                                            />
-                                        ))}
+                                    ))}
+                                    <div className="col-span-3 mt-2">
+                                        <div className="flex items-center justify-between text-xs text-white/30 mb-1">
+                                            <span>{mat.barLabel[0]}</span>
+                                            <span>{mat.barLabel[1]}</span>
+                                        </div>
+                                        <div className="w-full h-8 flex items-end gap-0.5 opacity-50">
+                                            {mat.bars.map((bar, j) => (
+                                                <div
+                                                    key={j}
+                                                    className="w-1 bg-white rounded-t-sm bar-anim"
+                                                    style={{
+                                                        height: bar.height,
+                                                        animationDuration: bar.duration,
+                                                        animationDelay: bar.delay,
+                                                    }}
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* Tier & Action */}
-                            <div className="col-span-1 md:col-span-2 flex items-center justify-between md:justify-end gap-6">
-                                <span className="text-xl font-serif italic text-white">
-                                    {mat.tier}
-                                </span>
-                                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors group-hover:border-white">
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon icon="solar:file-download-linear" width="18" />
-                                </button>
-                            </div>
+                                {/* Tier & Action */}
+                                <div className="col-span-1 md:col-span-2 flex items-center justify-between md:justify-end gap-6">
+                                    <span className="text-xl font-serif italic text-white">{mat.tier}</span>
+                                    <motion.button
+                                        className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors group-hover:border-white"
+                                        whileHover={{ scale: 1.15, rotate: 90 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                                    >
+                                        {/* @ts-expect-error iconify-icon is a web component */}
+                                        <iconify-icon icon="solar:file-download-linear" width="18" />
+                                    </motion.button>
+                                </div>
+                            </motion.div>
                         </AnimateOnScroll>
                     ))}
                 </div>

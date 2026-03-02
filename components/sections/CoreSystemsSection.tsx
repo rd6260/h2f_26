@@ -1,10 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 /* ─── Nav-AI Visualization ─── */
 function NavAIVis() {
     return (
         <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none">
-            <div className="relative w-[300px] h-[300px] group-hover:scale-110 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+            <motion.div
+                className="relative w-[300px] h-[300px]"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+            >
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-32 h-32 rounded-full border border-emerald-500/30 animate-[spin_10s_linear_infinite]" />
                     <div className="absolute w-40 h-40 rounded-full border border-dashed border-emerald-500/20 animate-[spin_15s_linear_infinite_reverse]" />
@@ -21,7 +28,7 @@ function NavAIVis() {
                 <div className="absolute bottom-10 left-20 text-[8px] font-mono text-emerald-500/60 -rotate-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     Target Lock
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }
@@ -31,24 +38,9 @@ function AegisVis() {
     return (
         <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none">
             <div className="relative w-[260px] h-[260px] group-hover:scale-105 transition-transform duration-1000">
-                <svg
-                    className="absolute inset-0 w-full h-full text-blue-500 animate-[spin_30s_linear_infinite]"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <path
-                        d="M50 5 L89 27.5 V72.5 L50 95 L11 72.5 V27.5 Z"
-                        stroke="currentColor"
-                        strokeWidth="0.2"
-                        strokeDasharray="2 2"
-                        className="opacity-30"
-                    />
-                    <path
-                        d="M50 15 L80.3 32.5 V67.5 L50 85 L19.7 67.5 V32.5 Z"
-                        stroke="currentColor"
-                        strokeWidth="0.3"
-                        className="opacity-50"
-                    />
+                <svg className="absolute inset-0 w-full h-full text-blue-500 animate-[spin_30s_linear_infinite]" viewBox="0 0 100 100" fill="none">
+                    <path d="M50 5 L89 27.5 V72.5 L50 95 L11 72.5 V27.5 Z" stroke="currentColor" strokeWidth="0.2" strokeDasharray="2 2" className="opacity-30" />
+                    <path d="M50 15 L80.3 32.5 V67.5 L50 85 L19.7 67.5 V32.5 Z" stroke="currentColor" strokeWidth="0.3" className="opacity-50" />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-32 h-32 border-[0.5px] border-blue-400/30 rotate-45 animate-[spin_8s_linear_infinite]" />
@@ -65,11 +57,7 @@ function FusionVis() {
     return (
         <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none">
             <div className="relative w-[300px] h-[300px] group-hover:scale-110 transition-transform duration-1000">
-                <svg
-                    className="absolute inset-0 w-full h-full text-purple-500 animate-[spin_10s_linear_infinite]"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
+                <svg className="absolute inset-0 w-full h-full text-purple-500 animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100" fill="none">
                     <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="0.3" className="opacity-40" />
                     <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="0.3" className="opacity-40" transform="rotate(60 50 50)" />
                     <ellipse cx="50" cy="50" rx="45" ry="15" stroke="currentColor" strokeWidth="0.3" className="opacity-40" transform="rotate(120 50 50)" />
@@ -92,7 +80,7 @@ interface SystemCardProps {
     title: string;
     description: string;
     visualization: React.ReactNode;
-    delay: string;
+    delay: number;
 }
 
 function SystemCard({
@@ -140,64 +128,58 @@ function SystemCard({
     const c = colorMap[colorName];
 
     return (
-        <AnimateOnScroll
-            delay={delay}
-            className="group relative h-[500px] bg-neutral-900/40 border border-white/10 rounded-3xl p-8 overflow-hidden hover:bg-neutral-900/60 transition-all duration-500 hover:border-white/20 backdrop-blur-sm"
-        >
-            {/* Background Gradient */}
-            <div
-                className={`absolute inset-0 bg-gradient-to-b ${c.gradientFrom} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}
-            />
-
-            {/* Icon */}
-            <div
-                className={`relative z-10 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-auto ${c.textColor} group-hover:scale-110 ${c.iconHoverBg} ${c.iconHoverBorder} transition-all duration-500`}
+        <AnimateOnScroll delay={delay}>
+            <motion.div
+                className="group relative h-[500px] bg-neutral-900/40 border border-white/10 rounded-3xl p-8 overflow-hidden hover:bg-neutral-900/60 transition-all duration-500 hover:border-white/20 backdrop-blur-sm"
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-                {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon={icon} className="text-2xl" />
-            </div>
+                {/* Background Gradient */}
+                <div
+                    className={`absolute inset-0 bg-gradient-to-b ${c.gradientFrom} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}
+                />
 
-            {/* Visualization */}
-            {visualization}
-
-            {/* Content */}
-            <div className="relative z-10 mt-auto pt-32">
-                <div className="flex items-center gap-2 mb-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-                    <span
-                        className={`w-1.5 h-1.5 rounded-full ${c.dotColor} ${c.dotShadow} animate-pulse`}
-                    />
-                    <span
-                        className={`text-[10px] font-mono uppercase tracking-widest ${c.textColor}`}
-                    >
-                        {status}
-                    </span>
-                </div>
-                <h3
-                    className={`text-3xl text-white font-bricolage mb-3 tracking-tight ${c.hoverText} transition-colors`}
+                {/* Icon */}
+                <motion.div
+                    className={`relative z-10 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-auto ${c.textColor} group-hover:scale-110 ${c.iconHoverBg} ${c.iconHoverBorder} transition-all duration-500`}
+                    whileHover={{ rotate: 12, scale: 1.2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                    {title}
-                </h3>
-                <p className="text-sm text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">
-                    {description}
-                </p>
+                    {/* @ts-expect-error iconify-icon is a web component */}
+                    <iconify-icon icon={icon} className="text-2xl" />
+                </motion.div>
 
-                {/* Progress Line */}
-                <div className="w-full bg-white/5 h-[2px] mt-6 relative overflow-hidden rounded-full">
-                    <div
-                        className={`absolute inset-0 ${c.barColor} w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out`}
-                    />
+                {/* Visualization */}
+                {visualization}
+
+                {/* Content */}
+                <div className="relative z-10 mt-auto pt-32">
+                    <div className="flex items-center gap-2 mb-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <span className={`w-1.5 h-1.5 rounded-full ${c.dotColor} ${c.dotShadow} animate-pulse`} />
+                        <span className={`text-[10px] font-mono uppercase tracking-widest ${c.textColor}`}>
+                            {status}
+                        </span>
+                    </div>
+                    <h3 className={`text-3xl text-white font-bricolage mb-3 tracking-tight ${c.hoverText} transition-colors`}>
+                        {title}
+                    </h3>
+                    <p className="text-sm text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">
+                        {description}
+                    </p>
+
+                    {/* Progress Line */}
+                    <div className="w-full bg-white/5 h-[2px] mt-6 relative overflow-hidden rounded-full">
+                        <div className={`absolute inset-0 ${c.barColor} w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out`} />
+                    </div>
                 </div>
-            </div>
+            </motion.div>
         </AnimateOnScroll>
     );
 }
 
 export default function CoreSystemsSection() {
     return (
-        <section
-            id="systems"
-            className="py-32 bg-black relative overflow-hidden border-t border-white/5"
-        >
+        <section id="systems" className="py-32 bg-black relative overflow-hidden border-t border-white/5">
             <div className="z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
                 {/* Header */}
                 <AnimateOnScroll className="flex flex-col md:flex-row justify-between items-end mb-16">
@@ -216,17 +198,17 @@ export default function CoreSystemsSection() {
                             The infrastructure that powers the void.
                         </p>
                     </div>
-                    <a
+                    <motion.a
                         href="#"
                         className="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full text-sm font-medium hover:bg-neutral-200 transition-all mt-8 md:mt-0"
+                        whileHover={{ scale: 1.04, y: -2 }}
+                        whileTap={{ scale: 0.97 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 20 }}
                     >
                         <span>View Schematics</span>
                         {/* @ts-expect-error iconify-icon is a web component */}
-                        <iconify-icon
-                            icon="solar:arrow-right-linear"
-                            className="group-hover:translate-x-1 transition-transform"
-                        />
-                    </a>
+                        <iconify-icon icon="solar:arrow-right-linear" className="group-hover:translate-x-1 transition-transform" />
+                    </motion.a>
                 </AnimateOnScroll>
 
                 {/* Cards Grid */}
@@ -238,7 +220,7 @@ export default function CoreSystemsSection() {
                         title="Nav-AI Core"
                         description="Quantum probabilistic navigation calculating FTL-adjacent travel vectors in real-time."
                         visualization={<NavAIVis />}
-                        delay="delay-100"
+                        delay={0.1}
                     />
                     <SystemCard
                         icon="solar:shield-star-linear"
@@ -247,7 +229,7 @@ export default function CoreSystemsSection() {
                         title="Aegis Hull"
                         description="Self-healing nanomaterial composite with active radiation dampening fields."
                         visualization={<AegisVis />}
-                        delay="delay-200"
+                        delay={0.2}
                     />
                     <SystemCard
                         icon="solar:atom-linear"
@@ -256,7 +238,7 @@ export default function CoreSystemsSection() {
                         title="Fusion Drive"
                         description="Compact magnetic confinement fusion delivering continuous 3.5g thrust."
                         visualization={<FusionVis />}
-                        delay="delay-300"
+                        delay={0.3}
                     />
                 </div>
             </div>

@@ -1,12 +1,16 @@
+"use client";
+
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { motion } from "framer-motion";
 
 const PARTNERS = ["NASA", "SpaceX", "BLUE", "ESA", "AXIOM", "JAXA"];
 
 const STATS = [
-    { value: "4.2", suffix: "%", label: "Market Growth" },
-    { value: "128", suffix: "", label: "Active Missions" },
-    { value: "2.0", suffix: "", label: "Failure Rate" },
-    { value: "24", suffix: "/7", label: "Command Support" },
+    { value: 4.2, decimals: 1, suffix: "%", label: "Market Growth" },
+    { value: 128, decimals: 0, suffix: "", label: "Active Missions" },
+    { value: 2.0, decimals: 1, suffix: "", label: "Failure Rate" },
+    { value: 24, decimals: 0, suffix: "/7", label: "Command Support" },
 ];
 
 export default function PartnersSection() {
@@ -14,21 +18,23 @@ export default function PartnersSection() {
         <section className="bg-neutral-950 border-white/5 border-t pt-20 pb-20">
             <div className="max-w-7xl mr-auto ml-auto pr-6 pl-6">
                 {/* Title */}
-                <div className="text-center mb-12">
+                <AnimateOnScroll className="text-center mb-12">
                     <span className="text-xs uppercase tracking-[0.2em] text-white/30">
                         Trusted By The Coalition
                     </span>
-                </div>
+                </AnimateOnScroll>
 
                 {/* Partner Logos */}
                 <AnimateOnScroll
-                    delay="delay-200"
-                    className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500"
+                    delay={0.2}
+                    className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8"
                 >
-                    {PARTNERS.map((name) => (
-                        <div
+                    {PARTNERS.map((name, i) => (
+                        <motion.div
                             key={name}
-                            className="flex items-center justify-center h-12 text-white font-bricolage font-bold text-xl tracking-tighter"
+                            className="flex items-center justify-center h-12 text-white/40 font-bricolage font-bold text-xl tracking-tighter"
+                            whileHover={{ scale: 1.15, color: "rgba(255,255,255,1)" }}
+                            transition={{ type: "spring", stiffness: 300, damping: 15, delay: i * 0.03 }}
                         >
                             {name}
                             {name === "NASA" && (
@@ -36,26 +42,27 @@ export default function PartnersSection() {
                                     Adv
                                 </span>
                             )}
-                        </div>
+                        </motion.div>
                     ))}
                 </AnimateOnScroll>
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/5 mt-20 pt-12 gap-x-8 gap-y-8">
                     {STATS.map((stat) => (
-                        <div key={stat.label} className="text-center">
+                        <AnimateOnScroll key={stat.label} className="text-center" delay={0.1}>
                             <div className="text-4xl md:text-5xl font-bricolage text-white font-light mb-2">
-                                <span>{stat.value}</span>
-                                {stat.suffix && (
-                                    <span className="text-lg text-emerald-500">
-                                        {stat.suffix}
-                                    </span>
-                                )}
+                                <AnimatedCounter
+                                    value={stat.value}
+                                    decimals={stat.decimals}
+                                    suffix={stat.suffix}
+                                    suffixClassName="text-lg text-emerald-500"
+                                    duration={2.5}
+                                />
                             </div>
                             <div className="text-xs uppercase tracking-widest text-white/40">
                                 {stat.label}
                             </div>
-                        </div>
+                        </AnimateOnScroll>
                     ))}
                 </div>
             </div>
