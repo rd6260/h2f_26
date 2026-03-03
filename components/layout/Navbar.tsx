@@ -49,7 +49,7 @@ export default function Navbar() {
                         <iconify-icon icon="solar:planet-bold-duotone" width="18" />
                     </motion.div>
                     <span className="font-bricolage text-lg tracking-tight font-medium">
-                        VELOS
+                        HACK2FUTURE
                     </span>
                 </motion.div>
 
