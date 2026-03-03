@@ -19,6 +19,7 @@ export default function Home() {
       <SectionDivider variant="dot" />
       <MissionsSection />
 
+
       <AboutSection />
       <SectionDivider variant="dot" />
       <TimelineSection />
@@ -26,7 +27,14 @@ export default function Home() {
       <HullIntegritySection />
       <SectionDivider variant="dot" />
       <PrizesSection />
-      
+
+      <AboutSection />
+      <SectionDivider variant="dot" />
+      <TimelineSection />
+      <HullIntegritySection />
+      <SectionDivider variant="dot" />
+      <PrizesSection />
+
       <SponsorsSection />
       <SectionDivider variant="dot" />
       <FooterSection />
