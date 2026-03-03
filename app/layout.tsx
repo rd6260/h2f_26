@@ -24,9 +24,9 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "VELOS — Interstellar Logistics | Hack2Future",
+  title: "Hack2Future 2026",
   description:
-    "The Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
+    "The National Level Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
 };
 
 export default function RootLayout({
