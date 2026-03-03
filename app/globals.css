@@ -26,9 +26,10 @@ body {
 }
 
 /* ── Scrollbar ── */
-.hide-scrollbar::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
+
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -55,9 +56,11 @@ body {
     filter: blur(20px) grayscale(100%);
     opacity: 0;
   }
+
   20% {
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
     filter: blur(0px) grayscale(0%);
@@ -74,6 +77,7 @@ body {
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -88,6 +92,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -104,6 +109,7 @@ body {
     transform: translateY(30px);
     filter: blur(8px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -126,6 +132,7 @@ body {
   0% {
     transform: translateX(-150%) skewX(-20deg);
   }
+
   100% {
     transform: translateX(200%) skewX(-20deg);
   }
@@ -142,6 +149,7 @@ body {
     opacity: 0;
     transform: translateX(-60px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -153,6 +161,7 @@ body {
     opacity: 0;
     transform: translateX(60px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -172,6 +181,7 @@ body {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -188,6 +198,7 @@ body {
     transform: translateY(40px) rotate(2deg) scale(0.96);
     filter: blur(4px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) rotate(0) scale(1);
@@ -197,10 +208,12 @@ body {
 
 /* ── Bar Equalizer ── */
 @keyframes barEqualizer {
+
   0%,
   100% {
     transform: scaleY(1);
   }
+
   50% {
     transform: scaleY(0.3);
   }
@@ -217,15 +230,65 @@ body {
 .delay-100 {
   animation-delay: 100ms;
 }
+
 .delay-200 {
   animation-delay: 200ms;
 }
+
 .delay-300 {
   animation-delay: 300ms;
 }
+
 .delay-400 {
   animation-delay: 400ms;
 }
+
 .delay-500 {
   animation-delay: 500ms;
+}
+
+/* ── Sponsors Section Animations ── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes borderSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-border-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(245, 158, 11, 0.1), transparent 30%);
+  animation: borderSpin 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.animated-border-box:hover::before {
+  opacity: 1;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
