@@ -113,25 +113,31 @@ export default function HeroSection() {
               <span className="text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]">
                 HACK
               </span>
-              <motion.span
-                className="text-[18vw] md:text-[10rem] lg:text-[12rem] font-extralight italic font-serif relative text-amber-500/50"
-                animate={{
-                  color: ["rgba(245,158,11,0.5)", "rgba(255,255,255,0.35)", "rgba(245,158,11,0.5)"],
+              <span
+                className="text-[18vw] md:text-[10rem] lg:text-[12rem] font-bold font-bricolage relative select-none"
+                style={{
+                  WebkitTextFillColor: "transparent",
+                  WebkitTextStrokeWidth: "3px",
+                  WebkitTextStrokeColor: "rgba(180, 180, 200, 0.45)",
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
                 2
-              </motion.span>
+              </span>
             </motion.div>
             {/* FUTURE */}
-            <motion.span
-              className="block text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em] -mt-3 md:-mt-10 lg:-mt-14"
+            <motion.div
+              className="flex items-baseline gap-2 md:gap-4 -mt-3 md:-mt-10 lg:-mt-14 whitespace-nowrap"
               initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 1.6, duration: 1.2, ease }}
             >
-              FUTURE
-            </motion.span>
+              <span className="text-[18vw] sm:mt-5 md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]">
+                FUTURE
+              </span>
+              <span className="text-[10vw] md:text-[7rem] lg:text-[10rem] text-amber-500/50 font italic font-montserrat">
+                2.0
+              </span>
+            </motion.div>
           </h1>
 
           {/* Tagline below headline */}

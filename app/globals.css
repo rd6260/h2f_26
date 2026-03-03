@@ -8,6 +8,7 @@
   --font-bricolage: var(--font-bricolage-grotesque);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     "Liberation Mono", monospace;
+  --font-montserrat: var(--font-montserrat);
 }
 
 /* ── Base ── */
@@ -23,6 +24,10 @@ body {
 
 .font-bricolage {
   font-family: var(--font-bricolage), sans-serif !important;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif !important;
 }
 
 /* ── Scrollbar ── */
