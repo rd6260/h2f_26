@@ -48,78 +48,10 @@ export default function AboutSection() {
 
                         <AnimateOnScroll delay={0.2}>
                             <p className="text-white/60 text-lg mb-8 leading-relaxed font-light">
-                                A 36-hour national-level innovation sprint designed to bridge
-                                the gap between academia and industry. Not just another
-                                hackathon — a high-intensity prototyping platform where leading
-                                companies bring real-world problem statements and challenge the
-                                brightest student minds to build rapid, scalable solutions.
+                                IIIT Dharwad, established in 2015 as an Institute of National Importance under a Public-Private Partnership between the Ministry of Education, Government of Karnataka, and Keonics, aims to bridge the high-end IT skill gap and support India’s global leadership in the sector. It offers BTech programs in CSE, ECE, and DSAI, emphasizing IT solutions for India’s social challenges. With a semi-modern campus, a stately logo, and a strategic location in the Hubballi-Dharwad education hub with growing connectivity to Bengaluru the institute is poised to make a strong impact on the Indian IT industry, academic research, and the North Karnataka region.
                             </p>
                         </AnimateOnScroll>
-
-                        <div className="space-y-6">
-                            <AnimateOnScroll delay={0.3}>
-                                <motion.div
-                                    className="flex gap-4 group cursor-default"
-                                    whileHover={{ x: 6 }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                >
-                                    <motion.div
-                                        className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors"
-                                        whileHover={{ scale: 1.1, rotate: 10 }}
-                                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                                    >
-                                        {/* @ts-expect-error iconify-icon is a web component */}
-                                        <iconify-icon icon="solar:cpu-bolt-linear" width="24" className="text-white" />
-                                    </motion.div>
-                                    <div>
-                                        <h4 className="text-xl font-medium mb-1 font-bricolage">
-                                            Industry-Driven Challenges
-                                        </h4>
-                                        <p className="text-sm text-white/50">
-                                            Tackle real problems spanning AI, cybersecurity, sustainability, automation, and next-gen engineering domains.
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            </AnimateOnScroll>
-
-                            <AnimateOnScroll delay={0.4}>
-                                <motion.div
-                                    className="flex gap-4 group cursor-default"
-                                    whileHover={{ x: 6 }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                >
-                                    <motion.div
-                                        className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors"
-                                        whileHover={{ scale: 1.1, rotate: -10 }}
-                                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                                    >
-                                        {/* @ts-expect-error iconify-icon is a web component */}
-                                        <iconify-icon icon="solar:rocket-2-linear" width="24" className="text-white" />
-                                    </motion.div>
-                                    <div>
-                                        <h4 className="text-xl font-medium mb-1 font-bricolage">
-                                            Ideas to Prototypes
-                                        </h4>
-                                        <p className="text-sm text-white/50">
-                                            Transform concepts into functional prototypes within 36 hours under expert mentorship from industry specialists.
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            </AnimateOnScroll>
-                        </div>
-
-                        <AnimateOnScroll delay={0.5}>
-                            <motion.button
-                                className="mt-10 px-8 py-3 bg-white text-black rounded-full font-medium hover:bg-neutral-200 transition-colors flex items-center gap-2 group"
-                                whileHover={{ scale: 1.04, y: -2 }}
-                                whileTap={{ scale: 0.97 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                            >
-                                Register Now
-                                {/* @ts-expect-error iconify-icon is a web component */}
-                                <iconify-icon icon="solar:arrow-right-linear" className="group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
-                        </AnimateOnScroll>
+                        
                     </div>
 
                     {/* Image Column with hotspots */}
