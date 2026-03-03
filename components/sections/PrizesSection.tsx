@@ -305,7 +305,7 @@ export default function PrizesSection() {
                         </h2>
                     </div>
 
-    
+
                 </AnimateOnScroll>
 
                 {/* Cards Grid — 1st prize elevated */}
@@ -334,7 +334,7 @@ export default function PrizesSection() {
                         emoji="🥉"
                         colorName="bronze"
                         label="3rd Place • Honorable"
-                        amount="₹15,000"
+                        amount="₹20,000"
                         description="For excellence in execution and user experience. Where polish and precision shine."
                         visualization={<BronzeVis />}
                         delay={0.3}
@@ -342,8 +342,28 @@ export default function PrizesSection() {
                     />
                 </div>
 
+                {/* Additional Goodies */}
+                <AnimateOnScroll className="mt-16 sm:mt-15 flex justify-center" delay={0.35}>
+                    <div className="relative group p-1 w-full max-w-xl">
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-yellow-400/20 to-amber-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50" />
+                        <div className="relative bg-neutral-900/80 backdrop-blur-xl border border-amber-500/20 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 hover:border-amber-500/40 transition-colors">
+                            <div className="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center border border-amber-500/20 shrink-0 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                                <span className="text-3xl">🎁</span>
+                            </div>
+                            <div className="text-center sm:text-left">
+                                <h3 className="text-xl sm:text-2xl font-bricolage text-white font-semibold mb-1 tracking-tight">
+                                    Plus <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent drop-shadow-sm">Goodies Worth ₹1 Lakh</span>
+                                </h3>
+                                <p className="text-white/40 text-sm">
+                                    Exciting swags, credits, and perks for our participants!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </AnimateOnScroll>
+
                 {/* Bottom motivational tagline */}
-                <AnimateOnScroll delay={0.4} className="mt-16 text-center">
+                <AnimateOnScroll delay={0.4} className="mt-16 sm:mt-24 text-center">
                     <div className="inline-flex flex-col items-center">
                         <p className="text-white/30 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
                             Build something extraordinary — the stage is yours
