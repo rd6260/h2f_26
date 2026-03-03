@@ -303,9 +303,9 @@ export default function HeroSection() {
         className="absolute bottom-8 left-8 hidden lg:flex flex-col gap-2 z-20"
       >
         <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest text-white/40 font-mono">
-          <span>Sys.Norm</span>
+          <span>Reg.Status</span>
           <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
-          <span>V. 4.0.2</span>
+          <span>H2F 2026</span>
         </div>
         <motion.div
           className="bg-neutral-900/80 w-64 border-white/10 border rounded-xl px-4 py-4 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
@@ -313,29 +313,29 @@ export default function HeroSection() {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <div className="flex justify-between mb-2">
-            <span className="text-xs text-white/60">Orbit Stability</span>
-            <span className="text-xs text-emerald-400 font-mono">99.9%</span>
+            <span className="text-xs text-white/60">Registration</span>
+            <span className="text-xs text-emerald-400 font-mono">Open</span>
           </div>
           <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
             <motion.div
               className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-full rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"
               initial={{ width: "0%" }}
-              animate={{ width: "99%" }}
+              animate={{ width: "65%" }}
               transition={{ delay: 2.8, duration: 1.5, ease }}
             />
           </div>
           <div className="grid grid-cols-2 gap-4 mt-4">
             <div>
               <span className="block text-[10px] text-white/40 uppercase tracking-wider">
-                Apogee
+                Duration
               </span>
-              <span className="text-sm text-white font-mono">402km</span>
+              <span className="text-sm text-white font-mono">36 hrs</span>
             </div>
             <div>
               <span className="block text-[10px] text-white/40 uppercase tracking-wider">
-                Perigee
+                Tracks
               </span>
-              <span className="text-sm text-white font-mono">398km</span>
+              <span className="text-sm text-white font-mono">05</span>
             </div>
           </div>
         </motion.div>
