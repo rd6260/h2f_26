@@ -103,7 +103,7 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
     return (
         <motion.div
             ref={cardRef}
-            className="group relative"
+            className="group relative h-full"
             initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
             animate={
                 isInView
@@ -117,8 +117,8 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
             }}
         >
             <motion.div
-                className={`relative bg-neutral-900/40 backdrop-blur-xl border border-white/8 rounded-2xl p-6 md:p-8 overflow-hidden transition-all duration-500 hover:bg-neutral-900/60 hover:border-white/15`}
-                whileHover={{ y: -5 }}
+                className={`relative h-full flex flex-col bg-neutral-900/40 backdrop-blur-xl border border-white/8 rounded-2xl p-6 md:p-8 overflow-hidden transition-all duration-500 hover:bg-neutral-900/60 hover:border-white/15 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)]`}
+                whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 250, damping: 20 }}
             >
                 {/* Top accent line */}
@@ -138,7 +138,7 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                     style={{ backgroundColor: problem.accentGlow }}
                 />
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                     {/* Top row: Number + Company + Domain */}
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-5">
                         {/* Track number + icon */}
@@ -178,7 +178,7 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                     </p>
 
                     {/* Tags + Arrow */}
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center justify-between gap-4 mt-auto">
                         <div className="flex flex-wrap gap-2">
                             {problem.tags.map((tag) => (
                                 <span
@@ -248,7 +248,7 @@ export default function HullIntegritySection() {
                 TRACKS
             </div>
 
-            <div className="z-10 w-full max-w-5xl mx-auto relative">
+            <div className="z-10 w-full max-w-7xl mx-auto relative">
                 {/* Header */}
                 <motion.div
                     ref={headerRef}
@@ -293,7 +293,7 @@ export default function HullIntegritySection() {
                 </motion.div>
 
                 {/* Problem cards */}
-                <div className="flex flex-col gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
                     {PROBLEMS.map((problem) => (
                         <ProblemCard key={problem.id} problem={problem} />
                     ))}

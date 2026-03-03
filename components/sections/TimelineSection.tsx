@@ -548,9 +548,7 @@ export default function TimelineSection() {
           transition={{ duration: 0.6, ease }}
           viewport={{ once: true }}
         >
-          <p className="text-white/25 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
-            The countdown has begun — are you ready?
-          </p>
+        
         </motion.div>
       </div>
     </section>

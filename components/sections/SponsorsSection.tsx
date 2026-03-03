@@ -260,23 +260,7 @@ export default function SponsorsSection() {
 
         </div>
 
-        {/* Sponsor CTA */}
-        {/* <AnimateOnScroll delay={0.4} className="mt-16 md:mt-24 text-center">
-          <div className="inline-flex flex-col items-center">
-            <p className="text-white/40 font-mono text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] mb-3 md:mb-4 uppercase">
-              Want to fuel the mission?
-            </p>
-            <a href="#"
-              className="group relative inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-transparent border border-white/20 rounded-full text-xs md:text-sm font-medium text-white hover:border-transparent transition-all duration-300 overflow-hidden shadow-[0_0_0_rgba(255,255,255,0)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-              <span className="relative z-10 group-hover:text-black transition-colors duration-300">Download Sponsor Deck</span>
-              <Icon icon="solar:document-download-linear"
-                className="relative z-10 group-hover:translate-y-0.5 group-hover:text-black transition-all duration-300"
-                width="20" />
-              {/* Button Hover Fill 
-              <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
-            </a>
-          </div>
-        </AnimateOnScroll> */}
+       
 
       </div>
     </section>

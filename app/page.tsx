@@ -18,15 +18,15 @@ export default function Home() {
       <HeroSection />
       <SectionDivider variant="dot" />
       <MissionsSection />
-      <SectionDivider variant="pill" label="Sync" />
+
       <AboutSection />
       <SectionDivider variant="dot" />
       <TimelineSection />
-      <SectionDivider variant="pill" label="Log" />
+     
       <HullIntegritySection />
       <SectionDivider variant="dot" />
       <PrizesSection />
-      <SectionDivider variant="pill" label="Scan" />
+      
       <SponsorsSection />
       <SectionDivider variant="dot" />
       <FooterSection />
