@@ -9,28 +9,40 @@ const QUICK_LINKS = [
     { label: "About", href: "#about" },
     { label: "Sponsors", href: "#sponsors" },
     { label: "Timeline", href: "#timeline" },
-    { label: "Contact", href: "#contact" },
+
 ];
 
 const SOCIALS = [
     {
         label: "Instagram",
         icon: "mdi:instagram",
-        href: "#",
+        href: "https://www.instagram.com/h2f.iiitdwd/?hl=en",
         color: "hover:text-pink-400",
     },
     {
         label: "LinkedIn",
         icon: "mdi:linkedin",
-        href: "#",
+        href: "https://www.linkedin.com/company/hack-2-future/",
+        color: "hover:text-blue-400",
+    },
+    {
+        label: "Discord",
+        icon: "mdi:discord",
+        href: "https://discord.gg/pDs7HhJK",
+        color: "hover:text-blue-400",
+    },
+    {
+        label: "X",
+        icon: "mdi:twitter",
+        href: "https://x.com/hack2future_",
         color: "hover:text-blue-400",
     },
 ];
 
 const IMPORTANT_DATES = [
-    { date: "12th March 2026", event: "Registrations Closes", icon: "📝" },
-    { date: "4th April 2026", event: "Hackathon Begins", icon: "🚀" },
-    { date: "5th April 2026", event: "Final Submissions and Prize Distribution", icon: "🏁" },
+    { date: "12th March 2026", event: "Registrations Closes", icon: "" },
+    { date: "4th April 2026", event: "Hackathon Begins", icon: "" },
+    { date: "5th April 2026", event: "Final Submissions and Prize Distribution", icon: "" },
 ];
 
 export default function FooterSection() {
@@ -79,6 +91,7 @@ export default function FooterSection() {
                                 <motion.a
                                     key={label}
                                     href={href}
+                                    target="_blank"
                                     aria-label={label}
                                     className={`w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 ${color} transition-colors`}
                                     whileHover={{ scale: 1.15, rotate: 5 }}
@@ -168,8 +181,16 @@ export default function FooterSection() {
                             <span className="w-5 h-[1px] bg-emerald-500 block" />
                             Venue
                         </h4>
-                        <div className="p-[1px] rounded-2xl bg-gradient-to-br from-white/10 to-white/0">
-                            <div className="bg-neutral-900/80 backdrop-blur-xl rounded-[15px] p-5 border border-white/5">
+                        <motion.a
+                            href="https://maps.google.com/?q=IIIT+Dharwad,+Ittigatti+Road,+Dharwad,+Karnataka+580009"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block p-[1px] rounded-2xl bg-gradient-to-br from-white/10 to-white/0 group/venue cursor-pointer"
+                            whileHover={{ scale: 1.03, y: -4 }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        >
+                            <div className="bg-neutral-900/80 backdrop-blur-xl rounded-[15px] p-5 border border-white/5 group-hover/venue:border-emerald-500/30 group-hover/venue:shadow-[0_8px_30px_rgba(16,185,129,0.15)] transition-all duration-500" title="Click to open the map">
                                 <div className="flex items-center gap-2 text-emerald-400 mb-3">
                                     {/* @ts-expect-error iconify-icon is a web component */}
                                     <iconify-icon
@@ -179,17 +200,23 @@ export default function FooterSection() {
                                     <span className="text-xs font-mono uppercase tracking-wider">
                                         Campus
                                     </span>
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon
+                                        icon="solar:arrow-right-up-linear"
+                                        width="14"
+                                        className="ml-auto opacity-0 group-hover/venue:opacity-100 transition-opacity duration-300"
+                                    />
                                 </div>
-                                <p className="text-white text-sm font-medium mb-1">
+                                <p className="text-white text-sm font-medium mb-1 group-hover/venue:text-emerald-50 transition-colors">
                                     IIIT Dharwad
                                 </p>
-                                <p className="text-neutral-500 text-xs leading-relaxed">
+                                <p className="text-neutral-500 text-xs leading-relaxed group-hover/venue:text-neutral-400 transition-colors">
                                     Ittigatti Road, Near Sattur Colony,
                                     <br />
                                     Dharwad 580009, Karnataka
                                 </p>
                             </div>
-                        </div>
+                        </motion.a>
                     </AnimateOnScroll>
                 </div>
 

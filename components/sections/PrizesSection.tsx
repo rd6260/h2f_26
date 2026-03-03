@@ -303,31 +303,9 @@ export default function PrizesSection() {
                                 Rewards
                             </span>
                         </h2>
-                        <p className="text-lg text-white/50 font-light leading-relaxed max-w-lg">
-                            Win Big. Build Bigger.{" "}
-                            <span className="text-white/30">
-                                Over ₹95,000 in total prizes for the brightest innovators.
-                            </span>
-                        </p>
                     </div>
 
-                    {/* Total prize pool badge */}
-                    <AnimateOnScroll delay={0.15}>
-                        <motion.div
-                            className="relative px-8 py-5 bg-neutral-900/60 border border-white/10 rounded-2xl backdrop-blur-xl overflow-hidden group hover:border-amber-500/20 transition-all duration-500"
-                            whileHover={{ scale: 1.03, y: -2 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        >
-                            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-500/5 to-transparent animate-shimmer-effect pointer-events-none" />
-                            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
-                            <span className="block text-[10px] font-mono uppercase tracking-widest text-amber-400/70 mb-1">
-                                Total Prize Pool
-                            </span>
-                            <span className="text-3xl font-bricolage font-bold bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent">
-                                ₹95,000+
-                            </span>
-                        </motion.div>
-                    </AnimateOnScroll>
+    
                 </AnimateOnScroll>
 
                 {/* Cards Grid — 1st prize elevated */}
