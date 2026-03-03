@@ -5,7 +5,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import MissionsSection from "@/components/sections/MissionsSection";
 import TimelineSection from "@/components/sections/TimelineSection";
 import HullIntegritySection from "@/components/sections/HullIntegritySection";
-import CoreSystemsSection from "@/components/sections/CoreSystemsSection";
+import PrizesSection from "@/components/sections/PrizesSection";
 import SponsorsSection from "@/components/sections/SponsorsSection";
 import FooterSection from "@/components/sections/FooterSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -25,7 +25,7 @@ export default function Home() {
       <SectionDivider variant="pill" label="Log" />
       <HullIntegritySection />
       <SectionDivider variant="dot" />
-      <CoreSystemsSection />
+      <PrizesSection />
       <SectionDivider variant="pill" label="Scan" />
       <SponsorsSection />
       <SectionDivider variant="dot" />
