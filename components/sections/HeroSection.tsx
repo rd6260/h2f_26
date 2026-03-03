@@ -108,7 +108,7 @@ export default function HeroSection() {
       >
         {/* Left Column: Primary Headline */}
         <div className="md:col-span-7 relative flex flex-col justify-end">
-          
+
 
           <h1 className="font-bricolage text-white leading-none font-bold select-none">
             {/* HACK */}
@@ -191,7 +191,7 @@ export default function HeroSection() {
           <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
           <span>H2F 2026</span>
         </div>
-        
+
       </motion.div>
     </header>
   );

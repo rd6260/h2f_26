@@ -96,7 +96,7 @@ function TimelineNode({
     >
       {/* Outer pulse ring */}
       <motion.div
-        className={`absolute w-14 h-14 rounded-full border ${highlight ? "border-emerald-400/40" : "border-white/10"
+        className={`absolute w-14 h-14 rounded-full border ${highlight ? "border-amber-400/40" : "border-white/10"
           }`}
         animate={
           isInView
@@ -117,7 +117,7 @@ function TimelineNode({
       {/* Secondary pulse */}
       {highlight && (
         <motion.div
-          className="absolute w-20 h-20 rounded-full border border-emerald-500/20"
+          className="absolute w-20 h-20 rounded-full border border-amber-500/20"
           animate={
             isInView
               ? {
@@ -138,12 +138,12 @@ function TimelineNode({
       {/* Core node */}
       <div
         className={`w-10 h-10 rounded-full flex items-center justify-center ${highlight
-          ? "bg-emerald-500/20 border border-emerald-400/50 shadow-[0_0_25px_rgba(16,185,129,0.4)]"
+          ? "bg-amber-500/20 border border-amber-400/50 shadow-[0_0_25px_rgba(245,158,11,0.4)]"
           : "bg-neutral-900 border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.08)]"
           }`}
       >
         <span
-          className={`font-mono text-[10px] font-bold ${highlight ? "text-emerald-400" : "text-white/70"
+          className={`font-mono text-[10px] font-bold ${highlight ? "text-amber-400" : "text-white/70"
             }`}
         >
           {String(index + 1).padStart(2, "0")}
@@ -186,14 +186,14 @@ function TimelineCard({
               <div className="text-right">
                 <span
                   className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest mb-2 ${isHighlight
-                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
                     : "bg-white/5 text-white/50 border border-white/10"
                     }`}
                 >
                   {event.label}
                 </span>
                 <p
-                  className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-emerald-400" : "text-white/80"
+                  className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-amber-400" : "text-white/80"
                     }`}
                 >
                   {event.date}
@@ -261,14 +261,14 @@ function TimelineCard({
               <div>
                 <span
                   className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest mb-2 ${isHighlight
-                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
                     : "bg-white/5 text-white/50 border border-white/10"
                     }`}
                 >
                   {event.label}
                 </span>
                 <p
-                  className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-emerald-400" : "text-white/80"
+                  className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-amber-400" : "text-white/80"
                     }`}
                 >
                   {event.date}
@@ -300,14 +300,14 @@ function TimelineCard({
         >
           <span
             className={`inline-block px-2.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest mb-1.5 ${isHighlight
-              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+              ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
               : "bg-white/5 text-white/40 border border-white/10"
               }`}
           >
             {event.label}
           </span>
           <p
-            className={`text-lg font-bricolage font-semibold mb-1 ${isHighlight ? "text-emerald-400" : "text-white/80"
+            className={`text-lg font-bricolage font-semibold mb-1 ${isHighlight ? "text-amber-400" : "text-white/80"
               }`}
           >
             {event.date}
@@ -341,14 +341,14 @@ function TimelineCardContent({
         ? "p-4 rounded-xl"
         : "p-6 rounded-2xl"
         } bg-neutral-900/40 backdrop-blur-xl border overflow-hidden transition-all duration-500 hover:bg-neutral-900/60 ${isHighlight
-          ? "border-emerald-500/20 hover:border-emerald-400/40"
+          ? "border-amber-500/20 hover:border-amber-400/40"
           : "border-white/10 hover:border-white/20"
         } ${align === "right" ? "ml-auto" : ""}`}
     >
       {/* Top accent line */}
       <div
         className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r ${isHighlight
-          ? "from-transparent via-emerald-400/50 to-transparent"
+          ? "from-transparent via-amber-400/50 to-transparent"
           : "from-transparent via-white/20 to-transparent"
           } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
       />
@@ -358,7 +358,7 @@ function TimelineCardContent({
 
       {/* Corner glow on hover */}
       {isHighlight && (
-        <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+        <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
       )}
 
       <div className="relative z-10">
@@ -366,7 +366,7 @@ function TimelineCardContent({
         <div className="flex items-center gap-3 mb-3">
           <div
             className={`w-8 h-8 rounded-lg flex items-center justify-center ${isHighlight
-              ? "bg-emerald-500/15 border border-emerald-500/25"
+              ? "bg-amber-500/15 border border-amber-500/25"
               : "bg-white/5 border border-white/10"
               } group-hover:scale-110 transition-transform duration-300`}
           >
@@ -374,7 +374,7 @@ function TimelineCardContent({
             <iconify-icon
               icon={event.icon}
               className={
-                isHighlight ? "text-emerald-400" : "text-white/60"
+                isHighlight ? "text-amber-400" : "text-white/60"
               }
               width="16"
             />
@@ -421,13 +421,13 @@ function TimelineLine() {
 
       {/* Animated glowing line */}
       <motion.div
-        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-emerald-500/60 via-emerald-400/30 to-transparent origin-top"
+        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-amber-500/60 via-amber-400/30 to-transparent origin-top"
         style={{ scaleY, height: "100%" }}
       />
 
       {/* Glow effect */}
       <motion.div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-emerald-500/30 via-emerald-400/10 to-transparent origin-top blur-[2px]"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-amber-500/30 via-amber-400/10 to-transparent origin-top blur-[2px]"
         style={{ scaleY, height: "100%" }}
       />
     </div>
@@ -450,7 +450,7 @@ function MobileTimelineLine() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
       <motion.div
-        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-emerald-500/50 via-emerald-400/20 to-transparent origin-top"
+        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-amber-500/50 via-amber-400/20 to-transparent origin-top"
         style={{ scaleY, height: "100%" }}
       />
     </div>
@@ -480,8 +480,8 @@ export default function TimelineSection() {
       />
 
       {/* Ambient glow orbs */}
-      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-emerald-500/[0.04] rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-emerald-400/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-amber-500/[0.04] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-amber-400/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -498,16 +498,16 @@ export default function TimelineSection() {
         >
           <div className="flex items-center justify-center gap-3 mb-6">
             <motion.span
-              className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-emerald-300 block"
+              className="w-8 h-[2px] bg-gradient-to-r from-amber-500 to-amber-300 block"
               initial={{ width: 0 }}
               animate={headerInView ? { width: 32 } : {}}
               transition={{ duration: 0.6, delay: 0.3, ease }}
             />
-            <span className="text-emerald-500 font-mono text-xs uppercase tracking-[0.25em]">
+            <span className="text-amber-500 font-mono text-xs uppercase tracking-[0.25em]">
               Mission Timeline
             </span>
             <motion.span
-              className="w-8 h-[2px] bg-gradient-to-l from-emerald-500 to-emerald-300 block"
+              className="w-8 h-[2px] bg-gradient-to-l from-amber-500 to-amber-300 block"
               initial={{ width: 0 }}
               animate={headerInView ? { width: 32 } : {}}
               transition={{ duration: 0.6, delay: 0.3, ease }}
