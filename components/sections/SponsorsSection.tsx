@@ -155,19 +155,17 @@ export default function SponsorsSection() {
             </div>
 
             <SponsorCard index={0}>
-              <div className="grid grid-cols-1 max-w-4xl mx-auto">
+              <div className="flex justify-center">
                 <motion.a href="#"
                   whileHover={{ scale: 1.02, y: -4 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="group relative flex items-center justify-center h-48 md:h-72 p-4 md:p-8 bg-neutral-900/30 border border-white/5 rounded-2xl hover:bg-neutral-800/50 transition-colors duration-500 overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(52,211,153,0.2)] hover:border-emerald-500/30">
+                  className="group relative flex items-center justify-center h-48 md:h-72 w-64 md:w-96 p-4 md:p-8 bg-neutral-900/30 border border-white/5 rounded-2xl hover:bg-neutral-800/50 transition-colors duration-500 overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(52,211,153,0.2)] hover:border-emerald-500/30">
                   <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="w-full h-full drop-shadow-lg">
-                    <motion.div
-                      whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(52,211,153,0.3)" }}
-                      className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                      <img src="/logos/iris.png" alt="IRIS" className="max-h-full max-w-full object-contain" />
-                    </motion.div>
-                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(52,211,153,0.3)" }}
+                    className="bg-white p-4 md:p-6 rounded-xl h-full aspect-square flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
+                    <img src="/logos/iris.png" alt="IRIS" className="max-h-full max-w-full object-contain" />
+                  </motion.div>
                 </motion.a>
               </div>
             </SponsorCard>
