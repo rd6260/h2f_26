@@ -4,13 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
-const QUICK_LINKS = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Sponsors", href: "#sponsors" },
-    { label: "Timeline", href: "#timeline" },
 
-];
+
 
 const SOCIALS = [
     {
@@ -39,12 +34,6 @@ const SOCIALS = [
     },
 ];
 
-const IMPORTANT_DATES = [
-    { date: "12th March 2026", event: "Registrations Closes", icon: "" },
-    { date: "4th April 2026", event: "Hackathon Begins", icon: "" },
-    { date: "5th April 2026", event: "Final Submissions and Prize Distribution", icon: "" },
-];
-
 export default function FooterSection() {
     return (
         <footer
@@ -64,7 +53,7 @@ export default function FooterSection() {
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Main Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24 mb-16">
                     {/* Brand */}
                     <AnimateOnScroll className="lg:col-span-2">
                         <div className="flex items-center gap-3 mb-5">
@@ -112,68 +101,91 @@ export default function FooterSection() {
                         </div>
                     </AnimateOnScroll>
 
-                    {/* Quick Links */}
-                    <AnimateOnScroll delay={0.1}>
+                    {/* Contact */}
+                    <AnimateOnScroll delay={0.1} className="lg:ml-12">
                         <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-6 font-mono flex items-center gap-2">
                             <span className="w-5 h-[1px] bg-emerald-500 block" />
-                            Quick Links
+                            Contact
                         </h4>
-                        <ul className="space-y-3">
-                            {QUICK_LINKS.map(({ label, href }) => (
-                                <li key={label}>
-                                    <motion.a
-                                        href={href}
-                                        className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-2 group"
-                                        whileHover={{ x: 4 }}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 300,
-                                            damping: 20,
-                                        }}
-                                    >
-                                        <span className="w-0 group-hover:w-3 h-[1px] bg-emerald-500 transition-all duration-300" />
-                                        {label}
-                                    </motion.a>
-                                </li>
-                            ))}
+                        <ul className="space-y-4">
+                            <li>
+                                <motion.a
+                                    href="mailto:hack2future@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    whileHover={{ x: 4 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 300,
+                                        damping: 20,
+                                    }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon
+                                        icon="solar:letter-linear"
+                                        width="18"
+                                        className="text-emerald-400 shrink-0"
+                                    />
+                                    <span>hackathon@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </li>
+
+                            <li>
+                                <div className="mb-1">
+                                    <span className="text-white text-sm font-medium">Sai Sathwik</span>
+                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Head Operations</span>
+                                </div>
+                                <motion.a
+                                    href="tel:+918074916768"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
+                                    <span>+91 80749 16768</span>
+                                </motion.a>
+                                <motion.a
+                                    href="mailto:23bcs036@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-xs transition-colors flex items-center gap-3 group mt-1"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:letter-linear" width="16" className="text-emerald-400 shrink-0" />
+                                    <span>23bcs036@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </li>
+                            {/* Swati R */}
+                            <li>
+                                <div className="mb-1">
+                                    <span className="text-white text-sm font-medium">Swati R</span>
+                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Chief of Staff</span>
+                                </div>
+                                <motion.a
+                                    href="tel:+919398481346"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
+                                    <span>+91 93984 81346</span>
+                                </motion.a>
+                                <motion.a
+                                    href="mailto:24bcs118@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-xs transition-colors flex items-center gap-3 group mt-1"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:letter-linear" width="16" className="text-emerald-400 shrink-0" />
+                                    <span>24bcs118@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </li>
                         </ul>
                     </AnimateOnScroll>
 
-                    {/* Important Dates */}
-                    <AnimateOnScroll delay={0.2}>
-                        <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-6 font-mono flex items-center gap-2">
-                            <span className="w-5 h-[1px] bg-emerald-500 block" />
-                            Key Dates
-                        </h4>
-                        <ul className="space-y-4">
-                            {IMPORTANT_DATES.map(
-                                ({ date, event, icon }, i) => (
-                                    <motion.li
-                                        key={event + i}
-                                        className="flex items-start gap-3 group cursor-default"
-                                        whileHover={{ x: 4 }}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 300,
-                                            damping: 20,
-                                        }}
-                                    >
-                                        <span className="text-lg leading-none mt-0.5">
-                                            {icon}
-                                        </span>
-                                        <div>
-                                            <span className="text-white text-sm font-medium block">
-                                                {date}
-                                            </span>
-                                            <span className="text-neutral-500 text-xs">
-                                                {event}
-                                            </span>
-                                        </div>
-                                    </motion.li>
-                                )
-                            )}
-                        </ul>
-                    </AnimateOnScroll>
+
 
                     {/* Location */}
                     <AnimateOnScroll delay={0.3}>
@@ -253,3 +265,4 @@ export default function FooterSection() {
         </footer>
     );
 }
+
