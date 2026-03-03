@@ -363,13 +363,7 @@ export default function PrizesSection() {
                 </AnimateOnScroll>
 
                 {/* Bottom motivational tagline */}
-                <AnimateOnScroll delay={0.4} className="mt-16 sm:mt-24 text-center">
-                    <div className="inline-flex flex-col items-center">
-                        <p className="text-white/30 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
-                            Build something extraordinary — the stage is yours
-                        </p>
-                    </div>
-                </AnimateOnScroll>
+            
             </div>
         </section>
     );
