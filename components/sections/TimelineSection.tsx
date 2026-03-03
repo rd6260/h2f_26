@@ -6,553 +6,553 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 const ease = [0.25, 0.8, 0.25, 1] as [number, number, number, number];
 
 const TIMELINE_EVENTS = [
-    {
-        date: "Mar 4",
-        label: "INAUGURATION",
-        title: "Liftoff",
-        description:
-            "The mission begins. Hack2Future 2026 is officially inaugurated — the countdown starts now.",
-        icon: "solar:rocket-2-bold",
-        side: "right" as const,
-    },
-    {
-        date: "Mar 12",
-        label: "REGISTRATION CLOSES",
-        title: "Hatch Sealed",
-        description:
-            "Final call for all crew members. Registration portal closes — secure your spot before it's gone.",
-        icon: "solar:lock-keyhole-bold",
-        side: "left" as const,
-    },
-    {
-        date: "Mar 21",
-        label: "FINALIST ANNOUNCEMENT",
-        title: "Crew Selected",
-        description:
-            "The shortlisted teams are revealed. Check if your squad made it through to the finals.",
-        icon: "solar:star-bold",
-        side: "right" as const,
-    },
-    {
-        date: "Mar 25",
-        label: "CONFIRMATION DEADLINE",
-        title: "Lock In",
-        description:
-            "Confirm your participation. This is the final date to secure your place in the hackathon.",
-        icon: "solar:check-circle-bold",
-        side: "left" as const,
-    },
-    {
-        date: "Apr 1",
-        label: "PAYMENT DEADLINE",
-        title: "Fuel Up",
-        description:
-            "Complete your payment to finalize your registration. No extensions beyond this point.",
-        icon: "solar:wallet-bold",
-        side: "right" as const,
-    },
-    {
-        date: "Apr 4–5",
-        label: "HACKATHON DAYS",
-        title: "Main Engine Burn",
-        description:
-            "36 hours of pure innovation. Build, break, and rebuild — this is where legends are forged.",
-        icon: "solar:code-bold",
-        side: "left" as const,
-        highlight: true,
-    },
-    {
-        date: "Apr 5",
-        label: "PRIZE DISTRIBUTION",
-        title: "Touchdown",
-        description:
-            "The winners are crowned. Prizes distributed, glory earned — the mission reaches its climax.",
-        icon: "solar:cup-star-bold",
-        side: "right" as const,
-        highlight: true,
-    },
+  {
+    date: "Mar 4",
+    label: "INAUGURATION",
+    title: "Liftoff",
+    description:
+      "Start of the event — problem statements are released and registration officially opens. The mission begins now.",
+    icon: "solar:rocket-2-bold",
+    side: "right" as const,
+  },
+  {
+    date: "Mar 18",
+    label: "REGISTRATION CLOSES",
+    title: "Hatch Sealed",
+    description:
+      "First registration closes on March 12th, extended till March 18th. Secure your spot before the portal shuts for good.",
+    icon: "solar:lock-keyhole-bold",
+    side: "left" as const,
+  },
+  {
+    date: "Mar 21",
+    label: "ANNOUNCEMENT OF FINALISTS",
+    title: "Crew Selected",
+    description:
+      "Teams shortlisted based on their solution approach by the technical team and experienced faculties. Top 75 teams out of 500+ will be selected.",
+    icon: "solar:star-bold",
+    side: "right" as const,
+  },
+  {
+    date: "Mar 25",
+    label: "CONFIRMATION OF PARTICIPATION",
+    title: "Lock In",
+    description:
+      "Get confirmation from the teams on their attendance. Teams must submit their train/flight tickets and inform about campus availability.",
+    icon: "solar:check-circle-bold",
+    side: "left" as const,
+  },
+  {
+    date: "Apr 1",
+    label: "FINAL PAYMENT DEADLINE",
+    title: "Fuel Up",
+    description:
+      "Final payment must be done without any extensions beyond this date. This covers accommodation and food for the event.",
+    icon: "solar:wallet-bold",
+    side: "right" as const,
+  },
+  {
+    date: "Apr 4",
+    label: "HACKATHON DAYS",
+    title: "Main Engine Burn",
+    description:
+      "36-hour Hackathon D-day. Build, break, and rebuild — this is where legends are forged.",
+    icon: "solar:code-bold",
+    side: "left" as const,
+    highlight: true,
+  },
+  {
+    date: "Apr 5",
+    label: "PRIZE DISTRIBUTION",
+    title: "Touchdown",
+    description:
+      "The winners are crowned. Prizes distributed, glory earned — the mission reaches its climax.",
+    icon: "solar:cup-star-bold",
+    side: "right" as const,
+    highlight: true,
+  },
 ];
 
 function TimelineNode({
-    index,
-    isInView,
-    highlight,
+  index,
+  isInView,
+  highlight,
 }: {
-    index: number;
-    isInView: boolean;
-    highlight?: boolean;
+  index: number;
+  isInView: boolean;
+  highlight?: boolean;
 }) {
-    return (
+  return (
+    <motion.div
+      className="relative z-20 flex items-center justify-center"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={isInView ? { scale: 1, opacity: 1 } : {}}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+        delay: 0.1,
+      }}
+    >
+      {/* Outer pulse ring */}
+      <motion.div
+        className={`absolute w-14 h-14 rounded-full border ${highlight ? "border-emerald-400/40" : "border-white/10"
+          }`}
+        animate={
+          isInView
+            ? {
+              scale: [1, 1.6, 1],
+              opacity: [0.4, 0, 0.4],
+            }
+            : {}
+        }
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          delay: index * 0.3,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Secondary pulse */}
+      {highlight && (
         <motion.div
-            className="relative z-20 flex items-center justify-center"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 15,
-                delay: 0.1,
-            }}
+          className="absolute w-20 h-20 rounded-full border border-emerald-500/20"
+          animate={
+            isInView
+              ? {
+                scale: [1, 2, 1],
+                opacity: [0.2, 0, 0.2],
+              }
+              : {}
+          }
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            delay: index * 0.3 + 0.5,
+            ease: "easeInOut",
+          }}
+        />
+      )}
+
+      {/* Core node */}
+      <div
+        className={`w-10 h-10 rounded-full flex items-center justify-center ${highlight
+          ? "bg-emerald-500/20 border border-emerald-400/50 shadow-[0_0_25px_rgba(16,185,129,0.4)]"
+          : "bg-neutral-900 border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+          }`}
+      >
+        <span
+          className={`font-mono text-[10px] font-bold ${highlight ? "text-emerald-400" : "text-white/70"
+            }`}
         >
-            {/* Outer pulse ring */}
-            <motion.div
-                className={`absolute w-14 h-14 rounded-full border ${highlight ? "border-emerald-400/40" : "border-white/10"
-                    }`}
-                animate={
-                    isInView
-                        ? {
-                            scale: [1, 1.6, 1],
-                            opacity: [0.4, 0, 0.4],
-                        }
-                        : {}
-                }
-                transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.3,
-                    ease: "easeInOut",
-                }}
-            />
-
-            {/* Secondary pulse */}
-            {highlight && (
-                <motion.div
-                    className="absolute w-20 h-20 rounded-full border border-emerald-500/20"
-                    animate={
-                        isInView
-                            ? {
-                                scale: [1, 2, 1],
-                                opacity: [0.2, 0, 0.2],
-                            }
-                            : {}
-                    }
-                    transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        delay: index * 0.3 + 0.5,
-                        ease: "easeInOut",
-                    }}
-                />
-            )}
-
-            {/* Core node */}
-            <div
-                className={`w-10 h-10 rounded-full flex items-center justify-center ${highlight
-                    ? "bg-emerald-500/20 border border-emerald-400/50 shadow-[0_0_25px_rgba(16,185,129,0.4)]"
-                    : "bg-neutral-900 border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.08)]"
-                    }`}
-            >
-                <span
-                    className={`font-mono text-[10px] font-bold ${highlight ? "text-emerald-400" : "text-white/70"
-                        }`}
-                >
-                    {String(index + 1).padStart(2, "0")}
-                </span>
-            </div>
-        </motion.div>
-    );
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      </div>
+    </motion.div>
+  );
 }
 
 function TimelineCard({
-    event,
-    index,
+  event,
+  index,
 }: {
-    event: (typeof TIMELINE_EVENTS)[0];
-    index: number;
+  event: (typeof TIMELINE_EVENTS)[0];
+  index: number;
 }) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "0px 0px -12% 0px" });
-    const isRight = event.side === "right";
-    const isHighlight = "highlight" in event && event.highlight;
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -12% 0px" });
+  const isRight = event.side === "right";
+  const isHighlight = "highlight" in event && event.highlight;
 
-    return (
-        <div
-            ref={ref}
-            className={`relative flex items-center w-full ${index !== TIMELINE_EVENTS.length - 1 ? "mb-8 md:mb-0" : ""
-                }`}
-        >
-            {/* Desktop alternating layout */}
-            <div className="hidden md:grid md:grid-cols-[1fr_80px_1fr] w-full items-center">
-                {/* Left column */}
-                <div>
-                    {isRight ? (
-                        /* Date badge on the left */
-                        <motion.div
-                            className="flex justify-end pr-8"
-                            initial={{ opacity: 0, x: -40 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.7, delay: 0.15, ease }}
-                        >
-                            <div className="text-right">
-                                <span
-                                    className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest mb-2 ${isHighlight
-                                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                                        : "bg-white/5 text-white/50 border border-white/10"
-                                        }`}
-                                >
-                                    {event.label}
-                                </span>
-                                <p
-                                    className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-emerald-400" : "text-white/80"
-                                        }`}
-                                >
-                                    {event.date}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ) : (
-                        /* Card on the left */
-                        <motion.div
-                            className="flex justify-end pr-8"
-                            initial={{ opacity: 0, x: -60, filter: "blur(8px)" }}
-                            animate={
-                                isInView
-                                    ? { opacity: 1, x: 0, filter: "blur(0px)" }
-                                    : {}
-                            }
-                            transition={{ duration: 0.8, delay: 0.2, ease }}
-                        >
-                            <TimelineCardContent
-                                event={event}
-                                isHighlight={isHighlight}
-                                align="right"
-                            />
-                        </motion.div>
-                    )}
-                </div>
-
-                {/* Center node */}
-                <div className="flex justify-center">
-                    <TimelineNode
-                        index={index}
-                        isInView={isInView}
-                        highlight={isHighlight}
-                    />
-                </div>
-
-                {/* Right column */}
-                <div>
-                    {isRight ? (
-                        /* Card on the right */
-                        <motion.div
-                            className="pl-8"
-                            initial={{ opacity: 0, x: 60, filter: "blur(8px)" }}
-                            animate={
-                                isInView
-                                    ? { opacity: 1, x: 0, filter: "blur(0px)" }
-                                    : {}
-                            }
-                            transition={{ duration: 0.8, delay: 0.2, ease }}
-                        >
-                            <TimelineCardContent
-                                event={event}
-                                isHighlight={isHighlight}
-                                align="left"
-                            />
-                        </motion.div>
-                    ) : (
-                        /* Date badge on the right */
-                        <motion.div
-                            className="pl-8"
-                            initial={{ opacity: 0, x: 40 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.7, delay: 0.15, ease }}
-                        >
-                            <div>
-                                <span
-                                    className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest mb-2 ${isHighlight
-                                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                                        : "bg-white/5 text-white/50 border border-white/10"
-                                        }`}
-                                >
-                                    {event.label}
-                                </span>
-                                <p
-                                    className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-emerald-400" : "text-white/80"
-                                        }`}
-                                >
-                                    {event.date}
-                                </p>
-                            </div>
-                        </motion.div>
-                    )}
-                </div>
-            </div>
-
-            {/* Mobile layout — left-aligned line */}
-            <div className="flex md:hidden items-start gap-4 w-full">
-                <div className="flex flex-col items-center shrink-0 pt-1">
-                    <TimelineNode
-                        index={index}
-                        isInView={isInView}
-                        highlight={isHighlight}
-                    />
-                </div>
-                <motion.div
-                    className="flex-1 pb-2"
-                    initial={{ opacity: 0, x: 30, filter: "blur(6px)" }}
-                    animate={
-                        isInView
-                            ? { opacity: 1, x: 0, filter: "blur(0px)" }
-                            : {}
-                    }
-                    transition={{ duration: 0.7, delay: 0.15, ease }}
+  return (
+    <div
+      ref={ref}
+      className={`relative flex items-center w-full ${index !== TIMELINE_EVENTS.length - 1 ? "mb-8 md:mb-0" : ""
+        }`}
+    >
+      {/* Desktop alternating layout */}
+      <div className="hidden md:grid md:grid-cols-[1fr_80px_1fr] w-full items-center">
+        {/* Left column */}
+        <div>
+          {isRight ? (
+            /* Date badge on the left */
+            <motion.div
+              className="flex justify-end pr-8"
+              initial={{ opacity: 0, x: -40 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.15, ease }}
+            >
+              <div className="text-right">
+                <span
+                  className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest mb-2 ${isHighlight
+                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    : "bg-white/5 text-white/50 border border-white/10"
+                    }`}
                 >
-                    <span
-                        className={`inline-block px-2.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest mb-1.5 ${isHighlight
-                            ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                            : "bg-white/5 text-white/40 border border-white/10"
-                            }`}
-                    >
-                        {event.label}
-                    </span>
-                    <p
-                        className={`text-lg font-bricolage font-semibold mb-1 ${isHighlight ? "text-emerald-400" : "text-white/80"
-                            }`}
-                    >
-                        {event.date}
-                    </p>
-                    <TimelineCardContent
-                        event={event}
-                        isHighlight={isHighlight}
-                        align="left"
-                        compact
-                    />
-                </motion.div>
-            </div>
+                  {event.label}
+                </span>
+                <p
+                  className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-emerald-400" : "text-white/80"
+                    }`}
+                >
+                  {event.date}
+                </p>
+              </div>
+            </motion.div>
+          ) : (
+            /* Card on the left */
+            <motion.div
+              className="flex justify-end pr-8"
+              initial={{ opacity: 0, x: -60, filter: "blur(8px)" }}
+              animate={
+                isInView
+                  ? { opacity: 1, x: 0, filter: "blur(0px)" }
+                  : {}
+              }
+              transition={{ duration: 0.8, delay: 0.2, ease }}
+            >
+              <TimelineCardContent
+                event={event}
+                isHighlight={isHighlight}
+                align="right"
+              />
+            </motion.div>
+          )}
         </div>
-    );
+
+        {/* Center node */}
+        <div className="flex justify-center">
+          <TimelineNode
+            index={index}
+            isInView={isInView}
+            highlight={isHighlight}
+          />
+        </div>
+
+        {/* Right column */}
+        <div>
+          {isRight ? (
+            /* Card on the right */
+            <motion.div
+              className="pl-8"
+              initial={{ opacity: 0, x: 60, filter: "blur(8px)" }}
+              animate={
+                isInView
+                  ? { opacity: 1, x: 0, filter: "blur(0px)" }
+                  : {}
+              }
+              transition={{ duration: 0.8, delay: 0.2, ease }}
+            >
+              <TimelineCardContent
+                event={event}
+                isHighlight={isHighlight}
+                align="left"
+              />
+            </motion.div>
+          ) : (
+            /* Date badge on the right */
+            <motion.div
+              className="pl-8"
+              initial={{ opacity: 0, x: 40 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.15, ease }}
+            >
+              <div>
+                <span
+                  className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest mb-2 ${isHighlight
+                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    : "bg-white/5 text-white/50 border border-white/10"
+                    }`}
+                >
+                  {event.label}
+                </span>
+                <p
+                  className={`text-2xl font-bricolage font-semibold ${isHighlight ? "text-emerald-400" : "text-white/80"
+                    }`}
+                >
+                  {event.date}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
+
+      {/* Mobile layout — left-aligned line */}
+      <div className="flex md:hidden items-start gap-4 w-full">
+        <div className="flex flex-col items-center shrink-0 pt-1">
+          <TimelineNode
+            index={index}
+            isInView={isInView}
+            highlight={isHighlight}
+          />
+        </div>
+        <motion.div
+          className="flex-1 pb-2"
+          initial={{ opacity: 0, x: 30, filter: "blur(6px)" }}
+          animate={
+            isInView
+              ? { opacity: 1, x: 0, filter: "blur(0px)" }
+              : {}
+          }
+          transition={{ duration: 0.7, delay: 0.15, ease }}
+        >
+          <span
+            className={`inline-block px-2.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest mb-1.5 ${isHighlight
+              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+              : "bg-white/5 text-white/40 border border-white/10"
+              }`}
+          >
+            {event.label}
+          </span>
+          <p
+            className={`text-lg font-bricolage font-semibold mb-1 ${isHighlight ? "text-emerald-400" : "text-white/80"
+              }`}
+          >
+            {event.date}
+          </p>
+          <TimelineCardContent
+            event={event}
+            isHighlight={isHighlight}
+            align="left"
+            compact
+          />
+        </motion.div>
+      </div>
+    </div>
+  );
 }
 
 function TimelineCardContent({
-    event,
-    isHighlight,
-    align,
-    compact = false,
+  event,
+  isHighlight,
+  align,
+  compact = false,
 }: {
-    event: (typeof TIMELINE_EVENTS)[0];
-    isHighlight: boolean | undefined;
-    align: "left" | "right";
-    compact?: boolean;
+  event: (typeof TIMELINE_EVENTS)[0];
+  isHighlight: boolean | undefined;
+  align: "left" | "right";
+  compact?: boolean;
 }) {
-    return (
-        <div
-            className={`group relative ${compact ? "" : "max-w-md"} ${compact
-                ? "p-4 rounded-xl"
-                : "p-6 rounded-2xl"
-                } bg-neutral-900/40 backdrop-blur-xl border overflow-hidden transition-all duration-500 hover:bg-neutral-900/60 ${isHighlight
-                    ? "border-emerald-500/20 hover:border-emerald-400/40"
-                    : "border-white/10 hover:border-white/20"
-                } ${align === "right" ? "ml-auto" : ""}`}
-        >
-            {/* Top accent line */}
-            <div
-                className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r ${isHighlight
-                    ? "from-transparent via-emerald-400/50 to-transparent"
-                    : "from-transparent via-white/20 to-transparent"
-                    } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+  return (
+    <div
+      className={`group relative ${compact ? "" : "max-w-md"} ${compact
+        ? "p-4 rounded-xl"
+        : "p-6 rounded-2xl"
+        } bg-neutral-900/40 backdrop-blur-xl border overflow-hidden transition-all duration-500 hover:bg-neutral-900/60 ${isHighlight
+          ? "border-emerald-500/20 hover:border-emerald-400/40"
+          : "border-white/10 hover:border-white/20"
+        } ${align === "right" ? "ml-auto" : ""}`}
+    >
+      {/* Top accent line */}
+      <div
+        className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r ${isHighlight
+          ? "from-transparent via-emerald-400/50 to-transparent"
+          : "from-transparent via-white/20 to-transparent"
+          } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+      />
+
+      {/* Shimmer */}
+      <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none animate-shimmer-effect" />
+
+      {/* Corner glow on hover */}
+      {isHighlight && (
+        <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      )}
+
+      <div className="relative z-10">
+        {/* Icon + Title row */}
+        <div className="flex items-center gap-3 mb-3">
+          <div
+            className={`w-8 h-8 rounded-lg flex items-center justify-center ${isHighlight
+              ? "bg-emerald-500/15 border border-emerald-500/25"
+              : "bg-white/5 border border-white/10"
+              } group-hover:scale-110 transition-transform duration-300`}
+          >
+            {/* @ts-expect-error iconify-icon is a web component */}
+            <iconify-icon
+              icon={event.icon}
+              className={
+                isHighlight ? "text-emerald-400" : "text-white/60"
+              }
+              width="16"
             />
-
-            {/* Shimmer */}
-            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none animate-shimmer-effect" />
-
-            {/* Corner glow on hover */}
-            {isHighlight && (
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            )}
-
-            <div className="relative z-10">
-                {/* Icon + Title row */}
-                <div className="flex items-center gap-3 mb-3">
-                    <div
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center ${isHighlight
-                            ? "bg-emerald-500/15 border border-emerald-500/25"
-                            : "bg-white/5 border border-white/10"
-                            } group-hover:scale-110 transition-transform duration-300`}
-                    >
-                        {/* @ts-expect-error iconify-icon is a web component */}
-                        <iconify-icon
-                            icon={event.icon}
-                            className={
-                                isHighlight ? "text-emerald-400" : "text-white/60"
-                            }
-                            width="16"
-                        />
-                    </div>
-                    <h3
-                        className={`${compact ? "text-base" : "text-xl"
-                            } font-bricolage font-semibold ${isHighlight
-                                ? "text-white"
-                                : "text-white/90"
-                            }`}
-                    >
-                        {event.title}
-                    </h3>
-                </div>
-
-                {/* Description */}
-                <p
-                    className={`${compact ? "text-xs" : "text-sm"
-                        } text-white/40 leading-relaxed group-hover:text-white/55 transition-colors duration-500`}
-                >
-                    {event.description}
-                </p>
-            </div>
+          </div>
+          <h3
+            className={`${compact ? "text-base" : "text-xl"
+              } font-bricolage font-semibold ${isHighlight
+                ? "text-white"
+                : "text-white/90"
+              }`}
+          >
+            {event.title}
+          </h3>
         </div>
-    );
+
+        {/* Description */}
+        <p
+          className={`${compact ? "text-xs" : "text-sm"
+            } text-white/40 leading-relaxed group-hover:text-white/55 transition-colors duration-500`}
+        >
+          {event.description}
+        </p>
+      </div>
+    </div>
+  );
 }
 
 /* ── Vertical connecting line between nodes ── */
 function TimelineLine() {
-    const lineRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: lineRef,
-        offset: ["start center", "end center"],
-    });
-    const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const lineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: lineRef,
+    offset: ["start center", "end center"],
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-    return (
-        <div
-            ref={lineRef}
-            className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[1px] hidden md:block"
-        >
-            {/* Static faint line */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
+  return (
+    <div
+      ref={lineRef}
+      className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[1px] hidden md:block"
+    >
+      {/* Static faint line */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
 
-            {/* Animated glowing line */}
-            <motion.div
-                className="absolute top-0 left-0 right-0 bg-gradient-to-b from-emerald-500/60 via-emerald-400/30 to-transparent origin-top"
-                style={{ scaleY, height: "100%" }}
-            />
+      {/* Animated glowing line */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-emerald-500/60 via-emerald-400/30 to-transparent origin-top"
+        style={{ scaleY, height: "100%" }}
+      />
 
-            {/* Glow effect */}
-            <motion.div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-emerald-500/30 via-emerald-400/10 to-transparent origin-top blur-[2px]"
-                style={{ scaleY, height: "100%" }}
-            />
-        </div>
-    );
+      {/* Glow effect */}
+      <motion.div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-emerald-500/30 via-emerald-400/10 to-transparent origin-top blur-[2px]"
+        style={{ scaleY, height: "100%" }}
+      />
+    </div>
+  );
 }
 
 /* ── Mobile connecting line ── */
 function MobileTimelineLine() {
-    const lineRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: lineRef,
-        offset: ["start center", "end center"],
-    });
-    const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const lineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: lineRef,
+    offset: ["start center", "end center"],
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-    return (
-        <div
-            ref={lineRef}
-            className="absolute left-[19px] top-0 bottom-0 w-[1px] md:hidden"
-        >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
-            <motion.div
-                className="absolute top-0 left-0 right-0 bg-gradient-to-b from-emerald-500/50 via-emerald-400/20 to-transparent origin-top"
-                style={{ scaleY, height: "100%" }}
-            />
-        </div>
-    );
+  return (
+    <div
+      ref={lineRef}
+      className="absolute left-[19px] top-0 bottom-0 w-[1px] md:hidden"
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
+      <motion.div
+        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-emerald-500/50 via-emerald-400/20 to-transparent origin-top"
+        style={{ scaleY, height: "100%" }}
+      />
+    </div>
+  );
 }
 
 export default function TimelineSection() {
-    const headerRef = useRef(null);
-    const headerInView = useInView(headerRef, {
-        once: true,
-        margin: "0px 0px -10% 0px",
-    });
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, {
+    once: true,
+    margin: "0px 0px -10% 0px",
+  });
 
-    return (
-        <section
-            id="timeline"
-            className="py-24 md:py-32 bg-neutral-950 relative overflow-hidden border-t border-white/5"
+  return (
+    <section
+      id="timeline"
+      className="py-24 md:py-32 bg-neutral-950 relative overflow-hidden border-t border-white/5"
+    >
+      {/* Dot grid pattern */}
+      <div
+        className="absolute inset-0 z-0 opacity-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      {/* Ambient glow orbs */}
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-emerald-500/[0.04] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-emerald-400/[0.03] rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          ref={headerRef}
+          className="text-center mb-20 md:mb-28"
+          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          animate={
+            headerInView
+              ? { opacity: 1, y: 0, filter: "blur(0px)" }
+              : {}
+          }
+          transition={{ duration: 0.8, ease }}
         >
-            {/* Dot grid pattern */}
-            <div
-                className="absolute inset-0 z-0 opacity-20"
-                style={{
-                    backgroundImage:
-                        "radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                }}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <motion.span
+              className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-emerald-300 block"
+              initial={{ width: 0 }}
+              animate={headerInView ? { width: 32 } : {}}
+              transition={{ duration: 0.6, delay: 0.3, ease }}
             />
+            <span className="text-emerald-500 font-mono text-xs uppercase tracking-[0.25em]">
+              Mission Timeline
+            </span>
+            <motion.span
+              className="w-8 h-[2px] bg-gradient-to-l from-emerald-500 to-emerald-300 block"
+              initial={{ width: 0 }}
+              animate={headerInView ? { width: 32 } : {}}
+              transition={{ duration: 0.6, delay: 0.3, ease }}
+            />
+          </div>
+          <h2 className="text-5xl md:text-7xl font-bricolage text-white font-semibold tracking-tight">
+            The Ascent
+          </h2>
+          <p className="text-white/30 mt-4 text-sm md:text-base font-light max-w-lg mx-auto">
+            Every great mission has a sequence.{" "}
+            <span className="text-white/50">
+              Here&apos;s yours — from launch to landing.
+            </span>
+          </p>
+        </motion.div>
 
-            {/* Ambient glow orbs */}
-            <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-emerald-500/[0.04] rounded-full blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-emerald-400/[0.03] rounded-full blur-[120px] pointer-events-none" />
+        {/* Timeline */}
+        <div className="relative">
+          {/* Desktop vertical line */}
+          <TimelineLine />
 
-            <div className="max-w-6xl mx-auto px-6 relative z-10">
-                {/* Section Header */}
-                <motion.div
-                    ref={headerRef}
-                    className="text-center mb-20 md:mb-28"
-                    initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-                    animate={
-                        headerInView
-                            ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                            : {}
-                    }
-                    transition={{ duration: 0.8, ease }}
-                >
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <motion.span
-                            className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-emerald-300 block"
-                            initial={{ width: 0 }}
-                            animate={headerInView ? { width: 32 } : {}}
-                            transition={{ duration: 0.6, delay: 0.3, ease }}
-                        />
-                        <span className="text-emerald-500 font-mono text-xs uppercase tracking-[0.25em]">
-                            Mission Timeline
-                        </span>
-                        <motion.span
-                            className="w-8 h-[2px] bg-gradient-to-l from-emerald-500 to-emerald-300 block"
-                            initial={{ width: 0 }}
-                            animate={headerInView ? { width: 32 } : {}}
-                            transition={{ duration: 0.6, delay: 0.3, ease }}
-                        />
-                    </div>
-                    <h2 className="text-5xl md:text-7xl font-bricolage text-white font-semibold tracking-tight">
-                        The Ascent
-                    </h2>
-                    <p className="text-white/30 mt-4 text-sm md:text-base font-light max-w-lg mx-auto">
-                        Every great mission has a sequence.{" "}
-                        <span className="text-white/50">
-                            Here&apos;s yours — from launch to landing.
-                        </span>
-                    </p>
-                </motion.div>
+          {/* Mobile vertical line */}
+          <MobileTimelineLine />
 
-                {/* Timeline */}
-                <div className="relative">
-                    {/* Desktop vertical line */}
-                    <TimelineLine />
+          {/* Events */}
+          <div className="relative z-10 flex flex-col gap-6 md:gap-16">
+            {TIMELINE_EVENTS.map((event, i) => (
+              <TimelineCard key={event.date} event={event} index={i} />
+            ))}
+          </div>
+        </div>
 
-                    {/* Mobile vertical line */}
-                    <MobileTimelineLine />
-
-                    {/* Events */}
-                    <div className="relative z-10 flex flex-col gap-6 md:gap-16">
-                        {TIMELINE_EVENTS.map((event, i) => (
-                            <TimelineCard key={event.date} event={event} index={i} />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Bottom tagline */}
-                <motion.div
-                    className="mt-16 md:mt-24 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease }}
-                    viewport={{ once: true }}
-                >
-                    <p className="text-white/25 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
-                        The countdown has begun — are you ready?
-                    </p>
-                </motion.div>
-            </div>
-        </section>
-    );
+        {/* Bottom tagline */}
+        <motion.div
+          className="mt-16 md:mt-24 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease }}
+          viewport={{ once: true }}
+        >
+          <p className="text-white/25 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
+            The countdown has begun — are you ready?
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
