@@ -116,7 +116,7 @@ export default function HeroSection() {
         >
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
           <span className="text-xs font-mono tracking-wider uppercase text-white/90">
-            Live: Orbital Station Alpha
+            Live: View the problem statements
           </span>
         </motion.div>
         <motion.div
@@ -128,7 +128,7 @@ export default function HeroSection() {
         >
           <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
           <span className="text-xs font-mono tracking-wider uppercase text-white/70">
-            36hr &bull; 500+ Hackers
+            36hr &bull; 300+ Hackers
           </span>
         </motion.div>
       </motion.div>

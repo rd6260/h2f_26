@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
-type FilterCategory = "all" | "deep-space" | "orbital";
+type FilterCategory = "all" | "past-winners" | "past-event";
 
 const FILTER_BUTTONS: { id: FilterCategory; label: string; icon: React.ReactNode }[] = [
     {
         id: "all",
-        label: "All Missions",
+        label: "All Pictures",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="7" height="7" x="3" y="3" rx="1" />
@@ -21,8 +21,8 @@ const FILTER_BUTTONS: { id: FilterCategory; label: string; icon: React.ReactNode
         ),
     },
     {
-        id: "deep-space",
-        label: "Deep Space",
+        id: "past-winners",
+        label: "Past winners",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
@@ -33,8 +33,8 @@ const FILTER_BUTTONS: { id: FilterCategory; label: string; icon: React.ReactNode
         ),
     },
     {
-        id: "orbital",
-        label: "Orbital",
+        id: "past-event",
+        label: "Past event",
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" />
