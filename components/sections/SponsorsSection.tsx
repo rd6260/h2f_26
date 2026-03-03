@@ -84,14 +84,14 @@ export default function SponsorsSection() {
               <div className="flex-1 h-px bg-gradient-to-r from-amber-500/30 via-amber-500/10 to-transparent" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {/* Cyseck */}
               <SponsorCard index={0}>
                 <div className="group animated-border-box relative p-[1px] rounded-2xl md:rounded-[2rem] overflow-hidden bg-neutral-900/20">
                   <motion.a href="#"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-80 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-64 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
                     <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                     <div className="relative flex flex-col items-center justify-center w-full h-full animate-float">
                       <motion.div
@@ -110,7 +110,7 @@ export default function SponsorsSection() {
                   <motion.a href="#"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-80 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-64 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
                     <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                     <div className="relative flex flex-col items-center justify-center w-full h-full animate-float" style={{ animationDelay: "-2s" }}>
                       <motion.div
@@ -129,13 +129,32 @@ export default function SponsorsSection() {
                   <motion.a href="#"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-80 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-64 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
                     <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                     <div className="relative flex flex-col items-center justify-center w-full h-full animate-float" style={{ animationDelay: "-4s" }}>
                       <motion.div
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
                         className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
                         <img src="/logos/idrp.png" alt="IDRP" className="max-h-full max-w-full object-contain" />
+                      </motion.div>
+                    </div>
+                  </motion.a>
+                </div>
+              </SponsorCard>
+
+              {/* DevFolio */}
+              <SponsorCard index={3}>
+                <div className="group animated-border-box relative p-[1px] rounded-2xl md:rounded-[2rem] overflow-hidden bg-neutral-900/20">
+                  <motion.a href="#"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="relative z-10 flex items-center justify-center p-4 md:p-8 h-48 md:h-64 bg-neutral-950/90 rounded-[23px] md:rounded-[31px] border border-white/5 overflow-hidden transition-all duration-500 group-hover:bg-neutral-900/80 backdrop-blur-xl group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    <div className="relative flex flex-col items-center justify-center w-full h-full animate-float" style={{ animationDelay: "-6s" }}>
+                      <motion.div
+                        whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
+                        className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
+                        <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-full max-w-full object-contain" />
                       </motion.div>
                     </div>
                   </motion.a>
@@ -169,22 +188,8 @@ export default function SponsorsSection() {
                 </motion.a>
               </SponsorCard>
 
-              {/* DevFolio */}
-              <SponsorCard index={1}>
-                <motion.a href="#"
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="group relative flex items-center justify-center h-36 md:h-56 p-3 md:p-6 bg-white/[0.02] border border-white/[0.04] rounded-xl md:rounded-2xl hover:bg-white/[0.06] transition-colors duration-500 hover:border-white/20 hover:shadow-[0_10px_30px_rgba(255,255,255,0.1)]">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="w-full h-full bg-white p-2 md:p-3 rounded-lg md:rounded-xl flex items-center justify-center">
-                    <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-[90%] max-w-[95%] object-contain" />
-                  </motion.div>
-                </motion.a>
-              </SponsorCard>
-
               {/* Velocity */}
-              <SponsorCard index={2}>
+              <SponsorCard index={1}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -196,12 +201,9 @@ export default function SponsorsSection() {
                   </motion.div>
                 </motion.a>
               </SponsorCard>
-            </div>
 
-            {/* Row 2: 4 partners */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-5xl mx-auto mt-3 md:mt-6">
               {/* IIITians Network */}
-              <SponsorCard index={3}>
+              <SponsorCard index={2}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -213,9 +215,12 @@ export default function SponsorsSection() {
                   </motion.div>
                 </motion.a>
               </SponsorCard>
+            </div>
 
+            {/* Row 2: 3 partners */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto mt-3 md:mt-6">
               {/* Mosaic */}
-              <SponsorCard index={4}>
+              <SponsorCard index={3}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -229,7 +234,7 @@ export default function SponsorsSection() {
               </SponsorCard>
 
               {/* KDEM */}
-              <SponsorCard index={5}>
+              <SponsorCard index={4}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -243,7 +248,7 @@ export default function SponsorsSection() {
               </SponsorCard>
 
               {/* Iridescence */}
-              <SponsorCard index={6}>
+              <SponsorCard index={5}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -260,7 +265,7 @@ export default function SponsorsSection() {
 
         </div>
 
-       
+
 
       </div>
     </section>

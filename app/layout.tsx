@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Bricolage_Grotesque } from "next/font/google";
+import { Inter, Playfair_Display, Bricolage_Grotesque, Montserrat } from "next/font/google";
 import Script from "next/script";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import "./globals.css";
@@ -23,6 +23,12 @@ const bricolage = Bricolage_Grotesque({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   title: "Hack2Future 2026",
   description:
@@ -44,7 +50,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${bricolage.variable} bg-neutral-950 text-neutral-50 w-full overflow-x-hidden selection:bg-white/20 selection:text-white relative antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${bricolage.variable} ${montserrat.variable} bg-neutral-950 text-neutral-50 w-full overflow-x-hidden selection:bg-white/20 selection:text-white relative antialiased`}
       >
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
