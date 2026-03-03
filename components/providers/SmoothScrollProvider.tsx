@@ -4,21 +4,22 @@ import { ReactLenis } from "lenis/react";
 import type { ReactNode } from "react";
 
 export default function SmoothScrollProvider({
-    children,
+  children,
 }: {
-    children: ReactNode;
+  children: ReactNode;
 }) {
-    return (
-        <ReactLenis
-            root
-            options={{
-                lerp: 0.1,
-                smoothWheel: true,
-                wheelMultiplier: 1,
-                touchMultiplier: 1.5,
-            }}
-        >
-            {children}
-        </ReactLenis>
-    );
+  return (
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.08,
+        smoothWheel: true,
+        wheelMultiplier: 0.8,
+        touchMultiplier: 1.2,
+        syncTouch: true,
+      }}
+    >
+      {children}
+    </ReactLenis>
+  );
 }

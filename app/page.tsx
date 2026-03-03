@@ -7,7 +7,7 @@ import InfrastructureSection from "@/components/sections/InfrastructureSection";
 import TimelineSection from "@/components/sections/TimelineSection";
 import HullIntegritySection from "@/components/sections/HullIntegritySection";
 import CoreSystemsSection from "@/components/sections/CoreSystemsSection";
-import PartnersSection from "@/components/sections/PartnersSection";
+import SponsorsSection from "@/components/sections/SponsorsSection";
 import CareersSection from "@/components/sections/CareersSection";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
       <SectionDivider variant="dot" />
       <CoreSystemsSection />
       <SectionDivider variant="pill" label="Scan" />
-      <PartnersSection />
+      <SponsorsSection />
       <SectionDivider variant="dot" />
       <CareersSection />
     </>
