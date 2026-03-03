@@ -3,18 +3,12 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import CountdownDevfolio from "@/components/ui/CountdownDevfolio";
 
 const ease = [0.25, 0.8, 0.25, 1] as [number, number, number, number];
 
-/* ── Animated count-up number ── */
-function CountUp({ value, suffix = "" }: { value: string; suffix?: string }) {
-  return (
-    <span className="text-2xl text-white font-bricolage">
-      {value}
-      <span className="text-emerald-400 text-lg">{suffix}</span>
-    </span>
-  );
-}
+
+
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -27,7 +21,6 @@ export default function HeroSection() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const badgeY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   return (
     <header
@@ -108,25 +101,18 @@ export default function HeroSection() {
       >
         {/* Left Column: Primary Headline */}
         <div className="md:col-span-7 relative flex flex-col justify-end">
-          
 
           <h1 className="font-bricolage text-white leading-none font-bold select-none">
-            {/* HACK */}
-            <motion.span
-              className="block text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]"
+            {/* HACK 2 */}
+            <motion.div
+              className="flex items-baseline gap-2 md:gap-4"
               initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 1.4, duration: 1.2, ease }}
             >
-              HACK
-            </motion.span>
-            {/* 2 FUTURE */}
-            <motion.div
-              className="flex items-baseline gap-2 md:gap-4 -mt-3 md:-mt-10 lg:-mt-14"
-              initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ delay: 1.6, duration: 1.2, ease }}
-            >
+              <span className="text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]">
+                HACK
+              </span>
               <motion.span
                 className="text-[18vw] md:text-[10rem] lg:text-[12rem] font-extralight italic font-serif relative text-amber-500/50"
                 animate={{
@@ -136,10 +122,16 @@ export default function HeroSection() {
               >
                 2
               </motion.span>
-              <span className="text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]">
-                FUTURE
-              </span>
             </motion.div>
+            {/* FUTURE */}
+            <motion.span
+              className="block text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em] -mt-3 md:-mt-10 lg:-mt-14"
+              initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 1.6, duration: 1.2, ease }}
+            >
+              FUTURE
+            </motion.span>
           </h1>
 
           {/* Tagline below headline */}
@@ -162,18 +154,28 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
+      {/* ── Countdown + Devfolio — Bottom Right ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.2, duration: 0.8, ease }}
+        className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20"
+      >
+        <CountdownDevfolio />
+      </motion.div>
+
       {/* ── Scroll Indicator ── */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.6, duration: 0.8, ease }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="text-[10px] uppercase tracking-widest text-white/40">
+        <span className="text-[10px] uppercase tracking-widest text-white/40 hidden md:block">
           Scroll
         </span>
         <motion.div
-          className="w-[1px] h-12 bg-gradient-to-b from-amber-500/80 to-transparent"
+          className="w-[1px] h-12 bg-gradient-to-b from-amber-500/80 to-transparent hidden md:block"
           animate={{ scaleY: [1, 0.5, 1], opacity: [1, 0.5, 1] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -186,12 +188,6 @@ export default function HeroSection() {
         transition={{ delay: 2.4, duration: 0.8, ease }}
         className="absolute bottom-8 left-8 hidden lg:flex flex-col gap-2 z-20"
       >
-        <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest text-white/40 font-mono">
-          <span>Reg.Status</span>
-          <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
-          <span>H2F 2026</span>
-        </div>
-        
       </motion.div>
     </header>
   );
