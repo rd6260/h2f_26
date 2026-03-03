@@ -1,200 +1,186 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import CountdownDevfolio from "@/components/ui/CountdownDevfolio";
 
-const ease = [0.25, 0.8, 0.25, 1] as [number, number, number, number];
+type TimeLeft = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
 
+function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    },
+  };
 
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="z-[10] flex w-full flex-col items-start justify-center text-left pt-20"
+    >
+      <div className="flex flex-col items-start font-anton uppercase leading-[0.9] tracking-wide mb-8 ml-4 sm:ml-8 md:ml-12 lg:ml-20">
+        <motion.div variants={itemVariants} className="text-[clamp(4.5rem,11vw,8.5rem)] text-white">
+          <span>HACK</span>
+          <span className="text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.8)] md:[-webkit-text-stroke:3px_rgba(255,255,255,0.8)]">2</span>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="flex flex-row items-center gap-4 text-[clamp(4.5rem,11vw,8.5rem)] text-white ml-0 sm:ml-4 lg:ml-8 mt-[-10px]">
+
+          <span>FUTURE</span>
+          <span className="">2.0</span>
+        </motion.div>
+      </div>
+
+      <motion.div variants={itemVariants} className="flex flex-col items-start gap-6 ml-[2%] sm:ml-8 md:ml-12 lg:ml-20">
+        <div className="w-full max-w-[320px] rounded-md py-2 text-left text-white">
+          <div className="text-lg font-normal mb-2 text-gray-300">Final Round In:</div>
+          <div className="flex justify-start space-x-6">
+            <div className="flex flex-col items-center">
+              <span className="font-anton text-2xl md:text-3xl">
+                {timeLeft.days.toString().padStart(2, '0')}
+              </span>
+              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Days</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-anton text-2xl md:text-3xl">
+                {timeLeft.hours.toString().padStart(2, '0')}
+              </span>
+              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Hours</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-anton text-2xl md:text-3xl">
+                {timeLeft.minutes.toString().padStart(2, '0')}
+              </span>
+              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Minutes</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-anton text-2xl md:text-3xl">
+                {timeLeft.seconds.toString().padStart(2, '0')}
+              </span>
+              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Seconds</span>
+            </div>
+          </div>
+        </div>
+        <a
+          href={"https://hack-2-future-iiit-dharwad.devfolio.co"}
+          target="_blank"
+          className="bg-[#3770ff] hover:bg-[#2b58c9] transition-colors h-[48px] w-fit flex items-center justify-center text-[18px] font-medium gap-3 rounded-[4px] text-white px-8 outline-none mt-2"
+        >
+          <Image
+            height={20}
+            width={20}
+            src={"/logos/d.png"}
+            alt={"devfolio"}
+          />
+          Go to Devfolio
+        </a>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function HeroSection() {
-  const ref = useRef<HTMLElement>(null);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
 
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  useEffect(() => {
+    function calculateTimeLeft(): TimeLeft {
+      const eventDate = new Date("2026-04-04T09:00:00");
+      const currentTime = new Date();
+      const difference = eventDate.getTime() - currentTime.getTime();
+
+      let timeLeft: TimeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      if (difference > 0) {
+        timeLeft = {
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        };
+      }
+      return timeLeft;
+    }
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    setTimeLeft(calculateTimeLeft());
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <header
+    <section
       ref={ref}
-      className="relative w-full overflow-hidden flex flex-col justify-end pb-12 md:pb-24 min-h-screen md:h-screen"
+      id="landing"
+      className="font-roboto relative z-0 flex h-[100dvh] w-full items-center justify-between overflow-hidden"
+      data-idx="0"
     >
-      {/* ── Background Image Layer with parallax ── */}
-      <div className="absolute inset-0 z-0 bg-black">
-        <motion.div
-          initial={{ scale: 1.4, opacity: 0, filter: "blur(20px) grayscale(100%)" }}
-          animate={{ scale: 1, opacity: 1, filter: "blur(0px) grayscale(0%)" }}
-          transition={{ duration: 3.5, ease }}
-          style={{ scale: imgScale, y: imgY }}
-          className="w-full h-full will-change-transform"
-        >
-          <Image
-            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/25904405-aa15-491b-9a03-de5fc75f18b3_3840w.webp"
-            alt="Brutalist Architecture Detail"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
-        {/* Multi-layer gradients for depth */}
-        <motion.div
-          style={{ opacity: overlayOpacity }}
-          className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/60 via-transparent to-transparent" />
-        <div className="bg-black/10 mix-blend-overlay absolute inset-0" />
-      </div>
-
-      {/* ── Ambient Glow Orbs ── */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 2 }}
-        className="absolute inset-0 z-[1] pointer-events-none overflow-hidden"
-      >
-        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-amber-500/8 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-emerald-500/6 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/3 right-1/4 w-[200px] h-[200px] bg-violet-500/5 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: "2s" }} />
+        style={{ y: backgroundY, scale: backgroundScale }}
+        className="absolute inset-x-0 inset-y-[-10%] z-0 h-[120%] w-full bg-[url('/bg.png')] bg-cover bg-center"
+      />
+
+      <div className="absolute top-0 z-[1] h-full w-full bg-black/40"></div>
+
+      <motion.div style={{ y: backgroundY }} className="z-[2] mt-4 max-sm:w-full md:ml-4 lg:ml-8 xl:ml-12 w-full md:w-1/2">
+        <EventDetails timeLeft={timeLeft} />
       </motion.div>
 
-      {/* ── Floating Particles ── */}
+      {/* Right Bottom Hero Graphic */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 1.5 }}
-        className="absolute inset-0 z-[2] pointer-events-none"
+        style={{ y: backgroundY }}
+        initial={{ opacity: 0, scale: 0.8, x: 50 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{
+          opacity: { duration: 1, ease: "easeOut" },
+          scale: { duration: 1, ease: "easeOut" },
+          x: { duration: 1, ease: "easeOut" },
+        }}
+        className="absolute bottom-0 right-[5%] z-[20] w-[600px] md:w-[800px] lg:w-[1000px] pointer-events-none hidden md:block"
       >
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full bg-white/20"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.4,
-            }}
-          />
-        ))}
-      </motion.div>
-
-      {/* ── Main Content Grid ── */}
-      <motion.div
-        style={{ y: textY }}
-        className="md:px-12 grid grid-cols-1 md:grid-cols-12 z-10 w-full max-w-[90rem] mr-auto ml-auto pr-6 pl-6 relative gap-x-6 gap-y-6 items-end"
-      >
-        {/* Left Column: Primary Headline */}
-        <div className="md:col-span-7 relative flex flex-col justify-end">
-
-          <h1 className="font-bricolage text-white leading-none font-bold select-none">
-            {/* HACK 2 */}
-            <motion.div
-              className="flex items-baseline gap-2 md:gap-4"
-              initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ delay: 1.4, duration: 1.2, ease }}
-            >
-              <span className="text-[18vw] md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]">
-                HACK
-              </span>
-              <span
-                className="text-[18vw] md:text-[10rem] lg:text-[12rem] font-bold font-bricolage relative select-none"
-                style={{
-                  WebkitTextFillColor: "transparent",
-                  WebkitTextStrokeWidth: "3px",
-                  WebkitTextStrokeColor: "rgba(180, 180, 200, 0.45)",
-                }}
-              >
-                2
-              </span>
-            </motion.div>
-            {/* FUTURE */}
-            <motion.div
-              className="flex items-baseline gap-2 md:gap-4 -mt-3 md:-mt-10 lg:-mt-14 whitespace-nowrap"
-              initial={{ opacity: 0, y: 80, filter: "blur(12px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ delay: 1.6, duration: 1.2, ease }}
-            >
-              <span className="text-[18vw] sm:mt-5 md:text-[10rem] lg:text-[12rem] text-white tracking-[-0.04em]">
-                FUTURE
-              </span>
-              <span className="text-[10vw] md:text-[7rem] lg:text-[10rem] text-amber-500/50 font italic font-montserrat">
-                2.0
-              </span>
-            </motion.div>
-          </h1>
-
-          {/* Tagline below headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.8, ease }}
-            className="mt-5 md:mt-8 flex items-center gap-4"
-          >
-            <motion.span
-              initial={{ width: 0 }}
-              animate={{ width: 40 }}
-              transition={{ delay: 2.2, duration: 0.5, ease }}
-              className="h-[1px] bg-white/20 block shrink-0"
-            />
-            <p className="text-white/50 text-xs md:text-sm font-mono tracking-[0.2em] uppercase">
-              Where Innovation Meets Ambition
-            </p>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* ── Countdown + Devfolio — Bottom Right ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.2, duration: 0.8, ease }}
-        className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20"
-      >
-        <CountdownDevfolio />
-      </motion.div>
-
-      {/* ── Scroll Indicator ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.6, duration: 0.8, ease }}
-        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
-      >
-        <span className="text-[10px] uppercase tracking-widest text-white/40 hidden md:block">
-          Scroll
-        </span>
-        <motion.div
-          className="w-[1px] h-12 bg-gradient-to-b from-amber-500/80 to-transparent hidden md:block"
-          animate={{ scaleY: [1, 0.5, 1], opacity: [1, 0.5, 1] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        <Image
+          src="/hero1.png"
+          alt="Hero Graphic"
+          width={1000}
+          height={1000}
+          className="object-contain w-full h-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]"
         />
       </motion.div>
-
-      {/* ── Bottom-left status widget ── */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.4, duration: 0.8, ease }}
-        className="absolute bottom-8 left-8 hidden lg:flex flex-col gap-2 z-20"
-      >
-      </motion.div>
-    </header>
+    </section>
   );
 }

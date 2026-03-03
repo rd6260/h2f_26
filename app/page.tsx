@@ -17,19 +17,18 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <SectionDivider variant="dot" />
-      <MissionsSection />
-
-
       <AboutSection />
       <SectionDivider variant="dot" />
+      <MissionsSection />
+      <SectionDivider variant="dot" />
       <TimelineSection />
-     
+
       <HullIntegritySection />
       <SectionDivider variant="dot" />
       <PrizesSection />
 
-     
- 
+
+
       <SponsorsSection />
       <SectionDivider variant="dot" />
       <FooterSection />

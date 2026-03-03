@@ -78,8 +78,7 @@ export default function SponsorsSection() {
           <AnimateOnScroll delay={0.1}>
             <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
               <span className="text-xs md:text-sm font-mono text-amber-400 uppercase tracking-widest flex items-center gap-2 bg-amber-500/10 px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-amber-500/20">
-                <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.8)]" />
-                [ SPONSORS ]
+                [ GOLD ]
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-amber-500/30 via-amber-500/10 to-transparent" />
             </div>
