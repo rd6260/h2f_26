@@ -28,13 +28,8 @@ export default function Home() {
       <SectionDivider variant="dot" />
       <PrizesSection />
 
-      <AboutSection />
-      <SectionDivider variant="dot" />
-      <TimelineSection />
-      <HullIntegritySection />
-      <SectionDivider variant="dot" />
-      <PrizesSection />
-
+     
+ 
       <SponsorsSection />
       <SectionDivider variant="dot" />
       <FooterSection />
