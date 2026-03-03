@@ -101,38 +101,6 @@ export default function HeroSection() {
         ))}
       </motion.div>
 
-      {/* ── Floating Data Points (top-right) ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20, x: 20 }}
-        animate={{ opacity: 1, y: 0, x: 0 }}
-        transition={{ delay: 2.5, duration: 0.8, ease }}
-        style={{ y: badgeY }}
-        className="absolute top-32 right-6 md:right-12 z-20 flex flex-col items-end gap-3"
-      >
-        <motion.div
-          className="px-4 py-2.5 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-          whileHover={{ scale: 1.05, borderColor: "rgba(255,255,255,0.25)", boxShadow: "0 8px 32px rgba(245,158,11,0.15)" }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-          <span className="text-xs font-mono tracking-wider uppercase text-white/90">
-            Live: View the problem statements
-          </span>
-        </motion.div>
-        <motion.div
-          className="px-4 py-2.5 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 2.8, duration: 0.6, ease }}
-          whileHover={{ scale: 1.05, borderColor: "rgba(255,255,255,0.25)" }}
-        >
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
-          <span className="text-xs font-mono tracking-wider uppercase text-white/70">
-            36hr &bull; 300+ Hackers
-          </span>
-        </motion.div>
-      </motion.div>
-
       {/* ── Main Content Grid ── */}
       <motion.div
         style={{ y: textY }}
@@ -140,23 +108,7 @@ export default function HeroSection() {
       >
         {/* Left Column: Primary Headline */}
         <div className="md:col-span-7 relative flex flex-col justify-end">
-          {/* Decorative Label */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.7, ease }}
-            className="flex items-center gap-3 mb-4 md:mb-8"
-          >
-            <motion.span
-              initial={{ width: 0 }}
-              animate={{ width: 48 }}
-              transition={{ delay: 1.4, duration: 0.6, ease }}
-              className="h-[2px] bg-gradient-to-r from-amber-500 via-amber-400 to-transparent block"
-            />
-            <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] text-amber-400/90">
-              Est. 2042
-            </span>
-          </motion.div>
+          
 
           <h1 className="font-bricolage text-white leading-none font-bold select-none">
             {/* HACK */}
@@ -208,74 +160,6 @@ export default function HeroSection() {
             </p>
           </motion.div>
         </div>
-
-        {/* Right Column: Description & Specs */}
-        <div className="md:col-span-4 md:col-start-9 flex flex-col justify-end pb-4 md:pb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 1.8, duration: 1, ease }}
-            className="overflow-hidden md:p-8 bg-neutral-950/60 border-white/10 border ring-white/5 ring-1 rounded-2xl pt-6 pr-6 pb-6 pl-6 relative shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
-          >
-            {/* Shimmer Overlay */}
-            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent z-0 pointer-events-none animate-shimmer-effect" />
-
-            {/* Top accent line */}
-            <motion.div
-              className="absolute top-0 left-0 right-0 h-[1px]"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 2.2, duration: 1, ease }}
-              style={{ background: "linear-gradient(90deg, transparent, rgba(245,158,11,0.5), transparent)" }}
-            />
-
-            <div className="relative z-10">
-              <p className="md:text-xl leading-relaxed antialiased text-lg font-light text-white mb-8 drop-shadow-md">
-                The Flagship Hackathon of IIIT Dharwad. Build Bold, Think
-                Beyond, Code the future, Hack2Future
-              </p>
-
-              <div className="flex flex-col gap-6">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2.2, duration: 0.6 }}
-                  className="grid grid-cols-2 gap-4 border-t border-white/20 pt-6"
-                >
-                  <div>
-                    <span className="block text-[10px] uppercase text-white/50 tracking-widest mb-1">
-                      Edition
-                    </span>
-                    <CountUp value="2nd" />
-                  </div>
-                  <div>
-                    <span className="block text-[10px] uppercase text-white/50 tracking-widest mb-1">
-                      Bases
-                    </span>
-                    <CountUp value="04" />
-                  </div>
-                </motion.div>
-
-                <motion.a
-                  href="#projects"
-                  className="group relative flex items-center justify-between w-full p-1 border-b border-white/30 hover:border-amber-500/60 transition-colors pb-2 overflow-hidden"
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <span className="text-sm font-medium text-white tracking-wide">
-                    View Brochure
-                  </span>
-                  {/* @ts-expect-error iconify-icon is a web component */}
-                  <iconify-icon
-                    icon="solar:arrow-right-linear"
-                    className="text-white group-hover:translate-x-1 transition-transform"
-                    width="18"
-                  />
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
       </motion.div>
 
       {/* ── Scroll Indicator ── */}
@@ -307,38 +191,7 @@ export default function HeroSection() {
           <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
           <span>H2F 2026</span>
         </div>
-        <motion.div
-          className="bg-neutral-900/80 w-64 border-white/10 border rounded-xl px-4 py-4 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-          whileHover={{ borderColor: "rgba(245,158,11,0.3)", scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        >
-          <div className="flex justify-between mb-2">
-            <span className="text-xs text-white/60">Registration</span>
-            <span className="text-xs text-emerald-400 font-mono">Open</span>
-          </div>
-          <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-            <motion.div
-              className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-full rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"
-              initial={{ width: "0%" }}
-              animate={{ width: "65%" }}
-              transition={{ delay: 2.8, duration: 1.5, ease }}
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            <div>
-              <span className="block text-[10px] text-white/40 uppercase tracking-wider">
-                Duration
-              </span>
-              <span className="text-sm text-white font-mono">36 hrs</span>
-            </div>
-            <div>
-              <span className="block text-[10px] text-white/40 uppercase tracking-wider">
-                Tracks
-              </span>
-              <span className="text-sm text-white font-mono">05</span>
-            </div>
-          </div>
-        </motion.div>
+        
       </motion.div>
     </header>
   );

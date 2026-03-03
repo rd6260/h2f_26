@@ -50,9 +50,9 @@ export default function Navbar() {
                         : "0 25px 50px -12px rgba(0,0,0,0.25)",
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="flex flex-col w-full max-w-4xl border rounded-2xl md:rounded-full backdrop-blur-xl overflow-hidden"
+                className="flex flex-col px-8 max-w-4xl border rounded-2xl md:rounded-full backdrop-blur-xl overflow-hidden"
             >
-                <div className="flex pt-2 pr-3 pb-2 pl-2 items-center justify-between">
+                <div className="flex gap-8 pt-2 pr-3 pb-2 pl-2 items-center justify-between">
                     {/* Logo */}
                     <motion.a
                         href="#"
@@ -60,16 +60,9 @@ export default function Navbar() {
                         whileHover={{ scale: 1.02 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
                     >
-                        <motion.div
-                            className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.6, ease: "easeInOut" }}
-                        >
-                            {/* @ts-expect-error iconify-icon is a web component */}
-                            <iconify-icon icon="solar:code-bold" width="16" />
-                        </motion.div>
+                        <img src="/logos/logo.png" alt="Logo" className="w-7 h-7" />
                         <span className="font-bricolage text-lg tracking-tight font-medium">
-                            H2F
+                            Hack2Future
                         </span>
                     </motion.a>
 
@@ -95,19 +88,6 @@ export default function Navbar() {
 
                     {/* Actions */}
                     <div className="flex items-center gap-2">
-                        {/* Register CTA */}
-                        <motion.a
-                            href="#"
-                            className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 text-black text-sm font-semibold shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-shadow"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                        >
-                            Register
-                            {/* @ts-expect-error iconify-icon is a web component */}
-                            <iconify-icon icon="solar:arrow-right-linear" width="16" />
-                        </motion.a>
-
                         {/* Mobile hamburger */}
                         <motion.button
                             className="md:hidden w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-colors"
@@ -147,18 +127,6 @@ export default function Navbar() {
                                         {link.label}
                                     </motion.a>
                                 ))}
-                                <motion.a
-                                    href="#"
-                                    onClick={() => setMobileOpen(false)}
-                                    className="mt-2 flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 text-black text-sm font-semibold"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.25, duration: 0.3 }}
-                                >
-                                    Register Now
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon icon="solar:arrow-right-linear" width="16" />
-                                </motion.a>
                             </div>
                         </motion.div>
                     )}
