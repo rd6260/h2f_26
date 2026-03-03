@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
-export default function InfrastructureSection() {
+export default function AboutSection() {
     return (
         <section
             className="py-24 bg-neutral-900 text-white relative overflow-hidden"
