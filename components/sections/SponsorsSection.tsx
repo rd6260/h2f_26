@@ -144,35 +144,8 @@ export default function SponsorsSection() {
             </div>
           </AnimateOnScroll>
 
-          {/* ─── Organizing Partner Tier ─── */}
-          <AnimateOnScroll delay={0.2}>
-            <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-              <span className="text-xs md:text-sm font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-emerald-500/20 flex items-center gap-2">
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
-                [ ORGANIZING_PARTNER ]
-              </span>
-              <div className="flex-1 h-px bg-gradient-to-r from-emerald-500/30 to-transparent" />
-            </div>
-
-            <SponsorCard index={0}>
-              <div className="flex justify-center">
-                <motion.a href="#"
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="group relative flex items-center justify-center h-48 md:h-72 w-64 md:w-96 p-4 md:p-8 bg-neutral-900/30 border border-white/5 rounded-2xl hover:bg-neutral-800/50 transition-colors duration-500 overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(52,211,153,0.2)] hover:border-emerald-500/30">
-                  <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <motion.div
-                    whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(52,211,153,0.3)" }}
-                    className="bg-white p-4 md:p-6 rounded-xl h-full aspect-square flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                    <img src="/logos/iris.png" alt="IRIS" className="max-h-full max-w-full object-contain" />
-                  </motion.div>
-                </motion.a>
-              </div>
-            </SponsorCard>
-          </AnimateOnScroll>
-
           {/* ─── Partners Tier ─── */}
-          <AnimateOnScroll delay={0.3}>
+          <AnimateOnScroll delay={0.2}>
             <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
               <span className="text-xs md:text-sm font-mono text-white/50 uppercase tracking-widest bg-white/5 px-3 md:px-4 py-1 md:py-1.5 rounded-full border border-white/10">
                 [ PARTNERS ]
@@ -180,8 +153,9 @@ export default function SponsorsSection() {
               <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
-              {/* Iridescence */}
+            {/* Row 1: 3 partners */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
+              {/* IRIS */}
               <SponsorCard index={0}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
@@ -190,13 +164,27 @@ export default function SponsorsSection() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     className="w-full h-full bg-white p-2 md:p-3 rounded-lg md:rounded-xl flex items-center justify-center">
-                    <img src="/logos/irides.png" alt="Iridescence" className="max-h-[90%] max-w-[95%] object-contain" />
+                    <img src="/logos/iris.png" alt="IRIS" className="max-h-[90%] max-w-[95%] object-contain" />
+                  </motion.div>
+                </motion.a>
+              </SponsorCard>
+
+              {/* DevFolio */}
+              <SponsorCard index={1}>
+                <motion.a href="#"
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="group relative flex items-center justify-center h-36 md:h-56 p-3 md:p-6 bg-white/[0.02] border border-white/[0.04] rounded-xl md:rounded-2xl hover:bg-white/[0.06] transition-colors duration-500 hover:border-white/20 hover:shadow-[0_10px_30px_rgba(255,255,255,0.1)]">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="w-full h-full bg-white p-2 md:p-3 rounded-lg md:rounded-xl flex items-center justify-center">
+                    <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-[90%] max-w-[95%] object-contain" />
                   </motion.div>
                 </motion.a>
               </SponsorCard>
 
               {/* Velocity */}
-              <SponsorCard index={1}>
+              <SponsorCard index={2}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -208,9 +196,12 @@ export default function SponsorsSection() {
                   </motion.div>
                 </motion.a>
               </SponsorCard>
+            </div>
 
+            {/* Row 2: 4 partners */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-5xl mx-auto mt-3 md:mt-6">
               {/* IIITians Network */}
-              <SponsorCard index={2}>
+              <SponsorCard index={3}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -224,7 +215,7 @@ export default function SponsorsSection() {
               </SponsorCard>
 
               {/* Mosaic */}
-              <SponsorCard index={3}>
+              <SponsorCard index={4}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -238,7 +229,7 @@ export default function SponsorsSection() {
               </SponsorCard>
 
               {/* KDEM */}
-              <SponsorCard index={4}>
+              <SponsorCard index={5}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -251,8 +242,8 @@ export default function SponsorsSection() {
                 </motion.a>
               </SponsorCard>
 
-              {/* DevFolio */}
-              <SponsorCard index={5}>
+              {/* Iridescence */}
+              <SponsorCard index={6}>
                 <motion.a href="#"
                   whileHover={{ scale: 1.03, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -260,7 +251,7 @@ export default function SponsorsSection() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     className="w-full h-full bg-white p-2 md:p-3 rounded-lg md:rounded-xl flex items-center justify-center">
-                    <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-[90%] max-w-[95%] object-contain" />
+                    <img src="/logos/irides.png" alt="Iridescence" className="max-h-[90%] max-w-[95%] object-contain" />
                   </motion.div>
                 </motion.a>
               </SponsorCard>
@@ -270,7 +261,7 @@ export default function SponsorsSection() {
         </div>
 
         {/* Sponsor CTA */}
-        <AnimateOnScroll delay={0.4} className="mt-16 md:mt-24 text-center">
+        {/* <AnimateOnScroll delay={0.4} className="mt-16 md:mt-24 text-center">
           <div className="inline-flex flex-col items-center">
             <p className="text-white/40 font-mono text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] mb-3 md:mb-4 uppercase">
               Want to fuel the mission?
@@ -281,11 +272,11 @@ export default function SponsorsSection() {
               <Icon icon="solar:document-download-linear"
                 className="relative z-10 group-hover:translate-y-0.5 group-hover:text-black transition-all duration-300"
                 width="20" />
-              {/* Button Hover Fill */}
+              {/* Button Hover Fill 
               <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
             </a>
           </div>
-        </AnimateOnScroll>
+        </AnimateOnScroll> */}
 
       </div>
     </section>
