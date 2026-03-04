@@ -7,7 +7,7 @@ const ease = [0.25, 0.8, 0.25, 1] as [number, number, number, number];
 
 const TIMELINE_EVENTS = [
   {
-    date: "Mar 4",
+    date: "Mar 5",
     label: "INAUGURATION",
     title: "Liftoff",
     description:
