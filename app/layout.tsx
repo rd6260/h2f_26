@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display, Bricolage_Grotesque, Montserrat } from "next/font/google";
 import Script from "next/script";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import SplashScreen from "@/components/ui/SplashScreen";
 import "./globals.css";
 
 const inter = Inter({
@@ -106,6 +107,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${bricolage.variable} ${montserrat.variable} bg-neutral-950 text-neutral-50 w-full overflow-x-hidden selection:bg-white/20 selection:text-white relative antialiased`}
       >
+        <SplashScreen />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>

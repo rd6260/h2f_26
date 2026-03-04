@@ -25,7 +25,7 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3,
+        delayChildren: typeof window !== 'undefined' && window.innerWidth < 768 ? 3.3 : 7.3,
       },
     },
   };
@@ -50,12 +50,15 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
 
         <motion.div variants={itemVariants} className="flex flex-row items-baseline gap-2 text-[clamp(4.5rem,11vw,8.5rem)] text-white font-bold ml-2">
           <span>HACK</span>
-          <span className="text-[clamp(2.5rem,5vw,4.5rem)] text-amber-500 italic font-montserrat tracking-tighter font-black">2.0</span>
+
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-row items-center gap-1 text-[clamp(4.5rem,11vw,8.5rem)] text-white ml-0 sm:ml-4 lg:ml-8 mt-[-10px] sm:mt-[-15px] font-bold">
+        <motion.div variants={itemVariants} className="flex flex-row items-start gap-1 text-[clamp(4.5rem,11vw,8.5rem)] text-white ml-0 sm:ml-4 lg:ml-8 mt-[-10px] sm:mt-[-15px] font-bold">
           <span className="text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.8)] md:[-webkit-text-stroke:3px_rgba(255,255,255,0.8)] leading-[0.9]">2</span>
-          <span>FUTURE</span>
+          <div className="flex flex-col items-end leading-none">
+            <span>FUTURE</span>
+            <span className="text-[clamp(2.5rem,5vw,3.5rem)] text-amber-500 italic font-montserrat tracking-tighter font-black mt-[-10px] sm:mt-[-15px] lg:mt-[-25px] translate-x-4 md:translate-x-8 lg:translate-x-12 z-10 block">2.0</span>
+          </div>
         </motion.div>
       </div>
 
@@ -154,12 +157,12 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="landing"
-      className="font-roboto relative z-0 flex h-[100dvh] w-full items-center justify-between overflow-hidden"
+      className="font-roboto relative z-0 flex h-[100dvh] w-full items-center justify-between overflow-hidden bg-black"
       data-idx="0"
     >
       <motion.div
         style={{ y: backgroundY, scale: backgroundScale }}
-        className="absolute inset-x-0 inset-y-[-10%] z-0 h-[120%] w-full bg-[url('/bg.png')] bg-cover bg-center"
+        className="absolute inset-x-0 inset-y-0 z-0 h-full w-full bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat"
       />
 
       <div className="absolute top-0 z-[1] h-full w-full bg-black/40"></div>
@@ -171,21 +174,22 @@ export default function HeroSection() {
       {/* Right Bottom Hero Graphic */}
       <motion.div
         style={{ y: backgroundY }}
-        initial={{ opacity: 0, scale: 0.8, x: 50 }}
+        initial={{ opacity: 0, scale: 1.2, x: -50 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{
-          opacity: { duration: 1, ease: "easeOut" },
-          scale: { duration: 1, ease: "easeOut" },
-          x: { duration: 1, ease: "easeOut" },
+          opacity: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
+          scale: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
+          x: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
         }}
-        className="absolute bottom-0 right-[5%] z-[20] w-[600px] md:w-[800px] lg:w-[1000px] pointer-events-none hidden md:block"
+        className="absolute bottom-[-2%] right-[5%] z-[20] h-[95vh] max-w-[85%] flex justify-end items-end pointer-events-none hidden md:flex"
       >
         <Image
           src="/hero1.png"
           alt="Hero Graphic"
           width={1000}
           height={1000}
-          className="object-contain w-full h-auto drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]"
+          className="object-contain object-right-bottom w-auto h-full drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]"
+          priority
         />
       </motion.div>
 
