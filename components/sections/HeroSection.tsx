@@ -95,7 +95,7 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
             src={"/logos/d.png"}
             alt={"devfolio"}
           />
-          Go to Devfolio
+          Apply with Devfolio
         </a>
       </motion.div>
     </motion.div>
