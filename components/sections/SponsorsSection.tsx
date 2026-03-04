@@ -84,7 +84,7 @@ export default function SponsorsSection() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              {/* Cyseck */}
+              {/* DevFolio */}
               <SponsorCard index={0}>
                 <div className="group animated-border-box relative p-[1px] rounded-2xl md:rounded-[2rem] overflow-hidden bg-neutral-900/20">
                   <motion.a href="#"
@@ -96,14 +96,14 @@ export default function SponsorsSection() {
                       <motion.div
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
                         className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                        <img src="/logos/cysec.png" alt="Cyseck" className="max-h-full max-w-full object-contain" />
+                        <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-full max-w-full object-contain" />
                       </motion.div>
                     </div>
                   </motion.a>
                 </div>
               </SponsorCard>
 
-              {/* Infosys */}
+              {/* Cyseck */}
               <SponsorCard index={1}>
                 <div className="group animated-border-box relative p-[1px] rounded-2xl md:rounded-[2rem] overflow-hidden bg-neutral-900/20">
                   <motion.a href="#"
@@ -115,14 +115,14 @@ export default function SponsorsSection() {
                       <motion.div
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
                         className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                        <img src="/logos/infosys.png" alt="Infosys" className="max-h-full max-w-full object-contain" />
+                        <img src="/logos/cysec.png" alt="Cyseck" className="max-h-full max-w-full object-contain" />
                       </motion.div>
                     </div>
                   </motion.a>
                 </div>
               </SponsorCard>
 
-              {/* IDRP */}
+              {/* Infosys */}
               <SponsorCard index={2}>
                 <div className="group animated-border-box relative p-[1px] rounded-2xl md:rounded-[2rem] overflow-hidden bg-neutral-900/20">
                   <motion.a href="#"
@@ -134,14 +134,14 @@ export default function SponsorsSection() {
                       <motion.div
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
                         className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                        <img src="/logos/idrp.png" alt="IDRP" className="max-h-full max-w-full object-contain" />
+                        <img src="/logos/infosys.png" alt="Infosys" className="max-h-full max-w-full object-contain" />
                       </motion.div>
                     </div>
                   </motion.a>
                 </div>
               </SponsorCard>
 
-              {/* DevFolio */}
+              {/* IDRP */}
               <SponsorCard index={3}>
                 <div className="group animated-border-box relative p-[1px] rounded-2xl md:rounded-[2rem] overflow-hidden bg-neutral-900/20">
                   <motion.a href="#"
@@ -153,7 +153,7 @@ export default function SponsorsSection() {
                       <motion.div
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
                         className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                        <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-full max-w-full object-contain" />
+                        <img src="/logos/idrp.png" alt="IDRP" className="max-h-full max-w-full object-contain" />
                       </motion.div>
                     </div>
                   </motion.a>

@@ -7,6 +7,7 @@ import TimelineSection from "@/components/sections/TimelineSection";
 import HullIntegritySection from "@/components/sections/HullIntegritySection";
 import PrizesSection from "@/components/sections/PrizesSection";
 import SponsorsSection from "@/components/sections/SponsorsSection";
+import FAQsSection from "@/components/sections/FAQsSection";
 import FooterSection from "@/components/sections/FooterSection";
 import AboutSection from "@/components/sections/AboutSection";
 
@@ -16,7 +17,6 @@ export default function Home() {
       <GrainOverlay />
       <Navbar />
       <HeroSection />
-      <SectionDivider variant="dot" />
       <AboutSection />
       <SectionDivider variant="dot" />
       <MissionsSection />
@@ -30,6 +30,8 @@ export default function Home() {
 
 
       <SponsorsSection />
+      <SectionDivider variant="dot" />
+      <FAQsSection />
       <SectionDivider variant="dot" />
       <FooterSection />
     </>

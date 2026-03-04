@@ -28,7 +28,7 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeOut" as const }
     },
   };
 
@@ -39,46 +39,48 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
       animate="visible"
       className="z-[10] flex w-full flex-col items-start justify-center text-left pt-20"
     >
-      <div className="flex flex-col items-start font-anton uppercase leading-[0.9] tracking-wide mb-8 ml-4 sm:ml-8 md:ml-12 lg:ml-20">
-        <motion.div variants={itemVariants} className="text-[clamp(4.5rem,11vw,8.5rem)] text-white">
+      <div className="flex flex-col items-start font-anton uppercase leading-[0.75] tracking-tighter mb-8 ml-4 sm:ml-8 md:ml-12 lg:ml-20">
+
+        <motion.div variants={itemVariants} className="flex flex-row items-baseline gap-2 text-[clamp(4.5rem,11vw,8.5rem)] text-white font-bold ml-2">
           <span>HACK</span>
-          <span className="text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.8)] md:[-webkit-text-stroke:3px_rgba(255,255,255,0.8)]">2</span>
+          <span className="text-[clamp(2.5rem,5vw,4.5rem)] text-amber-500 italic font-montserrat tracking-tighter font-black">2.0</span>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-row items-center gap-4 text-[clamp(4.5rem,11vw,8.5rem)] text-white ml-0 sm:ml-4 lg:ml-8 mt-[-10px]">
-
+        <motion.div variants={itemVariants} className="flex flex-row items-center gap-1 text-[clamp(4.5rem,11vw,8.5rem)] text-white ml-0 sm:ml-4 lg:ml-8 mt-[-10px] sm:mt-[-15px] font-bold">
+          <span className="text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.8)] md:[-webkit-text-stroke:3px_rgba(255,255,255,0.8)] leading-[0.9]">2</span>
           <span>FUTURE</span>
-          <span className="">2.0</span>
         </motion.div>
       </div>
 
-      <motion.div variants={itemVariants} className="flex flex-col items-start gap-6 ml-[2%] sm:ml-8 md:ml-12 lg:ml-20">
+      {/* Buttons Section */}
+      <motion.div variants={itemVariants} className="flex flex-col items-start gap-6 ml-[2%] sm:ml-8 md:ml-12 lg:ml-20 mt-[-10px]">
+        {/* Timer */}
         <div className="w-full max-w-[320px] rounded-md py-2 text-left text-white">
-          <div className="text-lg font-normal mb-2 text-gray-300">Final Round In:</div>
+          <div className="text-lg font-bold mb-2 text-gray-300">Final Round In:</div>
           <div className="flex justify-start space-x-6">
             <div className="flex flex-col items-center">
-              <span className="font-anton text-2xl md:text-3xl">
+              <span className="font-anton text-2xl md:text-3xl font-bold">
                 {timeLeft.days.toString().padStart(2, '0')}
               </span>
-              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Days</span>
+              <span className="text-sm uppercase font-bold text-[#a8b8d0]">Days</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-anton text-2xl md:text-3xl">
+              <span className="font-anton text-2xl md:text-3xl font-bold">
                 {timeLeft.hours.toString().padStart(2, '0')}
               </span>
-              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Hours</span>
+              <span className="text-sm uppercase font-bold text-[#a8b8d0]">Hours</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-anton text-2xl md:text-3xl">
+              <span className="font-anton text-2xl md:text-3xl font-bold">
                 {timeLeft.minutes.toString().padStart(2, '0')}
               </span>
-              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Minutes</span>
+              <span className="text-sm uppercase font-bold text-[#a8b8d0]">Minutes</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-anton text-2xl md:text-3xl">
+              <span className="font-anton text-2xl md:text-3xl font-bold">
                 {timeLeft.seconds.toString().padStart(2, '0')}
               </span>
-              <span className="text-sm uppercase tracking-widest text-[#a8b8d0]">Seconds</span>
+              <span className="text-sm uppercase font-bold text-[#a8b8d0]">Seconds</span>
             </div>
           </div>
         </div>
