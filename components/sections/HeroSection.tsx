@@ -181,7 +181,7 @@ export default function HeroSection() {
           scale: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
           x: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
         }}
-        className="absolute bottom-[-2%] right-[5%] z-[20] h-[95vh] max-w-[85%] flex justify-end items-end pointer-events-none hidden md:flex"
+        className="absolute bottom-[-2%] right-[5%] z-[20] h-[75vh] md:h-[85vh] lg:h-[95vh] w-auto max-w-[75vw] lg:max-w-[85%] flex justify-end items-end pointer-events-none hidden md:flex"
       >
         <Image
           src="/hero1.png"

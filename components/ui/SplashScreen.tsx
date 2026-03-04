@@ -51,7 +51,7 @@ const SplashScreen = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="absolute bottom-[-2%] right-[5%] z-[20] h-[95vh] max-w-[85%] flex justify-end items-end w-full translate-x-12 md:translate-x-20 lg:translate-x-[110px]"
+                            className="absolute bottom-[-2%] right-[5%] z-[20] h-[75vh] md:h-[85vh] lg:h-[95vh] w-auto max-w-[75vw] lg:max-w-[85%] flex justify-end items-end w-full translate-x-12 md:translate-x-20 lg:translate-x-[110px]"
                         >
                             <video
                                 ref={videoRef}

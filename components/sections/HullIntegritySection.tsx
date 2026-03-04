@@ -18,78 +18,84 @@ interface ProblemStatement {
     description: string;
     tags: string[];
     animDelay: number;
+    link: string;
 }
 
 const PROBLEMS: ProblemStatement[] = [
     {
         id: 1,
         company: "Nokia",
-        domain: "Cloud Security & Algorithms",
+        domain: "Kubernetes Attack Path Visualizer",
         icon: "solar:cloud-bolt-bold",
         accentColor: "text-blue-400",
         accentBg: "bg-blue-500/10",
         accentBorder: "border-blue-500/20",
         accentGlow: "rgba(59,130,246,0.15)",
         description:
-            "Design scalable security solutions for cloud-native architectures and build algorithmic frameworks for next-gen network infrastructure.",
-        tags: ["Cloud", "Security", "Algorithms"],
+            "Presented by Nokia — Develop a graph-based security analysis tool for cloud-native infrastructure to visualize and analyze potential attack paths for Kubernetes security.",
+        tags: ["Cloud Security", "Infrastructure"],
         animDelay: 0,
+        link: "https://drive.google.com/file/d/16JAs-vOeSdOPIadxBorC_4VIkv0NHH4l/view?usp=drive_link",
     },
     {
         id: 2,
-        company: "Nisargasoft",
-        domain: "E-commerce Intelligence & Data Engineering",
-        icon: "solar:chart-2-bold",
-        accentColor: "text-violet-400",
-        accentBg: "bg-violet-500/10",
-        accentBorder: "border-violet-500/20",
-        accentGlow: "rgba(139,92,246,0.15)",
-        description:
-            "Leverage data engineering pipelines and AI-driven intelligence to revolutionize e-commerce analytics and customer experience.",
-        tags: ["E-commerce", "Data Engineering", "AI"],
-        animDelay: 0.08,
-    },
-    {
-        id: 3,
         company: "IDRP",
-        domain: "Health Tech, AI & NLP",
+        domain: "Multilingual OPD Documentation System",
         icon: "solar:health-bold",
         accentColor: "text-emerald-400",
         accentBg: "bg-emerald-500/10",
         accentBorder: "border-emerald-500/20",
         accentGlow: "rgba(16,185,129,0.15)",
         description:
-            "Build AI-powered health technology solutions using natural language processing for diagnostics, patient care, and medical research.",
-        tags: ["Health Tech", "AI", "NLP"],
-        animDelay: 0.16,
+            "Presented by IDRP — Build an AI-powered, speech-driven documentation system for multilingual OPD consultation in Indian healthcare settings.",
+        tags: ["Health Tech", "AI", "Speech Tech"],
+        animDelay: 0.08,
+        link: "https://drive.google.com/file/d/1acRZ0bHNkAJwnACAl9EytO4H_Iys5nxt/view?usp=drive_link",
     },
     {
-        id: 4,
+        id: 3,
         company: "IDRP",
-        domain: "NLP",
+        domain: "Advanced Medical NLP Framework",
         icon: "solar:chat-square-code-bold",
         accentColor: "text-amber-400",
         accentBg: "bg-amber-500/10",
         accentBorder: "border-amber-500/20",
         accentGlow: "rgba(245,158,11,0.15)",
         description:
-            "Push the boundaries of natural language processing — build intelligent systems that understand, generate, and process human language at scale.",
-        tags: ["NLP", "Language Models", "Text Processing"],
+            "Presented by IDRP — Push the boundaries of natural language processing for medical care — build intelligent systems that process human language at scale.",
+        tags: ["NLP", "Medical AI", "Language Models"],
+        animDelay: 0.16,
+        link: "https://drive.google.com/file/d/1I3emSLRFxV7HeIknMNTZJxlz9DvH4ndk/view?usp=drive_link",
+    },
+    {
+        id: 4,
+        company: "Nisargasoft",
+        domain: "Real-Time Amazon Price Monitoring",
+        icon: "solar:chart-2-bold",
+        accentColor: "text-violet-400",
+        accentBg: "bg-violet-500/10",
+        accentBorder: "border-violet-500/20",
+        accentGlow: "rgba(139,92,246,0.15)",
+        description:
+            "Presented by Nisargasoft — Build a real-time price monitoring system for Amazon India using data scraping and competitive analytics to optimize pricing.",
+        tags: ["E-commerce", "Data Scraping", "Analytics"],
         animDelay: 0.24,
+        link: "https://drive.google.com/file/d/1GjeU6He9G5iGMdRycCE0Fd8k3ADqg0WQ/view?usp=drive_link",
     },
     {
         id: 5,
         company: "Armor.ai",
-        domain: "NLP & Speech Tech",
+        domain: "Financial Conversation Intelligence System",
         icon: "solar:microphone-3-bold",
         accentColor: "text-rose-400",
         accentBg: "bg-rose-500/10",
         accentBorder: "border-rose-500/20",
         accentGlow: "rgba(244,63,94,0.15)",
         description:
-            "Develop cutting-edge speech technology and NLP systems — from voice recognition to conversational AI and real-time audio processing.",
-        tags: ["Speech Tech", "NLP", "Voice AI"],
+            "Presented by Armor.ai — Develop an AI-driven multilingual financial decision capture system to facilitate automated conversation intelligence.",
+        tags: ["Speech AI", "FinTech", "Multilingual"],
         animDelay: 0.32,
+        link: "https://drive.google.com/file/d/147Iqpb3yfJ8sx--GSapX3CuPHYp14Og4/view?usp=drive_link",
     },
 ];
 
@@ -138,13 +144,13 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                     style={{ backgroundColor: problem.accentGlow }}
                 />
 
-                <div className="relative z-10 flex flex-col flex-1">
+                <div className="relative z-10 flex flex-col h-full">
                     {/* Top row: Number + Company + Domain */}
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-5">
                         {/* Track number + icon */}
-                        <div className="flex items-center gap-4 shrink-0">
+                        <div className="flex items-start gap-4 flex-1 min-w-0">
                             <div
-                                className={`w-12 h-12 rounded-xl ${problem.accentBg} border ${problem.accentBorder} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                                className={`w-12 h-12 rounded-xl ${problem.accentBg} border ${problem.accentBorder} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
                             >
                                 {/* @ts-expect-error iconify-icon is a web component */}
                                 <iconify-icon
@@ -153,7 +159,7 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                                     width="22"
                                 />
                             </div>
-                            <div>
+                            <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-2.5 mb-1">
                                     <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">
                                         Track {String(problem.id).padStart(2, "0")}
@@ -165,7 +171,7 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                                         {problem.company}
                                     </span>
                                 </div>
-                                <h4 className="text-lg md:text-xl font-bricolage font-semibold text-white group-hover:text-white transition-colors">
+                                <h4 className="text-lg md:text-xl font-bricolage font-semibold text-white group-hover:text-white transition-colors leading-tight">
                                     {problem.domain}
                                 </h4>
                             </div>
@@ -173,12 +179,12 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm text-white/40 leading-relaxed mb-5 group-hover:text-white/55 transition-colors duration-500 max-w-2xl">
+                    <p className="text-sm text-white/40 leading-relaxed mb-6 group-hover:text-white/55 transition-colors duration-500 max-w-2xl">
                         {problem.description}
                     </p>
 
-                    {/* Tags + Arrow */}
-                    <div className="flex items-center justify-between gap-4 mt-auto">
+                    {/* Bottom Row: Tags + View Details Button */}
+                    <div className="mt-auto pt-4 flex flex-col gap-6">
                         <div className="flex flex-wrap gap-2">
                             {problem.tags.map((tag) => (
                                 <span
@@ -190,26 +196,22 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
                             ))}
                         </div>
 
-                        {/* Action arrow */}
-                        <motion.div
-                            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-white/25 transition-colors"
-                            whileHover={{
-                                scale: 1.15,
-                                borderColor: "rgba(255,255,255,0.4)",
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 400,
-                                damping: 15,
-                            }}
-                        >
-                            {/* @ts-expect-error iconify-icon is a web component */}
-                            <iconify-icon
-                                icon="solar:arrow-right-linear"
-                                className="text-white/40 group-hover:text-white/80 transition-colors"
-                                width="16"
-                            />
-                        </motion.div>
+                        <div className="w-full">
+                            <a
+                                href={problem.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white text-white/60 text-sm font-medium transition-all group/btn"
+                            >
+                                <span>View Details</span>
+                                {/* @ts-expect-error iconify-icon is a web component */}
+                                <iconify-icon
+                                    icon="solar:arrow-right-up-linear"
+                                    className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
+                                    width="16"
+                                />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </motion.div>

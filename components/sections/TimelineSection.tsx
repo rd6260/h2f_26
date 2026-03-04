@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { motion, useInView, useScroll, useTransform, useMotionValueEvent, useSpring } from "framer-motion";
 
 const ease = [0.25, 0.8, 0.25, 1] as [number, number, number, number];
 
@@ -14,6 +15,7 @@ const TIMELINE_EVENTS = [
       "Start of the event — problem statements are released and registration officially opens. The mission begins now.",
     icon: "solar:rocket-2-bold",
     side: "right" as const,
+    highlight: true,
   },
   {
     date: "Mar 12",
@@ -410,11 +412,24 @@ function TimelineLine() {
     offset: ["start center", "end center"],
   });
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const rocketY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  // Track scroll direction for rocket rotation
+  const rotation = useSpring(90, {
+    stiffness: 200,
+    damping: 20
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    const previous = scrollYProgress.getPrevious() ?? 0;
+    if (current > previous) rotation.set(90);
+    else if (current < previous) rotation.set(270);
+  });
 
   return (
     <div
       ref={lineRef}
-      className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[1px] hidden md:block"
+      className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[1px] hidden md:block z-[40]"
     >
       {/* Static faint line */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
@@ -430,6 +445,21 @@ function TimelineLine() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-amber-500/30 via-amber-400/10 to-transparent origin-top blur-[2px]"
         style={{ scaleY, height: "100%" }}
       />
+
+      {/* Animated Rocket */}
+      <motion.div
+        className="absolute left-1/2 z-[50] -translate-x-1/2 -translate-y-1/2 pointer-events-none transform-gpu will-change-transform"
+        style={{ top: rocketY, rotate: rotation, originX: 0.5, originY: 0.5 }}
+      >
+        <div className="relative w-48 h-48 mt-4">
+          <Image
+            src="/rocket.png"
+            alt="Rocket"
+            fill
+            className="object-contain drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 }
@@ -442,17 +472,44 @@ function MobileTimelineLine() {
     offset: ["start center", "end center"],
   });
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const rocketY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Track scroll direction for rocket rotation
+  const rotation = useSpring(90, {
+    stiffness: 200,
+    damping: 20
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    const previous = scrollYProgress.getPrevious() ?? 0;
+    if (current > previous) rotation.set(90);
+    else if (current < previous) rotation.set(270);
+  });
 
   return (
     <div
       ref={lineRef}
-      className="absolute left-[19px] top-0 bottom-0 w-[1px] md:hidden"
+      className="absolute left-[19px] top-0 bottom-0 w-[1px] md:hidden z-[40]"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
       <motion.div
         className="absolute top-0 left-0 right-0 bg-gradient-to-b from-amber-500/50 via-amber-400/20 to-transparent origin-top"
         style={{ scaleY, height: "100%" }}
       />
+
+      {/* Animated Rocket Mobile */}
+      <motion.div
+        className="absolute left-1/2 z-[50] -translate-x-1/2 -translate-y-1/2 pointer-events-none transform-gpu will-change-transform"
+        style={{ top: rocketY, rotate: rotation, originX: 0.5, originY: 0.5 }}
+      >
+        <div className="relative w-24 h-24 pointer-events-none mt-2">
+          <Image
+            src="/rocket.png"
+            alt="Rocket"
+            fill
+            className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 }
@@ -480,8 +537,8 @@ export default function TimelineSection() {
       />
 
       {/* Ambient glow orbs */}
-      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-amber-500/[0.04] rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-amber-400/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-amber-500/[0.04] rounded-full blur-[150px] pointer-events-none hidden md:block" />
+      <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-amber-400/[0.03] rounded-full blur-[120px] pointer-events-none hidden md:block" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Section Header */}
