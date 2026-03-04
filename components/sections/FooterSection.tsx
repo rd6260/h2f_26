@@ -53,9 +53,9 @@ export default function FooterSection() {
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Main Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
                     {/* Brand */}
-                    <AnimateOnScroll className="lg:col-span-2">
+                    <AnimateOnScroll className="lg:col-span-1">
                         <div className="flex items-center gap-3 mb-5">
                             <Image
                                 src="/logos/logo.png"
@@ -69,10 +69,10 @@ export default function FooterSection() {
                                 <span className="text-white/30">2.0</span>
                             </h3>
                         </div>
-                        <p className="text-neutral-400 text-sm leading-relaxed max-w-sm font-light">
+                        <p className="text-neutral-400 text-sm leading-relaxed font-light">
                             A 36-hour national-level innovation sprint bridging
-                            academia and industry — where the brightest student
-                            minds build rapid, scalable solutions to real-world
+                            academia and industry — where student
+                            minds build rapid solutions to real-world
                             challenges.
                         </p>
                         <div className="flex gap-3 mt-6">
@@ -101,43 +101,44 @@ export default function FooterSection() {
                         </div>
                     </AnimateOnScroll>
 
-                    {/* Contact */}
-                    <AnimateOnScroll delay={0.1} className="lg:ml-12">
-                        <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-6 font-mono flex items-center gap-2">
+                    {/* Contact - Expanded for better layout */}
+                    <AnimateOnScroll delay={0.1} className="lg:col-span-2">
+                        <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-8 font-mono flex items-center gap-2">
                             <span className="w-5 h-[1px] bg-emerald-500 block" />
                             Contact
                         </h4>
-                        <ul className="space-y-4">
-                            <li>
-                                <motion.a
-                                    href="mailto:hack2future@iiitdwd.ac.in"
-                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
-                                    whileHover={{ x: 4 }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 300,
-                                        damping: 20,
-                                    }}
-                                >
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon
-                                        icon="solar:letter-linear"
-                                        width="18"
-                                        className="text-emerald-400 shrink-0"
-                                    />
-                                    <span>hackathon@iiitdwd.ac.in</span>
-                                </motion.a>
-                            </li>
 
+                        <div className="mb-8">
+                            <motion.a
+                                href="mailto:hack2future@iiitdwd.ac.in"
+                                className="text-neutral-500 hover:text-white text-base transition-colors flex items-center gap-3 group"
+                                whileHover={{ x: 4 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 20,
+                                }}
+                            >
+                                {/* @ts-expect-error iconify-icon is a web component */}
+                                <iconify-icon
+                                    icon="solar:letter-linear"
+                                    width="22"
+                                    className="text-emerald-400 shrink-0"
+                                />
+                                <span className="font-light tracking-wide">hackathon@iiitdwd.ac.in</span>
+                            </motion.a>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
                             {/* Prajin */}
-                            <li>
-                                <div className="mb-1">
-                                    <span className="text-white text-sm font-medium">Prajin</span>
-                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Head Organizer</span>
+                            <div>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-white font-semibold text-[15px]">Prajin AD</span>
+                                    <span className="text-emerald-400 text-[10px] font-mono uppercase tracking-[0.1em]">Head Organizer</span>
                                 </div>
                                 <motion.a
                                     href="tel:+919789880949"
-                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-2.5 group"
                                     whileHover={{ x: 4 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
@@ -145,16 +146,27 @@ export default function FooterSection() {
                                     <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
                                     <span>+91 97898 80949</span>
                                 </motion.a>
-                            </li>
+                                <motion.a
+                                    href="mailto:23bec036@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-[12px] transition-colors flex items-center gap-2.5 group mt-1"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:letter-linear" width="14" className="text-emerald-400 shrink-0" />
+                                    <span className="font-mono opacity-80">23bec036@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </div>
+
                             {/* Prem */}
-                            <li>
-                                <div className="mb-1">
-                                    <span className="text-white text-sm font-medium">Prem</span>
-                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Program Director</span>
+                            <div>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-white font-semibold text-[15px]">Prem TK</span>
+                                    <span className="text-emerald-400 text-[10px] font-mono uppercase tracking-[0.1em]">Program Director</span>
                                 </div>
                                 <motion.a
                                     href="tel:+918489889568"
-                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-2.5 group"
                                     whileHover={{ x: 4 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
@@ -162,16 +174,27 @@ export default function FooterSection() {
                                     <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
                                     <span>+91 84898 89568</span>
                                 </motion.a>
-                            </li>
+                                <motion.a
+                                    href="mailto:23bds065@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-[12px] transition-colors flex items-center gap-2.5 group mt-1"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:letter-linear" width="14" className="text-emerald-400 shrink-0" />
+                                    <span className="font-mono opacity-80">23bds065@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </div>
+
                             {/* Sai Sathwik */}
-                            <li>
-                                <div className="mb-1">
-                                    <span className="text-white text-sm font-medium">Sai Sathwik</span>
-                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Head Operations</span>
+                            <div>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-white font-semibold text-[15px]">Sai Sathwik</span>
+                                    <span className="text-emerald-400 text-[10px] font-mono uppercase tracking-[0.1em]">Head Operations</span>
                                 </div>
                                 <motion.a
                                     href="tel:+918074916768"
-                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-2.5 group"
                                     whileHover={{ x: 4 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
@@ -179,16 +202,27 @@ export default function FooterSection() {
                                     <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
                                     <span>+91 80749 16768</span>
                                 </motion.a>
-                            </li>
+                                <motion.a
+                                    href="mailto:23bcs036@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-[12px] transition-colors flex items-center gap-2.5 group mt-1"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:letter-linear" width="14" className="text-emerald-400 shrink-0" />
+                                    <span className="font-mono opacity-80">23bcs036@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </div>
+
                             {/* Swati R */}
-                            <li>
-                                <div className="mb-1">
-                                    <span className="text-white text-sm font-medium">Swati R</span>
-                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Chief of Staff</span>
+                            <div>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-white font-semibold text-[15px]">Swati R</span>
+                                    <span className="text-emerald-400 text-[10px] font-mono uppercase tracking-[0.1em]">Chief of Staff</span>
                                 </div>
                                 <motion.a
                                     href="tel:+919398481346"
-                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-2.5 group"
                                     whileHover={{ x: 4 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
@@ -196,14 +230,22 @@ export default function FooterSection() {
                                     <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
                                     <span>+91 93984 81346</span>
                                 </motion.a>
-                            </li>
-                        </ul>
+                                <motion.a
+                                    href="mailto:24bcs118@iiitdwd.ac.in"
+                                    className="text-neutral-500 hover:text-white text-[12px] transition-colors flex items-center gap-2.5 group mt-1"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:letter-linear" width="14" className="text-emerald-400 shrink-0" />
+                                    <span className="font-mono opacity-80">24bcs118@iiitdwd.ac.in</span>
+                                </motion.a>
+                            </div>
+                        </div>
                     </AnimateOnScroll>
 
-
-
                     {/* Location */}
-                    <AnimateOnScroll delay={0.3}>
+                    <AnimateOnScroll delay={0.3} className="lg:col-span-1">
                         <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-6 font-mono flex items-center gap-2">
                             <span className="w-5 h-[1px] bg-emerald-500 block" />
                             Venue
