@@ -129,6 +129,41 @@ export default function FooterSection() {
                                 </motion.a>
                             </li>
 
+                            {/* Prajin */}
+                            <li>
+                                <div className="mb-1">
+                                    <span className="text-white text-sm font-medium">Prajin</span>
+                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Head Organizer</span>
+                                </div>
+                                <motion.a
+                                    href="tel:+919789880949"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
+                                    <span>+91 97898 80949</span>
+                                </motion.a>
+                            </li>
+                            {/* Prem */}
+                            <li>
+                                <div className="mb-1">
+                                    <span className="text-white text-sm font-medium">Prem</span>
+                                    <span className="text-emerald-400/60 text-[10px] font-mono uppercase tracking-wider ml-2">Program Director</span>
+                                </div>
+                                <motion.a
+                                    href="tel:+918489889568"
+                                    className="text-neutral-500 hover:text-white text-sm transition-colors flex items-center gap-3 group"
+                                    whileHover={{ x: 4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    {/* @ts-expect-error iconify-icon is a web component */}
+                                    <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
+                                    <span>+91 84898 89568</span>
+                                </motion.a>
+                            </li>
+                            {/* Sai Sathwik */}
                             <li>
                                 <div className="mb-1">
                                     <span className="text-white text-sm font-medium">Sai Sathwik</span>
@@ -143,16 +178,6 @@ export default function FooterSection() {
                                     {/* @ts-expect-error iconify-icon is a web component */}
                                     <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
                                     <span>+91 80749 16768</span>
-                                </motion.a>
-                                <motion.a
-                                    href="mailto:23bcs036@iiitdwd.ac.in"
-                                    className="text-neutral-500 hover:text-white text-xs transition-colors flex items-center gap-3 group mt-1"
-                                    whileHover={{ x: 4 }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                >
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon icon="solar:letter-linear" width="16" className="text-emerald-400 shrink-0" />
-                                    <span>23bcs036@iiitdwd.ac.in</span>
                                 </motion.a>
                             </li>
                             {/* Swati R */}
@@ -170,16 +195,6 @@ export default function FooterSection() {
                                     {/* @ts-expect-error iconify-icon is a web component */}
                                     <iconify-icon icon="solar:phone-linear" width="16" className="text-emerald-400 shrink-0" />
                                     <span>+91 93984 81346</span>
-                                </motion.a>
-                                <motion.a
-                                    href="mailto:24bcs118@iiitdwd.ac.in"
-                                    className="text-neutral-500 hover:text-white text-xs transition-colors flex items-center gap-3 group mt-1"
-                                    whileHover={{ x: 4 }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                >
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon icon="solar:letter-linear" width="16" className="text-emerald-400 shrink-0" />
-                                    <span>24bcs118@iiitdwd.ac.in</span>
                                 </motion.a>
                             </li>
                         </ul>
