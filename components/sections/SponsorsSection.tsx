@@ -96,7 +96,7 @@ export default function SponsorsSection() {
                       <motion.div
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(245,158,11,0.3)" }}
                         className="bg-white p-4 md:p-6 rounded-xl w-full h-full flex items-center justify-center shadow-lg border border-white/10 transition-shadow duration-300">
-                        <img src="/logos/devfolio.png" alt="DevFolio" className="max-h-full max-w-full object-contain" />
+                        <img src="/logos/devfolio.png" alt="DEVFOLIO LOGO" className="max-h-full max-w-full object-contain" />
                       </motion.div>
                     </div>
                   </motion.a>
