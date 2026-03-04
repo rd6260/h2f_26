@@ -30,9 +30,59 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Hack2Future 2026",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://hack2future.in"),
+  title: {
+    default: "Hack2Future 2026",
+    template: "%s | Hack2Future 2026",
+  },
   description:
     "The National Level Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
+  keywords: [
+    "Hack2Future",
+    "Hackathon",
+    "IIIT Dharwad",
+    "Coding Competition",
+    "Tech Event",
+    "India Hackathon",
+  ],
+  authors: [{ name: "IIIT Dharwad" }],
+  creator: "IIIT Dharwad",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://hack2future.in",
+    siteName: "Hack2Future 2026",
+    title: "Hack2Future 2026 - IIIT Dharwad",
+    description:
+      "The National Level Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
+    images: [
+      {
+        url: "/icon.png", // fallback image as we know icon.png exists
+        width: 1200,
+        height: 630,
+        alt: "Hack2Future 2026",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hack2Future 2026 - IIIT Dharwad",
+    description:
+      "The National Level Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
+    images: ["/icon.png"],
+    creator: "@hack2future_",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -46,6 +96,10 @@ export default function RootLayout({
         {/* Iconify Web Component */}
         <Script
           src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="https://apply.devfolio.co/v2/sdk.js"
           strategy="beforeInteractive"
         />
       </head>
