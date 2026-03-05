@@ -57,7 +57,7 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
           <span className="text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.8)] md:[-webkit-text-stroke:3px_rgba(255,255,255,0.8)] leading-[0.9]">2</span>
           <div className="flex flex-col items-end leading-none">
             <span>FUTURE</span>
-            <span className="text-[clamp(2.5rem,5vw,3.5rem)] text-amber-500 italic font-montserrat tracking-tighter font-black mt-[-10px] sm:mt-[-15px] lg:mt-[-25px] translate-x-4 md:translate-x-8 lg:translate-x-12 z-10 block">2.0</span>
+            <span className="text-[clamp(2.5rem,5vw,3.5rem)] bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent italic font-montserrat tracking-tighter font-black mt-[-10px] sm:mt-[-15px] lg:mt-[-25px] translate-x-4 md:translate-x-8 lg:translate-x-12 z-10 block">2.0</span>
           </div>
         </motion.div>
       </div>
