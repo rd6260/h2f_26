@@ -127,7 +127,7 @@ export default function MissionsSection() {
               viewport={{ once: true, margin: "-50px" }}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-white/90 to-white/40 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Gallery</span>
-              <span className="font-light text-amber-500/50 drop-shadow-[0_0_10px_rgba(245,158,11,0.3)]">.</span>
+              {/* <span className="font-light text-amber-500/50 drop-shadow-[0_0_10px_rgba(245,158,11,0.3)]">.</span> */}
             </motion.h2>
           </div>
 

@@ -53,21 +53,33 @@ export default function AboutSection() {
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
                 <AnimateOnScroll className="w-full text-center flex flex-col items-center mb-6">
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="h-[1px] bg-amber-500 w-12 block" />
-                        <span className="text-amber-500 text-xs font-mono uppercase tracking-widest">
+                    <div className="flex items-center justify-center gap-3 mb-6">
+                        <motion.span
+                            className="w-8 h-[2px] bg-gradient-to-r from-amber-500 to-amber-300 block"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: 32 }}
+                            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        />
+                        <span className="text-amber-400/80 font-mono text-xs uppercase tracking-[0.25em]">
                             About Us
                         </span>
-                        <span className="h-[1px] bg-amber-500 w-12 block" />
+                        <motion.span
+                            className="w-8 h-[2px] bg-gradient-to-l from-amber-500 to-amber-300 block"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: 32 }}
+                            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        />
                     </div>
                 </AnimateOnScroll>
 
                 <AnimateOnScroll delay={0.1}>
-                    <h2 className="text-4xl md:text-6xl font-bricolage font-medium mb-10 leading-tight flex flex-row items-center justify-center text-center">
-                        <div>
-                            About
-                            <span className="text-amber-500 ml-3">Hack2Future 2.0</span>
-                        </div>
+                    <h2 className="text-4xl md:text-6xl font-bricolage font-semibold mb-10 leading-tight text-center">
+                        About{" "}
+                        <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
+                            Hack2Future 2.0
+                        </span>
                     </h2>
                 </AnimateOnScroll>
 

@@ -46,6 +46,27 @@ const SplashScreen = () => {
                 >
                     {/* Desktop: Full Screen Background Video */}
                     <div className="relative w-full h-full overflow-hidden bg-black hidden md:block">
+                        {/* Loading Text on the Left */}
+                        <div className="absolute left-[10%] top-1/2 -translate-y-1/2 z-[30] pointer-events-none">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1, delay: 0.3 }}
+                                className="flex flex-col gap-2"
+                            >
+                                <span className="text-white font-mono text-5xl lg:text-7xl font-bold tracking-[0.2em] opacity-90">
+                                    LOADING...
+                                </span>
+                                <div className="w-full h-0.5 bg-white/10 relative overflow-hidden">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: "100%" }}
+                                        transition={{ duration: 7, ease: "linear" }}
+                                        className="absolute inset-y-0 left-0 bg-white/40"
+                                    />
+                                </div>
+                            </motion.div>
+                        </div>
                         {/* Video styled to match Hero Graphic position */}
                         <motion.div
                             initial={{ opacity: 0 }}

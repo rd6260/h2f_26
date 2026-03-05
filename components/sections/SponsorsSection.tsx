@@ -174,55 +174,77 @@ export default function SponsorsSection() {
               <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-              <SponsorCard
-                id="kdem"
-                name="KDEM"
-                website="#"
-                logo="/logos/kde.png"
-                logoSize="full"
-                height="h-24 md:h-36"
-              />
-              <SponsorCard
-                id="iiitnet"
-                name="IIITians Network"
-                website="#"
-                logo="/logos/iiitnet.png"
-                logoSize="full"
-                height="h-24 md:h-36"
-              />
-              <SponsorCard
-                id="iris"
-                name="IRIS"
-                website="#"
-                logo="/logos/iris.png"
-                logoSize="full"
-                height="h-24 md:h-36"
-              />
-              <SponsorCard
-                id="mosaic"
-                name="Mosaic"
-                website="#"
-                logo="/logos/mosiac.png"
-                logoSize="full"
-                height="h-24 md:h-36"
-              />
-              <SponsorCard
-                id="iridescence"
-                name="Iridescence"
-                website="#"
-                logo="/logos/irides.png"
-                logoSize="full"
-                height="h-24 md:h-36"
-              />
-              <SponsorCard
-                id="velocity"
-                name="Velocity"
-                website="#"
-                logo="/logos/velocity.png"
-                logoSize="full"
-                height="h-24 md:h-36"
-              />
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-5xl mx-auto">
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="kdem"
+                  name="KDEM"
+                  website="#"
+                  logo="/logos/kde.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="iiitnet"
+                  name="IIITians Network"
+                  website="#"
+                  logo="/logos/iiitnet.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="thinkindia"
+                  name="Think India"
+                  website="#"
+                  logo="/logos/thinkindia.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="iris"
+                  name="IRIS"
+                  website="#"
+                  logo="/logos/iris.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="mosaic"
+                  name="Mosaic"
+                  website="#"
+                  logo="/logos/mosiac.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="iridescence"
+                  name="Iridescence"
+                  website="#"
+                  logo="/logos/irides.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="velocity"
+                  name="Velocity"
+                  website="#"
+                  logo="/logos/velocity.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
             </div>
           </AnimateOnScroll>
         </div>

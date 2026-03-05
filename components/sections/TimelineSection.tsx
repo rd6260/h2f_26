@@ -10,11 +10,21 @@ const TIMELINE_EVENTS = [
   {
     date: "Mar 5",
     label: "INAUGURATION",
-    title: "Liftoff",
+    title: "Official Launch",
     description:
-      "Start of the event — problem statements are released and registration officially opens. The mission begins now.",
+      "Inauguration ceremony and official release of the problem statements. The mission begins now.",
     icon: "solar:rocket-2-bold",
     side: "right" as const,
+    highlight: true,
+  },
+  {
+    date: "Mar 7",
+    label: "REGISTRATION OPEN",
+    title: "Registration Live",
+    description:
+      "Registrations are now live on Devfolio. Sign up to participate in the challenge.",
+    icon: "solar:pen-new-square-bold",
+    side: "left" as const,
     highlight: true,
   },
   {
@@ -24,7 +34,7 @@ const TIMELINE_EVENTS = [
     description:
       "First registration closes on March 12th, extended till March 18th. Secure your spot before the portal shuts for good.",
     icon: "solar:lock-keyhole-bold",
-    side: "left" as const,
+    side: "right" as const,
   },
   {
     date: "Mar 21",
@@ -33,7 +43,7 @@ const TIMELINE_EVENTS = [
     description:
       "Teams shortlisted based on their solution approach by the technical team and experienced faculties. Top 75 teams out of 500+ will be selected.",
     icon: "solar:star-bold",
-    side: "right" as const,
+    side: "left" as const,
   },
   {
     date: "Mar 25",
@@ -42,7 +52,7 @@ const TIMELINE_EVENTS = [
     description:
       "Get confirmation from the teams on their attendance. Teams must submit their train/flight tickets and inform about campus availability.",
     icon: "solar:check-circle-bold",
-    side: "left" as const,
+    side: "right" as const,
   },
   {
     date: "Apr 1",
@@ -51,7 +61,7 @@ const TIMELINE_EVENTS = [
     description:
       "Final payment must be done without any extensions beyond this date. This covers accommodation and food for the event.",
     icon: "solar:wallet-bold",
-    side: "right" as const,
+    side: "left" as const,
   },
   {
     date: "Apr 4",
@@ -60,7 +70,7 @@ const TIMELINE_EVENTS = [
     description:
       "36-hour Hackathon D-day. Build, break, and rebuild — this is where legends are forged.",
     icon: "solar:code-bold",
-    side: "left" as const,
+    side: "right" as const,
     highlight: true,
   },
   {
@@ -70,7 +80,7 @@ const TIMELINE_EVENTS = [
     description:
       "The winners are crowned. Prizes distributed, glory earned — the mission reaches its climax.",
     icon: "solar:cup-star-bold",
-    side: "right" as const,
+    side: "left" as const,
     highlight: true,
   },
 ];
