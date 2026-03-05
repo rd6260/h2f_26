@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import GlitchText from './GlitchText';
 
 const SplashScreen = () => {
     const [visible, setVisible] = useState(true);
@@ -54,9 +55,14 @@ const SplashScreen = () => {
                                 transition={{ duration: 1, delay: 0.3 }}
                                 className="flex flex-col gap-2"
                             >
-                                <span className="text-white font-mono text-5xl lg:text-7xl font-bold tracking-[0.2em] opacity-90">
+                                <GlitchText
+                                    speed={1}
+                                    enableShadows={true}
+                                    enableOnHover={false}
+                                    className="text-white font-mono text-5xl lg:text-7xl font-bold tracking-[0.2em] opacity-90"
+                                >
                                     LOADING...
-                                </span>
+                                </GlitchText>
                                 <div className="w-full h-0.5 bg-white/10 relative overflow-hidden">
                                     <motion.div
                                         initial={{ width: 0 }}
