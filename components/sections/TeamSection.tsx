@@ -200,7 +200,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
           <img
             src={`${member.photo}`}
             alt={member.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+            className="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-110 md:grayscale md:group-hover:grayscale-0"
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
         </div>
