@@ -98,13 +98,35 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
 
       {/* Devfolio Apply Button Outside Motion Wrapper */}
       <div className="ml-[2%] sm:ml-8 md:ml-12 lg:ml-20 mt-4">
+        {/* Official Devfolio Button (Hidden/Fallback) */}
         <div
           id="devfolio-apply-btn"
-          className="apply-button"
+          className="apply-button hidden"
           data-hackathon-slug="hack2future"
           data-button-theme="light"
           style={{ height: "44px", width: "312px" }}
         ></div>
+
+        {/* Custom Premium Devfolio Button */}
+        <a
+          href="https://hack2future.devfolio.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-md bg-[#3770ff] px-8 py-3 font-montserrat text-lg font-bold text-white transition-all duration-300 hover:bg-[#2b58c9] hover:shadow-[0_0_20px_rgba(55,112,255,0.4)] active:scale-95"
+        >
+          <div className="relative h-6 w-6 transition-transform duration-300 group-hover:scale-110">
+            <Image
+              src="/logos/d.png"
+              alt="Devfolio Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <span className="relative z-10">Apply with Devfolio</span>
+
+          {/* Shine effect */}
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+        </a>
       </div>
     </motion.div>
   );
@@ -150,7 +172,17 @@ export default function HeroSection() {
 
     setTimeLeft(calculateTimeLeft());
 
-    return () => clearInterval(timer);
+    // Load Devfolio SDK
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      clearInterval(timer);
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (

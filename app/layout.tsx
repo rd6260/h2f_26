@@ -99,10 +99,6 @@ export default function RootLayout({
           src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
           strategy="beforeInteractive"
         />
-        <Script
-          src="https://apply.devfolio.co/v2/sdk.js"
-          strategy="beforeInteractive"
-        />
       </head>
       <body
         className={`${inter.variable} ${playfair.variable} ${bricolage.variable} ${montserrat.variable} bg-neutral-950 text-neutral-50 w-full overflow-x-hidden selection:bg-white/20 selection:text-white relative antialiased`}
