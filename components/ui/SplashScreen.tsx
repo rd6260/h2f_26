@@ -23,7 +23,7 @@ const SplashScreen = () => {
 
         // Determine timeout based on screen size (mobile < 768px)
         const isMobile = window.innerWidth < 768;
-        const duration = isMobile ? 3000 : 7000;
+        const duration = isMobile ? 3000 : 6000;
 
         // Hide the splash screen after the dynamic duration
         const timeout = setTimeout(() => {
@@ -67,7 +67,7 @@ const SplashScreen = () => {
                                     <motion.div
                                         initial={{ width: 0 }}
                                         animate={{ width: "100%" }}
-                                        transition={{ duration: 7, ease: "linear" }}
+                                        transition={{ duration: 6, ease: "linear" }}
                                         className="absolute inset-y-0 left-0 bg-white/40"
                                     />
                                 </div>

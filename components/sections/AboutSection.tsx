@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
@@ -76,10 +76,10 @@ export default function AboutSection() {
 
                 <AnimateOnScroll delay={0.1}>
                     <h2 className="text-4xl md:text-6xl font-bricolage font-semibold mb-10 leading-tight text-center">
-                        About Hack2Future{" "}
-                        {/* <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent italic ml-2 pr-2">
-                            2.0
-                        </span> */}
+                        About
+                        <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent italic ml-2 pr-2">
+                            Hack2Future{" "}2.0
+                        </span>
                     </h2>
                 </AnimateOnScroll>
 

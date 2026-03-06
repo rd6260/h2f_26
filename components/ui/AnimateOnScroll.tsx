@@ -39,6 +39,15 @@ const variants = {
     },
 };
 
+const motionComponents: Record<string, any> = {
+    div: motion.div,
+    section: motion.section,
+    a: motion.a,
+    span: motion.span,
+    header: motion.header,
+    article: motion.article,
+};
+
 export default function AnimateOnScroll({
     children,
     className = "",
@@ -51,9 +60,8 @@ export default function AnimateOnScroll({
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "0px 0px -8% 0px" });
 
-    const Component = motion.create(as as "div");
-
     const selectedVariant = variants[animation];
+    const Component = motionComponents[as] || motion.div;
 
     return (
         <Component

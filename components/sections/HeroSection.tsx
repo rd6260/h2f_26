@@ -25,7 +25,7 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: typeof window !== 'undefined' && window.innerWidth < 768 ? 3.3 : 7.3,
+        delayChildren: typeof window !== 'undefined' && window.innerWidth < 768 ? 3.3 : 6.3,
       },
     },
   };
@@ -188,9 +188,9 @@ export default function HeroSection() {
         initial={{ opacity: 0, scale: 1.2, x: -50 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{
-          opacity: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
-          scale: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
-          x: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 7 },
+          opacity: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 6 },
+          scale: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 6 },
+          x: { duration: 1.5, ease: "easeOut", delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 6 },
         }}
         className="absolute bottom-[-2%] right-[5%] z-[20] h-[75vh] md:h-[85vh] lg:h-[95vh] w-auto max-w-[75vw] lg:max-w-[85%] flex justify-end items-end pointer-events-none hidden md:flex"
       >

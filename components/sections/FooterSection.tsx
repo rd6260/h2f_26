@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import ParticleBackground from "@/components/ui/ParticleBackground";
 
 
 
@@ -40,6 +41,7 @@ export default function FooterSection() {
             className="bg-neutral-950 border-t border-white/5 pt-20 pb-8 px-6 relative overflow-hidden"
             id="footer"
         >
+            <ParticleBackground />
             {/* Ambient bg */}
             <motion.div
                 className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen"
@@ -50,6 +52,29 @@ export default function FooterSection() {
                     ease: "easeInOut",
                 }}
             />
+
+            {/* Floating Astronote Graphic - Left Corner */}
+            <motion.div
+                className="absolute -left-16 md:-left-8 top-[-5%] pointer-events-none opacity-80 md:opacity-100 z-[1]"
+                animate={{
+                    y: [-15, 15, -15],
+                    rotate: [-3, 3, -3],
+                }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+            >
+                <Image
+                    src="/astronote1.png"
+                    alt="Astronote Graphic"
+                    width={400}
+                    height={400}
+                    className="object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.15)] max-w-none"
+                    priority
+                />
+            </motion.div>
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Main Grid */}
@@ -250,42 +275,34 @@ export default function FooterSection() {
                             <span className="w-5 h-[1px] bg-emerald-500 block" />
                             Venue
                         </h4>
-                        <motion.a
-                            href="https://maps.google.com/?q=IIIT+Dharwad,+Ittigatti+Road,+Dharwad,+Karnataka+580009"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block p-[1px] rounded-2xl bg-gradient-to-br from-white/10 to-white/0 group/venue cursor-pointer"
-                            whileHover={{ scale: 1.03, y: -4 }}
-                            whileTap={{ scale: 0.98 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        >
-                            <div className="bg-neutral-900/80 backdrop-blur-xl rounded-[15px] p-5 border border-white/5 group-hover/venue:border-emerald-500/30 group-hover/venue:shadow-[0_8px_30px_rgba(16,185,129,0.15)] transition-all duration-500" title="Click to open the map">
-                                <div className="flex items-center gap-2 text-emerald-400 mb-3">
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon
-                                        icon="solar:map-point-linear"
-                                        width="18"
-                                    />
-                                    <span className="text-xs font-mono uppercase tracking-wider">
-                                        Campus
-                                    </span>
-                                    {/* @ts-expect-error iconify-icon is a web component */}
-                                    <iconify-icon
-                                        icon="solar:arrow-right-up-linear"
-                                        width="14"
-                                        className="ml-auto opacity-0 group-hover/venue:opacity-100 transition-opacity duration-300"
-                                    />
-                                </div>
-                                <p className="text-white text-sm font-medium mb-1 group-hover/venue:text-emerald-50 transition-colors">
-                                    IIIT Dharwad
-                                </p>
-                                <p className="text-neutral-500 text-xs leading-relaxed group-hover/venue:text-neutral-400 transition-colors">
-                                    Ittigatti Road, Near Sattur Colony,
-                                    <br />
-                                    Dharwad 580009, Karnataka
-                                </p>
-                            </div>
-                        </motion.a>
+                        <div className="relative w-full h-48 md:h-56 rounded-2xl overflow-hidden border border-white/10 group-hover/venue:border-emerald-500/30 transition-colors shadow-[0_8px_32px_rgba(0,0,0,0.5)] z-10">
+                            {/* Inner glow/border effect */}
+                            <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-20" />
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.516087524584!2d75.0210287751221!3d15.397268585189311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d3a4bc7f5c91%3A0xf0fc4560c06c5e05!2sIndian%20Institute%20of%20Information%20Technology%20(IIIT)%2C%20Dharwad!5e0!3m2!1sen!2sin!4v1714574921935!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={false}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="z-10 absolute inset-0"
+                                title="IIIT Dharwad Map"
+                            />
+                        </div>
+
+                        {/* Text Below Map */}
+                        <div className="mt-4 text-xs">
+                            <p className="text-white font-medium mb-1 flex items-center gap-2">
+                                {/* @ts-expect-error iconify-icon is a web component */}
+                                <iconify-icon icon="solar:map-point-linear" className="text-emerald-400" />
+                                IIIT Dharwad Campus
+                            </p>
+                            <p className="text-neutral-500">
+                                Ittigatti Road, Near Sattur Colony,<br />
+                                Dharwad 580009, Karnataka
+                            </p>
+                        </div>
                     </AnimateOnScroll>
                 </div>
 
