@@ -97,10 +97,8 @@ export default function MissionsSection() {
       className="relative py-24 md:py-32 bg-neutral-950 text-white overflow-hidden"
     >
       {/* Ambient Background */}
-      <motion.div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[800px] bg-amber-900/20 rounded-full blur-[140px] pointer-events-none opacity-40 mix-blend-screen"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      <div
+        className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-900/15 rounded-full blur-[120px] pointer-events-none opacity-40 mix-blend-screen"
       />
 
       {/* Subtle Noise Texture Overlay */}

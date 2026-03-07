@@ -92,9 +92,8 @@ export default function SponsorsSection() {
       id="sponsors"
     >
       {/* Ambient Background Effect */}
-      <motion.div
-        style={{ y: backgroundY }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-amber-500/[0.05] rounded-full blur-[180px] pointer-events-none mix-blend-screen"
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen"
       />
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)] opacity-30" />
 

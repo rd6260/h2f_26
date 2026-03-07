@@ -53,9 +53,8 @@ export default function FooterSection() {
         }}
       />
 
-      {/* Floating Astronote Graphic - Left Corner */}
       <motion.div
-        className="hidden md:block absolute -left-16 md:-left-8 top-[-5%] pointer-events-none opacity-80 md:opacity-100 z-[1]"
+        className="hidden lg:block absolute -left-16 bottom-0 top-auto pointer-events-none opacity-100 z-[1]"
         animate={{
           y: [-15, 15, -15],
           rotate: [-3, 3, -3],

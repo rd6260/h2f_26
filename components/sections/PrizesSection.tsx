@@ -267,9 +267,8 @@ export default function PrizesSection() {
             className="py-32 bg-black relative overflow-hidden border-t border-white/5"
         >
             {/* Ambient background glow */}
-            <motion.div
-                style={{ y: backgroundY }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/[0.06] rounded-full blur-[150px] pointer-events-none mix-blend-screen"
+            <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/[0.05] rounded-full blur-[120px] pointer-events-none mix-blend-screen"
             />
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-yellow-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
@@ -363,7 +362,7 @@ export default function PrizesSection() {
                 </AnimateOnScroll>
 
                 {/* Bottom motivational tagline */}
-            
+
             </div>
         </section>
     );

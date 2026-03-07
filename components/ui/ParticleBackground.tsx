@@ -13,7 +13,7 @@ export default function ParticleBackground() {
 
         let animationFrameId: number;
         let particles: Particle[] = [];
-        const particleCount = 80;
+        const particleCount = 45;
         const connectionDistance = 150;
 
         const mouse = { x: -1000, y: -1000 };
@@ -78,46 +78,57 @@ export default function ParticleBackground() {
             parent.addEventListener("mouseleave", handleMouseLeave);
         }
 
+        let isVisible = true;
+
+        // Observer to pause animation when off-screen
+        const observer = new IntersectionObserver((entries) => {
+            isVisible = entries[0].isIntersecting;
+        }, { threshold: 0 });
+
+        if (canvas) observer.observe(canvas);
+
         const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (isVisible) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
 
-                // Connect to mouse
-                const dxMouse = particles[i].x - mouse.x;
-                const dyMouse = particles[i].y - mouse.y;
-                const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                    // Connect to mouse
+                    const dxMouse = particles[i].x - mouse.x;
+                    const dyMouse = particles[i].y - mouse.y;
+                    const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
 
-                if (distMouse < connectionDistance) {
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    const opacity = 0.5 - (distMouse / connectionDistance) * 0.5;
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
-
-                    // subtle pull towards mouse
-                    particles[i].x -= dxMouse * 0.01;
-                    particles[i].y -= dyMouse * 0.01;
-                }
-
-                // Connect to other particles
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < connectionDistance) {
+                    if (distMouse < connectionDistance) {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        const opacity = 0.2 - (dist / connectionDistance) * 0.2;
+                        ctx.lineTo(mouse.x, mouse.y);
+                        const opacity = 0.5 - (distMouse / connectionDistance) * 0.5;
                         ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
+
+                        // subtle pull towards mouse
+                        particles[i].x -= dxMouse * 0.01;
+                        particles[i].y -= dyMouse * 0.01;
+                    }
+
+                    // Connect to other particles
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < connectionDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            const opacity = 0.2 - (dist / connectionDistance) * 0.2;
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
                     }
                 }
             }
@@ -128,6 +139,7 @@ export default function ParticleBackground() {
         animate();
 
         return () => {
+            observer.disconnect();
             window.removeEventListener("resize", resize);
             if (parent) {
                 parent.removeEventListener("mousemove", handleMouseMove);
