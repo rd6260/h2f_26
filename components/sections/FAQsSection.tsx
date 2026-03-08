@@ -42,7 +42,7 @@ const faqData = [
     },
     {
         question: 'Can participants from different colleges form a team?',
-        answer: 'Absolutely! Teams can mix and match members from different colleges. We love diverse squads—it’s all about bringing fresh perspectives and unique skills to the table!',
+        answer: 'No inter-college teams are allowed. All team members must be from the same college',
         icon: 'mdi:crosshairs-gps',
     },
     {
