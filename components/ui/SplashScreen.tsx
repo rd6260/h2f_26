@@ -9,9 +9,7 @@ const SplashScreen = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        // Force scroll to top on initial load
-        if (typeof window !== 'undefined') {
-            window.history.scrollRestoration = 'manual';
+        if (!window.location.hash) {
             window.scrollTo(0, 0);
         }
 
@@ -28,6 +26,13 @@ const SplashScreen = () => {
         // Hide the splash screen after the dynamic duration
         const timeout = setTimeout(() => {
             setVisible(false);
+
+            const hash = window.location.hash;
+
+            if (hash) {
+                const element = document.querySelector(hash);
+                element?.scrollIntoView({ behavior: "smooth" });
+            }
         }, duration);
 
         return () => clearTimeout(timeout);
