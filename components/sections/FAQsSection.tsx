@@ -47,7 +47,7 @@ const faqData = [
     },
     {
         question: 'I have a question and it isnt listed above. What do I do?',
-        answer: 'Feel free to contact us at hackathon@iiitdwd.ac.in or give a call to 8870040108 for any queries!',
+        answer: 'Feel free to contact us at hackathon@iiitdwd.ac.in or give a call to 8074916768 for any queries!',
         icon: 'mdi:chat-question-outline',
     },
     {
@@ -88,7 +88,7 @@ export default function FAQsSection() {
                         <span className="h-[1px] bg-amber-500 w-12 block" />
                     </div>
                     <h2 className="text-5xl md:text-7xl font-bricolage font-bold uppercase tracking-tight">
-                        FA<span className="text-amber-500">Qs</span>
+                        FA<span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">Qs</span>
                     </h2>
                 </AnimateOnScroll>
 

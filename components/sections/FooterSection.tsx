@@ -53,29 +53,7 @@ export default function FooterSection() {
         }}
       />
 
-      <motion.div
-        className="hidden lg:block absolute -left-16 bottom-0 top-auto pointer-events-none opacity-100 z-[1]"
-        animate={{
-          y: [-15, 15, -15],
-          rotate: [-3, 3, -3],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <Image
-          src="/astronote1.png"
-          alt="Astronote Graphic"
-          width={400}
-          height={400}
-          className="object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.15)] max-w-none"
-          priority
-        />
-      </motion.div>
-
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 xl:px-8">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           {/* Brand */}
@@ -268,14 +246,42 @@ export default function FooterSection() {
             </div>
           </AnimateOnScroll>
 
-          {/* Location */}
-          <AnimateOnScroll delay={0.3} className="lg:col-span-1">
-            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-6 font-mono flex items-center gap-2">
-              <span className="w-5 h-[1px] bg-emerald-500 block" />
-              Venue
-            </h4>
-            <div className="relative w-full h-48 md:h-56 rounded-2xl overflow-hidden border border-white/10 group-hover/venue:border-emerald-500/30 transition-colors shadow-[0_8px_32px_rgba(0,0,0,0.5)] z-10">
-              {/* Inner glow/border effect */}
+          {/* Astronote (was Location) */}
+          <AnimateOnScroll delay={0.3} className="lg:col-span-1 hidden lg:flex items-center justify-center relative min-h-[350px]">
+            <motion.div
+              className="pointer-events-none z-10 absolute bottom-[-160px]"
+              animate={{
+                y: [-15, 15, -15],
+                rotate: [-3, 3, -3],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/astronote1.png"
+                alt="Astronote Graphic"
+                width={380}
+                height={380}
+                className="object-contain opacity-80 max-w-none w-[380px] xl:w-[480px]"
+                priority
+              />
+            </motion.div>
+          </AnimateOnScroll>
+        </div>
+
+        {/* Location - Moved below main grid */}
+        <AnimateOnScroll delay={0.4} className="mb-16">
+          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-6 font-mono flex items-center gap-2">
+            <span className="w-5 h-[1px] bg-emerald-500 block" />
+            Venue
+          </h4>
+          <div className="flex flex-col lg:flex-row gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] z-10 relative">
+
+            {/* Map Container */}
+            <div className="relative w-full lg:w-2/3 h-64 md:h-80 rounded-2xl overflow-hidden group-hover/venue:border-emerald-500/30 transition-colors">
               <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-20" />
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.516087524584!2d75.0210287751221!3d15.397268585189311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d3a4bc7f5c91%3A0xf0fc4560c06c5e05!2sIndian%20Institute%20of%20Information%20Technology%20(IIIT)%2C%20Dharwad!5e0!3m2!1sen!2sin!4v1714574921935!5m2!1sen!2sin"
@@ -285,25 +291,38 @@ export default function FooterSection() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="z-10 absolute inset-0"
+                className="z-10 absolute inset-0 grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
                 title="IIIT Dharwad Map"
               />
             </div>
 
             {/* Text Below Map */}
-            <div className="mt-4 text-xs">
-              <p className="text-white font-medium mb-1 flex items-center gap-2">
+            <div className="w-full lg:w-1/3 flex flex-col justify-center">
+              <div className="bg-emerald-500/10 w-12 h-12 rounded-full flex items-center justify-center mb-4 border border-emerald-500/20">
                 {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon="solar:map-point-linear" className="text-emerald-400" />
+                <iconify-icon icon="solar:map-point-bold-duotone" width="24" className="text-emerald-400" />
+              </div>
+              <h5 className="text-xl font-bricolage text-white font-medium mb-2">
                 IIIT Dharwad Campus
-              </p>
-              <p className="text-neutral-500">
+              </h5>
+              <p className="text-neutral-400 text-sm leading-relaxed mb-6">
                 Ittigatti Road, Near Sattur Colony,<br />
                 Dharwad 580009, Karnataka
               </p>
+
+              <motion.a
+                href="https://maps.app.goo.gl/yTfG5P6A8xQwZ5P99"
+                target="_blank"
+                className="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium hover:text-white transition-colors group"
+                whileHover={{ x: 4 }}
+              >
+                Open in Google Maps
+                {/* @ts-expect-error iconify-icon is a web component */}
+                <iconify-icon icon="solar:arrow-up-right-linear" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </motion.a>
             </div>
-          </AnimateOnScroll>
-        </div>
+          </div>
+        </AnimateOnScroll>
 
         {/* Divider */}
         <div className="h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
@@ -313,7 +332,7 @@ export default function FooterSection() {
           <AnimateOnScroll>
             <p>
               © {new Date().getFullYear()} Hack2Future 2.0 — IIIT
-              Dharwad. All rights reserved.
+              Dharwad. All copyrights reserved.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={0.1}>

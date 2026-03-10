@@ -38,6 +38,30 @@ const SplashScreen = () => {
         return () => clearTimeout(timeout);
     }, []);
 
+    // Effect for the loading percentage ticker
+    const [progress, setProgress] = useState(0);
+    useEffect(() => {
+        if (!visible) return;
+        const isMobile = window.innerWidth < 768;
+        // The mobile animation is 3000ms total. We want to finish the ticker a bit early (at 2000ms) so it sits at 100% just before disappearing.
+        const duration = isMobile ? 2000 : 5000;
+        const intervalMs = 20;
+        const increments = duration / intervalMs;
+        const incrementAmount = 100 / increments;
+
+        const interval = setInterval(() => {
+            setProgress(p => {
+                if (p + incrementAmount >= 100) {
+                    clearInterval(interval);
+                    return 100;
+                }
+                return p + incrementAmount;
+            });
+        }, intervalMs);
+
+        return () => clearInterval(interval);
+    }, [visible]);
+
     // Use the gold/amber color from the theme
     const goldColor = '#F59E0B';
     // Alternatively, `#EAB308` (yellow-500) or `#FFD700`
@@ -106,17 +130,17 @@ const SplashScreen = () => {
                                 <motion.span
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    transition={{ duration: 3, ease: "linear" }}
+                                    transition={{ duration: 2.5, ease: "linear" }}
                                 >
-                                    80%
+                                    {Math.floor(progress)}%
                                 </motion.span>
                             </div>
 
                             <div className="w-full h-8 border-4 border-white p-1">
                                 <motion.div
                                     initial={{ width: "0%" }}
-                                    animate={{ width: "80%" }}
-                                    transition={{ duration: 3, ease: "linear" }}
+                                    animate={{ width: "100%" }}
+                                    transition={{ duration: 2.5, ease: "linear" }}
                                     className="h-full bg-white relative overflow-hidden"
                                 >
                                     {/* Stripes effect for the pixel bar */}
