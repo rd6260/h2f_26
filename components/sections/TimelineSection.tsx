@@ -28,7 +28,7 @@ const TIMELINE_EVENTS = [
     highlight: true,
   },
   {
-    date: "Mar 12",
+    date: "Mar 15",
     label: "REGISTRATION CLOSES",
     title: "Hatch Sealed",
     description: 
