@@ -32,7 +32,7 @@ const TIMELINE_EVENTS = [
     label: "REGISTRATION CLOSES",
     title: "Hatch Sealed",
     description:
-      "First registration closes on March 12th, extended till March 18th. Secure your spot before the portal shuts for good.",
+      "First registration closes on March 15th. Secure your spot before the portal shuts for good.",
     icon: "solar:lock-keyhole-bold",
     side: "right" as const,
   },
