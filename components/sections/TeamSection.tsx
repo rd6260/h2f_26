@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/harshith-daraboina",
     linkedin: "https://www.linkedin.com/in/harshith-daraboina",
     instagram: "https://www.instagram.com/harsh_ith_011/",
-    photo: "/team/Leads/harshith_daraboina.png"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/Leads/harshith_daraboina.png"
   },
   {
     name: "Ujwal Akotkar",
@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/uju09",
     linkedin: "https://www.linkedin.com/in/uju09",
     instagram: "https://www.instagram.com/_uju_09/",
-    photo: "/team/uju.png"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/uju.png"
   },
   {
     name: "Syed Mahdee Husain",
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/mahdee19",
     linkedin: "https://www.linkedin.com/search/results/all/?keywords=Mahdee%20Husain",
     instagram: "https://instagram.com/mahdeehusain",
-    photo: "/team/syed_mahdee_husain.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/syed_mahdee_husain.jpg"
   },
   {
     name: "Pulla Suharshitha",
@@ -51,7 +51,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/pullasuharshitha",
     linkedin: "https://www.linkedin.com/in/pulla-suharshitha-a14a88324",
     instagram: "https://instagram.com/Pulla_Suharshitha",
-    photo: "/team/pulla_suharshitha.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/pulla_suharshitha.jpg"
   },
   {
     name: "Tejas Chalwadi",
@@ -60,7 +60,7 @@ const teamMembers: TeamMember[] = [
     github: "",
     linkedin: "https://www.linkedin.com/in/tejas-chalwadi-38bb15321",
     instagram: "https://instagram.com/tejaa.__.chalwadi",
-    photo: "/team/Leads/tejas_chalwadi.jpeg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/Leads/tejas_chalwadi.jpeg"
   },
   {
     name: "Ayush Gochhayat",
@@ -69,7 +69,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/Ayush-DSAI",
     linkedin: "https://www.linkedin.com/in/ayush-gochhayat-46927b381/",
     instagram: "https://www.instagram.com/_ayush.goc_/",
-    photo: "/team/ayush_gochhayat.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/ayush_gochhayat.jpg"
   },
   {
     name: "Aarya A Sajjan",
@@ -78,7 +78,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/sajjanaaru-ops",
     linkedin: "https://linkedin.com/in/aarya-a-sajjan/",
     instagram: "https://www.instagram.com/aarya__a__sajjan/",
-    photo: "/team/Leads/aarya_sajjan.jpeg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/Leads/aarya_sajjan.jpeg"
   },
   {
     name: "Satvik M Patil",
@@ -87,7 +87,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/Satvikpatil1582",
     linkedin: "https://www.linkedin.com/in/satvik-patil-830a0a372/",
     instagram: "https://www.instagram.com/patilsatvik30/",
-    photo: "/team/satvik_patil.jpeg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/satvik_patil.jpeg"
   },
   {
     name: "SUYASH BIRHADE",
@@ -96,7 +96,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/suyash24-cmd",
     linkedin: "https://www.linkedin.com/in/suyash-birhade-b11b28381",
     instagram: "https://www.instagram.com/birhadesuyash/",
-    photo: "/team/suyash_birhade.jpeg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/suyash_birhade.jpeg"
   },
   {
     name: "Prathyusha Reddy",
@@ -105,7 +105,7 @@ const teamMembers: TeamMember[] = [
     github: "",
     linkedin: "https://www.linkedin.com/in/prathyusha-reddy-chintha-b53aa3324",
     instagram: "",
-    photo: "/team/prathyusha_reddy.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/prathyusha_reddy.jpg"
   },
   {
     name: "Shreya S Sheri",
@@ -114,7 +114,7 @@ const teamMembers: TeamMember[] = [
     github: "",
     linkedin: "https://www.linkedin.com/search/results/all/?keywords=Shreya%20S%20Sheri",
     instagram: "https://instagram.com/shreya.sheri",
-    photo: "/team/shreya_s_sheri.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/shreya_s_sheri.jpg"
   },
   {
     name: "Zaid Nasim",
@@ -123,7 +123,7 @@ const teamMembers: TeamMember[] = [
     github: "",
     linkedin: "",
     instagram: "",
-    photo: "/team/zaid_nasim.png"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/zaid_nasim.png"
   },
   {
     name: "Pundru Madhulika",
@@ -132,7 +132,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/Madhulikaaaaa",
     linkedin: "https://www.linkedin.com/in/madhulika-p-4682b432a",
     instagram: "https://www.instagram.com/m4ds.here",
-    photo: "/team/pundru_madhulika.jpeg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/pundru_madhulika.jpeg"
   },
   {
     name: "Ngamchingseh Willis Kipgen",
@@ -141,7 +141,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/williskipsjr",
     linkedin: "https://www.linkedin.com/in/ngamchingseh-willis-kipgen/",
     instagram: "https://www.instagram.com/williskipsjr",
-    photo: "/team/willis_kipgen.jpeg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/willis_kipgen.jpeg"
   },
   {
     name: "Harshita Prasad",
@@ -150,7 +150,7 @@ const teamMembers: TeamMember[] = [
     github: "",
     linkedin: "",
     instagram: "",
-    photo: "/team/harshita_prasad.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/harshita_prasad.jpg"
   },
   {
     name: "Lakshmi prasad",
@@ -159,7 +159,7 @@ const teamMembers: TeamMember[] = [
     github: "",
     linkedin: "https://www.linkedin.com/in/lakshmi-prasad-doddi-26a30029a/",
     instagram: "https://www.instagram.com/lakshmi_prasad_lxp",
-    photo: "/team/Leads/lakshmi_prasad.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/Leads/lakshmi_prasad.jpg"
   },
   {
     name: "Muhammad Owais",
@@ -168,7 +168,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/mdowais-39",
     linkedin: "https://www.linkedin.com/in/muhammad-owais-a175ab324/",
     instagram: "https://instagram.com/md_owais39",
-    photo: "/team/muhammad_owais.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/muhammad_owais.jpg"
   },
   {
     name: "Devika Dhantala",
@@ -177,7 +177,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/Devika-0726",
     linkedin: "https://www.linkedin.com/in/devika-danthala-020912335",
     instagram: "https://www.instagram.com/devika_danthala_2607",
-    photo: "/team/devika_dhantala.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/devika_dhantala.jpg"
   },
   {
     name: "Sufiyan Alam",
@@ -186,7 +186,7 @@ const teamMembers: TeamMember[] = [
     github: "https://github.com/oyamanao",
     linkedin: "https://linkedin.com/in/cadnium",
     instagram: "https://instagram.com/cadnium",
-    photo: "/team/sufiyan_alam.jpg"
+    photo: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team/sufiyan_alam.jpg"
   }
 ];
 
