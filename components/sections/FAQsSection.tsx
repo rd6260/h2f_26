@@ -17,7 +17,7 @@ const faqData = [
     },
     {
         question: 'Team Size',
-        answer: '4 members per team , All the team members to be present offline if shortlisted!',
+        answer: '2 to 4 members per team , All the team members to be present offline if shortlisted!',
         icon: 'ion:people-outline',
     },
     {
