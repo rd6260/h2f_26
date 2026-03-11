@@ -128,39 +128,39 @@ export default function SponsorsSection() {
               <div className="flex-1 h-px bg-gradient-to-r from-amber-500/30 via-amber-500/10 to-transparent" />
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              <SponsorCard
-                id="devfolio"
-                name="DevFolio"
-                website="#"
-                logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/devfolio.png"
-                logoSize="full"
-                height="h-36 md:h-52"
-              />
-              <SponsorCard
-                id="cysec"
-                name="Cyseck"
-                website="#"
-                logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/cysec.png"
-                logoSize="full"
-                height="h-36 md:h-52"
-              />
-              <SponsorCard
-                id="infosys"
-                name="Infosys"
-                website="#"
-                logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/infosys.png"
-                logoSize="full"
-                height="h-36 md:h-52"
-              />
-              <SponsorCard
-                id="idrp"
-                name="IDRP"
-                website="#"
-                logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/idrp.png"
-                logoSize="full"
-                height="h-36 md:h-52"
-              />
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <div className="w-[calc(50%-8px)] md:w-[calc(25%-18px)] flex justify-center">
+                <SponsorCard
+                  id="devfolio"
+                  name="DevFolio"
+                  website="#"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/devfolio.png"
+                  logoSize="full"
+                  height="h-36 md:h-52"
+                />
+              </div>
+
+              <div className="w-[calc(50%-8px)] md:w-[calc(25%-18px)] flex justify-center">
+                <SponsorCard
+                  id="infosys"
+                  name="Infosys"
+                  website="#"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/infosys.png"
+                  logoSize="full"
+                  height="h-36 md:h-52"
+                />
+              </div>
+
+              <div className="w-[calc(50%-8px)] md:w-[calc(25%-18px)] flex justify-center">
+                <SponsorCard
+                  id="idrp"
+                  name="IDRP"
+                  website="#"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/idrp.png"
+                  logoSize="full"
+                  height="h-36 md:h-52"
+                />
+              </div>
             </div>
           </AnimateOnScroll>
 
@@ -174,6 +174,16 @@ export default function SponsorsSection() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-5xl mx-auto">
+              <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
+                <SponsorCard
+                  id="cysec"
+                  name="Cyseck"
+                  website="#"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/cysec.png"
+                  logoSize="full"
+                  height="h-24 md:h-36"
+                />
+              </div>
               <div className="w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex justify-center">
                 <SponsorCard
                   id="kdem"
