@@ -1,14 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Script from "next/script";
 import React, { useEffect, useState, useRef } from "react";
 
-declare global {
-  interface Window {
-    Devfolio: any;
-  }
-}
+
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type TimeLeft = {
@@ -96,16 +91,24 @@ function EventDetails({ timeLeft }: { timeLeft: TimeLeft }) {
         </div>
       </motion.div>
 
-      {/* Devfolio Apply Button Outside Motion Wrapper */}
+      {/* Devfolio Apply Button */}
       <div className="ml-[2%] sm:ml-8 md:ml-12 lg:ml-20 mt-4">
-        {/* Official Devfolio Button */}
-        <div
-          id="devfolio-apply-btn"
-          className="apply-button"
-          data-hackathon-slug="hack2future"
-          data-button-theme="light"
-          style={{ height: "44px", width: "312px" }}
-        ></div>
+        <a
+          href="https://hack2future.devfolio.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 rounded-lg px-6 py-3 text-white font-semibold text-base transition-transform hover:scale-105 active:scale-95"
+          style={{ backgroundColor: "#3971fe" }}
+        >
+          <Image
+            src="/logos/d.png"
+            alt="Devfolio Logo"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
+          Apply with Devfolio
+        </a>
       </div>
     </motion.div>
   );
@@ -151,16 +154,10 @@ export default function HeroSection() {
 
     setTimeLeft(calculateTimeLeft());
 
-    // Load Devfolio SDK
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+
 
     return () => {
       clearInterval(timer);
-      document.body.removeChild(script);
     };
   }, []);
 
