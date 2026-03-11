@@ -39,36 +39,21 @@ const PROBLEMS: ProblemStatement[] = [
     },
     {
         id: 2,
-        company: "IDRP",
-        domain: "Multilingual OPD Documentation System",
-        icon: "solar:health-bold",
+        company: "Vocab Ai",
+        domain: "Autonomous Mobile Robot Navigation using DRL",
+        icon: "solar:routing-2-bold",
         accentColor: "text-emerald-400",
         accentBg: "bg-emerald-500/10",
         accentBorder: "border-emerald-500/20",
         accentGlow: "rgba(16,185,129,0.15)",
         description:
-            "Presented by IDRP — Build an AI-powered, speech-driven documentation system for multilingual OPD consultation in Indian healthcare settings.",
-        tags: ["Health Tech", "AI", "Speech Tech"],
+            "Presented by Vocab Ai — Design, train, and evaluate a Deep Reinforcement Learning-based autonomous navigation system for a mobile robot using ROS2 and Gazebo.",
+        tags: ["Robotic simulation", "AI/ML", "ROS2"],
         animDelay: 0.08,
-        link: "https://drive.google.com/file/d/1acRZ0bHNkAJwnACAl9EytO4H_Iys5nxt/view?usp=drive_link",
+        link: "https://drive.google.com/file/d/1H1fEq6tLMwPiGvu7vae77SFOv8UKxhG3/view?usp=drivesdk",
     },
     {
         id: 3,
-        company: "IDRP",
-        domain: "Advanced Medical NLP Framework",
-        icon: "solar:chat-square-code-bold",
-        accentColor: "text-amber-400",
-        accentBg: "bg-amber-500/10",
-        accentBorder: "border-amber-500/20",
-        accentGlow: "rgba(245,158,11,0.15)",
-        description:
-            "Presented by IDRP — Push the boundaries of natural language processing for medical care — build intelligent systems that process human language at scale.",
-        tags: ["NLP", "Medical AI", "Language Models"],
-        animDelay: 0.16,
-        link: "https://drive.google.com/file/d/1I3emSLRFxV7HeIknMNTZJxlz9DvH4ndk/view?usp=drive_link",
-    },
-    {
-        id: 4,
         company: "Nisargasoft",
         domain: "Real-Time Amazon Price Monitoring",
         icon: "solar:chart-2-bold",
@@ -79,11 +64,11 @@ const PROBLEMS: ProblemStatement[] = [
         description:
             "Presented by Nisargasoft — Build a real-time price monitoring system for Amazon India using data scraping and competitive analytics to optimize pricing.",
         tags: ["E-commerce", "Data Scraping", "Analytics"],
-        animDelay: 0.24,
+        animDelay: 0.16,
         link: "https://drive.google.com/file/d/1GjeU6He9G5iGMdRycCE0Fd8k3ADqg0WQ/view?usp=drive_link",
     },
     {
-        id: 5,
+        id: 4,
         company: "Armor.ai",
         domain: "Financial Conversation Intelligence System",
         icon: "solar:microphone-3-bold",
@@ -94,8 +79,23 @@ const PROBLEMS: ProblemStatement[] = [
         description:
             "Presented by Armor.ai — Develop an AI-driven multilingual financial decision capture system to facilitate automated conversation intelligence.",
         tags: ["Speech AI", "FinTech", "Multilingual"],
-        animDelay: 0.32,
+        animDelay: 0.24,
         link: "https://drive.google.com/file/d/147Iqpb3yfJ8sx--GSapX3CuPHYp14Og4/view?usp=drive_link",
+    },
+    {
+        id: 5,
+        company: "IDRP",
+        domain: "AI-Powered Multilingual Conversational Intelligence Platform",
+        icon: "solar:chat-square-code-bold",
+        accentColor: "text-amber-400",
+        accentBg: "bg-amber-500/10",
+        accentBorder: "border-amber-500/20",
+        accentGlow: "rgba(245,158,11,0.15)",
+        description:
+            "Presented by IDRP — Develop a secure, scalable, multilingual platform capable of capturing, transcribing, and managing speech-driven documentation and automation.",
+        tags: ["Conversational AI", "Speech Tech", "NLP"],
+        animDelay: 0.32,
+        link: "https://drive.google.com/file/d/1aby9fFvcvaGuerpCwH0QvOuanRNCWCEt/view?usp=drivesdk",
     },
 ];
 
@@ -110,10 +110,10 @@ function ProblemCard({ problem }: { problem: ProblemStatement }) {
         <motion.div
             ref={cardRef}
             className="group relative h-full"
-            initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+            initial={{ opacity: 0, y: 40 }}
             animate={
                 isInView
-                    ? { opacity: 1, y: 0, filter: "blur(0px)" }
+                    ? { opacity: 1, y: 0 }
                     : {}
             }
             transition={{
@@ -242,8 +242,8 @@ export default function HullIntegritySection() {
             />
 
             {/* Ambient glow */}
-            <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-violet-500/[0.03] rounded-full blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
+            <div className="hidden md:block absolute top-0 left-1/3 w-[500px] h-[500px] bg-violet-500/[0.03] rounded-full blur-[150px] pointer-events-none" />
+            <div className="hidden md:block absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
             {/* Watermark */}
             <div className="absolute top-12 right-6 md:right-12 z-0 opacity-[0.04] font-bricolage font-bold text-[6rem] md:text-[10rem] leading-none text-white pointer-events-none select-none tracking-tighter">
@@ -255,10 +255,10 @@ export default function HullIntegritySection() {
                 <motion.div
                     ref={headerRef}
                     className="text-center mb-16 md:mb-20"
-                    initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                    initial={{ opacity: 0, y: 40 }}
                     animate={
                         headerInView
-                            ? { opacity: 1, y: 0, filter: "blur(0px)" }
+                            ? { opacity: 1, y: 0 }
                             : {}
                     }
                     transition={{ duration: 0.8, ease }}

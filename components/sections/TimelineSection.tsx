@@ -216,10 +216,10 @@ function TimelineCard({
             /* Card on the left */
             <motion.div
               className="flex justify-end pr-8"
-              initial={{ opacity: 0, x: -60, filter: "blur(8px)" }}
+              initial={{ opacity: 0, x: -60 }}
               animate={
                 isInView
-                  ? { opacity: 1, x: 0, filter: "blur(0px)" }
+                  ? { opacity: 1, x: 0 }
                   : {}
               }
               transition={{ duration: 0.8, delay: 0.2, ease }}
@@ -248,10 +248,10 @@ function TimelineCard({
             /* Card on the right */
             <motion.div
               className="pl-8"
-              initial={{ opacity: 0, x: 60, filter: "blur(8px)" }}
+              initial={{ opacity: 0, x: 60 }}
               animate={
                 isInView
-                  ? { opacity: 1, x: 0, filter: "blur(0px)" }
+                  ? { opacity: 1, x: 0 }
                   : {}
               }
               transition={{ duration: 0.8, delay: 0.2, ease }}
@@ -302,10 +302,10 @@ function TimelineCard({
         </div>
         <motion.div
           className="flex-1 pb-2"
-          initial={{ opacity: 0, x: 30, filter: "blur(6px)" }}
+          initial={{ opacity: 0, x: 30 }}
           animate={
             isInView
-              ? { opacity: 1, x: 0, filter: "blur(0px)" }
+              ? { opacity: 1, x: 0 }
               : {}
           }
           transition={{ duration: 0.7, delay: 0.15, ease }}
@@ -555,10 +555,10 @@ export default function TimelineSection() {
         <motion.div
           ref={headerRef}
           className="text-center mb-20 md:mb-28"
-          initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+          initial={{ opacity: 0, y: 40 }}
           animate={
             headerInView
-              ? { opacity: 1, y: 0, filter: "blur(0px)" }
+              ? { opacity: 1, y: 0 }
               : {}
           }
           transition={{ duration: 0.8, ease }}

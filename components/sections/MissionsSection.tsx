@@ -98,7 +98,7 @@ export default function MissionsSection() {
     >
       {/* Ambient Background */}
       <div
-        className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-900/15 rounded-full blur-[120px] pointer-events-none opacity-40 mix-blend-screen"
+        className="hidden md:block absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-900/15 rounded-full blur-[120px] pointer-events-none opacity-40 mix-blend-screen"
       />
 
       {/* Subtle Noise Texture Overlay */}

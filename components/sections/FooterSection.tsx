@@ -44,7 +44,7 @@ export default function FooterSection() {
       <ParticleBackground />
       {/* Ambient bg */}
       <motion.div
-        className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen"
+        className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen"
         animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.1, 0.05] }}
         transition={{
           duration: 6,
