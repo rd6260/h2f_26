@@ -117,7 +117,7 @@ const SplashScreen = () => {
                                 playsInline
                                 className="object-contain object-right-bottom w-auto h-full"
                             >
-                                <source src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/video/splash3.mp4" type="video/mp4" />
+                                <source src="/video/splash3.mp4" type="video/mp4" />
                             </video>
                         </motion.div>
                     </div>

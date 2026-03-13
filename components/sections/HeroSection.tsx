@@ -170,7 +170,7 @@ export default function HeroSection() {
     >
       <motion.div
         style={{ y: backgroundY, scale: backgroundScale }}
-        className="absolute inset-x-0 inset-y-0 z-0 h-full w-full bg-[url('https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/bg.png')] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-x-0 inset-y-0 z-0 h-full w-full bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat"
       />
 
       <div className="absolute top-0 z-[1] h-full w-full bg-black/40"></div>
@@ -192,7 +192,7 @@ export default function HeroSection() {
         className="absolute bottom-[-2%] right-[5%] z-[20] h-[75vh] md:h-[85vh] lg:h-[95vh] w-auto max-w-[75vw] lg:max-w-[85%] flex justify-end items-end pointer-events-none hidden md:flex"
       >
         <Image
-          src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/hero1.png"
+          src="/hero1.png"
           alt="Hero Graphic"
           width={1000}
           height={1000}

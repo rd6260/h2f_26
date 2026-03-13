@@ -31,14 +31,14 @@ const TABS: { id: TabId; label: string; icon: string; images: string[]; basePath
     label: "Past Winners",
     icon: "solar:cup-star-bold",
     images: PAST_WINNERS_IMAGES,
-    basePath: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/gallery/past-winners/",
+    basePath: "/gallery/past-winners/",
   },
   {
     id: "past-event",
     label: "Past Event",
     icon: "solar:camera-bold",
     images: PAST_EVENT_IMAGES,
-    basePath: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/gallery/past-event/",
+    basePath: "/gallery/past-event/",
   },
 ];
 

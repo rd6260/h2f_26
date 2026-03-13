@@ -94,7 +94,7 @@ export default function AboutSection() {
                     className="relative lg:h-[700px] w-full group h-[400px] md:h-[600px] flex items-center justify-center mt-12"
                 >
                     <Image
-                        src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/earth.png"
+                        src="/earth.png"
                         alt="Hack2Future Earth Graphic"
                         width={800}
                         height={800}
