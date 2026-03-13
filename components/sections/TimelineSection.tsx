@@ -41,7 +41,7 @@ const TIMELINE_EVENTS = [
     label: "ANNOUNCEMENT OF FINALISTS",
     title: "Crew Selected",
     description:
-      "Teams shortlisted based on their solution approach by the technical team and experienced faculties. Top 75 teams out of 500+ will be selected.",
+      "Teams shortlisted based on their solution approach by the technical team and experienced faculties. Top 60 teams out of 500+ will be selected.",
     icon: "solar:star-bold",
     side: "left" as const,
   },
