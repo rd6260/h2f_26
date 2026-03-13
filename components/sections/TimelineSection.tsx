@@ -28,16 +28,16 @@ const TIMELINE_EVENTS = [
     highlight: true,
   },
   {
-    date: "Mar 15",
+    date: "Mar 18 (Extended)",
     label: "REGISTRATION CLOSES",
     title: "Hatch Sealed",
     description:
-      "First registration closes on March 15th(Revised). Secure your spot before the portal shuts for good.",
+      "Registration closes on March 18th(Extended). Secure your spot before the portal shuts for good.",
     icon: "solar:lock-keyhole-bold",
     side: "right" as const,
   },
   {
-    date: "Mar 21",
+    date: "Mar 25 (Revised)",
     label: "ANNOUNCEMENT OF FINALISTS",
     title: "Crew Selected",
     description:
@@ -46,7 +46,7 @@ const TIMELINE_EVENTS = [
     side: "left" as const,
   },
   {
-    date: "Mar 25",
+    date: "Mar 28 (Revised)",
     label: "CONFIRMATION OF PARTICIPATION",
     title: "Lock In",
     description:
