@@ -60,7 +60,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
-            <img src="/logos/logo.png" alt="Logo" className="w-7 h-7" />
+            <img src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/logo.webp" alt="Logo" className="w-7 h-7" loading="lazy" />
             <span className="font-bricolage text-lg tracking-tight font-medium">
               Hack2Future 2.0
             </span>

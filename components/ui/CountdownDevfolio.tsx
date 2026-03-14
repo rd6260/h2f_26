@@ -108,7 +108,7 @@ export default function CountdownDevfolio() {
                 className="flex items-center justify-center gap-3 w-full px-8 py-3 rounded-lg bg-[#3770FF] hover:bg-[#2b5de0] transition-colors duration-200 text-white font-semibold text-base md:text-lg shadow-lg"
             >
                 <Image
-                    src="/logos/d.png"
+                    src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/d.webp"
                     alt=""
                     width={24}
                     height={24}

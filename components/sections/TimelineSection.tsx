@@ -463,7 +463,7 @@ function TimelineLine() {
       >
         <div className="relative w-48 h-48 mt-4">
           <Image
-            src="/rocket.png"
+            src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/rocket.webp"
             alt="Rocket"
             fill
             className="object-contain drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]"
@@ -513,7 +513,7 @@ function MobileTimelineLine() {
       >
         <div className="relative w-24 h-24 pointer-events-none mt-2">
           <Image
-            src="/rocket.png"
+            src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/rocket.webp"
             alt="Rocket"
             fill
             className="object-contain drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]"

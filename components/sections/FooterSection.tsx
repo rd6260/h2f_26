@@ -60,7 +60,7 @@ export default function FooterSection() {
           <AnimateOnScroll className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <Image
-                src="/logos/logo.png"
+                src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/logo.webp"
                 alt="IIIT Dharwad"
                 width={44}
                 height={44}
@@ -261,7 +261,7 @@ export default function FooterSection() {
               }}
             >
               <Image
-                src="/astronote1.png"
+                src="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/astronote1.webp"
                 alt="Astronote Graphic"
                 width={380}
                 height={380}
