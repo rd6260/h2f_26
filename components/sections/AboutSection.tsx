@@ -84,7 +84,7 @@ export default function AboutSection() {
                 </AnimateOnScroll>
 
                 <div className="max-w-4xl text-center mx-auto">
-                    <ScrollRevealText text="IIIT Dharwad, established in 2015 as an Institute of National Importance under a Public-Private Partnership between the Ministry of Education, Government of Karnataka, and Keonics, aims to bridge the high-end IT skill gap and support India’s global leadership in the sector. It offers BTech programs in CSE, ECE, and DSAI, emphasizing IT solutions for India’s social challenges. With a semi-modern campus, a stately logo, and a strategic location in the Hubballi-Dharwad education hub with growing connectivity to Bengaluru the institute is poised to make a strong impact on the Indian IT industry, academic research, and the North Karnataka region." />
+                    <ScrollRevealText text="Hack2Future is the flagship hackathon of IIIT Dharwad, bringing together developers, designers, and innovators from across the country to build impactful solutions to real-world problems. Designed to foster creativity, collaboration, and rapid innovation, the event provides a platform for participants to transform bold ideas into working prototypes while learning from mentors and industry experts. Now in its second edition, Hack2Future continues to grow as a space where ambitious minds come together to experiment, solve meaningful challenges, and showcase their technical skills. With carefully curated problem statements and an intense build environment, the hackathon encourages participants to push boundaries and create solutions that shape the future." />
                 </div>
 
                 {/* Image */}
