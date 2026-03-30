@@ -134,7 +134,7 @@ export default function SponsorsSection() {
                   id="devfolio"
                   name="DevFolio"
                   website="#"
-                  logo="/logos/devfolio.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/devfolio.png"
                   logoSize="full"
                   height="h-36 md:h-52"
                 />
@@ -145,7 +145,7 @@ export default function SponsorsSection() {
                   id="infosys"
                   name="Infosys"
                   website="#"
-                  logo="/logos/infosys.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/infosys.png"
                   logoSize="full"
                   height="h-36 md:h-52"
                 />
@@ -156,7 +156,7 @@ export default function SponsorsSection() {
                   id="idrp"
                   name="IDRP"
                   website="#"
-                  logo="/logos/idrp.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/idrp.png"
                   logoSize="full"
                   height="h-36 md:h-52"
                 />
@@ -179,7 +179,7 @@ export default function SponsorsSection() {
                   id="cysec"
                   name="Cyseck"
                   website="#"
-                  logo="/logos/cysec.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/cysec.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -189,7 +189,7 @@ export default function SponsorsSection() {
                   id="kdem"
                   name="KDEM"
                   website="#"
-                  logo="/logos/kde.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/kde.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -199,7 +199,7 @@ export default function SponsorsSection() {
                   id="iiitnet"
                   name="IIITians Network"
                   website="#"
-                  logo="/logos/iiitnet.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/iiitnet.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -209,7 +209,7 @@ export default function SponsorsSection() {
                   id="thinkindia"
                   name="Think India"
                   website="#"
-                  logo="/logos/thinkindia.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/thinkindia.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -219,7 +219,7 @@ export default function SponsorsSection() {
                   id="iris"
                   name="IRIS"
                   website="#"
-                  logo="/logos/iris.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/iris.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -229,7 +229,7 @@ export default function SponsorsSection() {
                   id="mosaic"
                   name="Mosaic"
                   website="#"
-                  logo="/logos/mosiac.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/mosiac.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -239,7 +239,7 @@ export default function SponsorsSection() {
                   id="iridescence"
                   name="Iridescence"
                   website="#"
-                  logo="/logos/irides.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/irides.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />
@@ -249,7 +249,7 @@ export default function SponsorsSection() {
                   id="velocity"
                   name="Velocity"
                   website="#"
-                  logo="/logos/velocity.png"
+                  logo="https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/logos/velocity.png"
                   logoSize="full"
                   height="h-24 md:h-36"
                 />

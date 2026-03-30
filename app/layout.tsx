@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       "The National Level Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
     images: [
       {
-        url: "/icon.png", // fallback image as we know icon.png exists
+        url: "https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/icon.png", // fallback image as we know icon.png exists
         width: 1200,
         height: 630,
         alt: "Hack2Future 2026",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Hack2Future 2026 - IIIT Dharwad",
     description:
       "The National Level Flagship Hackathon of IIIT Dharwad. Build Bold, Think Beyond, Code the Future.",
-    images: ["/icon.png"],
+    images: ["https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/icon.png"],
     creator: "@hack2future_",
   },
   robots: {
