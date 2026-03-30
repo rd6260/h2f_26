@@ -7,7 +7,7 @@ import TimelineSection from "@/components/sections/TimelineSection";
 import HullIntegritySection from "@/components/sections/HullIntegritySection";
 import PrizesSection from "@/components/sections/PrizesSection";
 import SponsorsSection from "@/components/sections/SponsorsSection";
-// import TeamSection from "@/components/sections/TeamSection";
+import TeamSection from "@/components/sections/TeamSection";
 import FAQsSection from "@/components/sections/FAQsSection";
 import FooterSection from "@/components/sections/FooterSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -32,8 +32,8 @@ export default function Home() {
 
       <SponsorsSection />
       <SectionDivider variant="dot" />
-      {/* <TeamSection /> */}
-      {/* <SectionDivider variant="dot" /> */}
+      <TeamSection />
+      <SectionDivider variant="dot" />
       <FAQsSection />
       <SectionDivider variant="dot" />
       <FooterSection />
