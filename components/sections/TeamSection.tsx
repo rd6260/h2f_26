@@ -19,66 +19,66 @@ const departments: DepartmentGroup[] = [
   {
     name: 'Leads',
     members: [
-      { name: 'Prem', designation: 'Program Director', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/thirupati-koppera-prem-sagar.webp?v=1' },
-      { name: 'Prajin', designation: 'Head Organizer', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/prajin.webp?v=1' },
-      { name: 'Sai Sathwik', designation: 'Head Operations', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/cheera-sai-sathwik.webp?v=1' },
-      { name: 'Aarya A Sajjan', designation: 'IIC Council Member', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/aarya.webp?v=1' },
-      { name: 'Sharvani P', designation: 'IIC Council Member', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/sharvani-p.webp?v=1' },
-      { name: 'R Swati', designation: 'Chief of Staff', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/ravva-swati.webp?v=1' },
-      { name: 'Shrisha', designation: 'IIC Council Member', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/shrisha-shrikant-rananaware.webp?v=1' },
+      { name: 'Prem', designation: 'Program Director', photo: \'/team-2/leads/thirupati-koppera-prem-sagar.webp\' },
+      { name: 'Prajin', designation: 'Head Organizer', photo: \'/team-2/leads/prajin.webp\' },
+      { name: 'Sai Sathwik', designation: 'Head Operations', photo: \'/team-2/leads/cheera-sai-sathwik.webp\' },
+      { name: 'Aarya A Sajjan', designation: 'IIC Council Member', photo: \'/team-2/leads/aarya.webp\' },
+      { name: 'Sharvani P', designation: 'IIC Council Member', photo: \'/team-2/leads/sharvani-p.webp\' },
+      { name: 'R Swati', designation: 'Chief of Staff', photo: \'/team-2/leads/ravva-swati.webp\' },
+      { name: 'Shrisha', designation: 'IIC Council Member', photo: \'/team-2/leads/shrisha-shrikant-rananaware.webp\' },
     ]
   },
   {
     name: 'Technical',
     members: [
-      { name: 'Savya Sanchi Sharma', designation: 'Technical Head', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/savya-sanchi-sharma.webp?v=1' },
-      { name: 'Ayush Gochhayat', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/ayush-gochhayat.webp?v=1' },
-      { name: 'Muhammad Owais', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/muhammad-owais.webp?v=1' },
-      { name: 'Satvik Patil', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/satvik-m-patil.webp?v=1' },
-      { name: 'Shreya S Sheri', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/shreya-s-sheri.webp?v=1' },
-      { name: 'Harshita Prasad', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/harshita-prasad.webp?v=1' },
-      { name: 'Suyash birhade', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/birhade-suyash-hemant.webp?v=1' },
-      { name: 'Sufiyan Alam', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/sufiyan-alam.webp?v=1' },
-      { name: 'Ngamchingseh Willis Kipgen', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/ngamchingseh-willis-kipgen.webp?v=1' },
-      { name: 'Barghav Abhilash B R', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/bhargav.webp?v=1' },
-      { name: 'Rohan Das', designation: 'Technical', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/rohan-das.webp?v=1' },
+      { name: 'Savya Sanchi Sharma', designation: 'Technical Head', photo: \'/team-2/leads/savya-sanchi-sharma.webp\' },
+      { name: 'Ayush Gochhayat', designation: 'Technical', photo: \'/team-2/ayush-gochhayat.webp\' },
+      { name: 'Muhammad Owais', designation: 'Technical', photo: \'/team-2/muhammad-owais.webp\' },
+      { name: 'Satvik Patil', designation: 'Technical', photo: \'/team-2/satvik-m-patil.webp\' },
+      { name: 'Shreya S Sheri', designation: 'Technical', photo: \'/team-2/shreya-s-sheri.webp\' },
+      { name: 'Harshita Prasad', designation: 'Technical', photo: \'/team-2/harshita-prasad.webp\' },
+      { name: 'Suyash birhade', designation: 'Technical', photo: \'/team-2/birhade-suyash-hemant.webp\' },
+      { name: 'Sufiyan Alam', designation: 'Technical', photo: \'/team-2/sufiyan-alam.webp\' },
+      { name: 'Ngamchingseh Willis Kipgen', designation: 'Technical', photo: \'/team-2/ngamchingseh-willis-kipgen.webp\' },
+      { name: 'Barghav Abhilash B R', designation: 'Technical', photo: \'/team-2/bhargav.webp\' },
+      { name: 'Rohan Das', designation: 'Technical', photo: \'/team-2/rohan-das.webp\' },
     ]
   },
   {
     name: 'Design',
     members: [
-      { name: 'Lakshmi prasad', designation: 'Design Head', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/lakshmi-prasad.webp?v=1' },
-      { name: 'Syed Mahdee Husain', designation: 'Design', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/syed-mahdee-husain.webp?v=1' },
-      { name: 'Sree Samhita', designation: 'Design', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/sree-samhita-gundimeda.webp?v=1' },
-      { name: 'Devika Dhantala', designation: 'Design', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/dhantala-devika.webp?v=1' },
-      { name: 'Prathyusha Reddy', designation: 'Design', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/chintha-prathyusha-reddy.webp?v=1' },
-      { name: 'Pundru Madhulika', designation: 'Design', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/pundru-madhulika.webp?v=1' },
-      { name: 'Shrujana pyla', designation: 'Design', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/pyla-shrujana.webp?v=1' },
+      { name: 'Lakshmi prasad', designation: 'Design Head', photo: \'/team-2/leads/lakshmi-prasad.webp\' },
+      { name: 'Syed Mahdee Husain', designation: 'Design', photo: \'/team-2/leads/syed-mahdee-husain.webp\' },
+      { name: 'Sree Samhita', designation: 'Design', photo: \'/team-2/sree-samhita-gundimeda.webp\' },
+      { name: 'Devika Dhantala', designation: 'Design', photo: \'/team-2/dhantala-devika.webp\' },
+      { name: 'Prathyusha Reddy', designation: 'Design', photo: \'/team-2/chintha-prathyusha-reddy.webp\' },
+      { name: 'Pundru Madhulika', designation: 'Design', photo: \'/team-2/pundru-madhulika.webp\' },
+      { name: 'Shrujana pyla', designation: 'Design', photo: \'/team-2/pyla-shrujana.webp\' },
     ]
   },
   {
     name: 'Website Development',
     members: [
-      { name: 'Kushagra Kumar Arora', designation: 'Website Development', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/kushagra-kumar-arora.webp?v=1' },
-      { name: 'Aditya gupta', designation: 'Website Development', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/aditya-gupta.webp?v=1' },
-      { name: 'Ujwal Akotkar', designation: 'Website Development', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/ujwal.webp?v=1' },
+      { name: 'Kushagra Kumar Arora', designation: 'Website Development', photo: \'/team-2/kushagra-kumar-arora.webp\' },
+      { name: 'Aditya gupta', designation: 'Website Development', photo: \'/team-2/aditya-gupta.webp\' },
+      { name: 'Ujwal Akotkar', designation: 'Website Development', photo: \'/team-2/ujwal.webp\' },
     ]
   },
   {
     name: 'Marketing & Sponsorship',
     members: [
-      { name: 'TEJAS', designation: 'Marketing Head', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/tejas-subhash-chalwadi.webp?v=1' },
-      { name: 'Zaid Nasim', designation: 'Sponsorship', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/zaid-nasim.webp?v=1' },
-      { name: 'Suharshitha', designation: 'Sponsorship', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/pulla-suharshitha.webp?v=1' },
-      { name: 'Madhav Dahiphale', designation: 'Sponsorship', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/dahiphale-madhav-hanmant.webp?v=1' },
-      { name: 'Keerthi varman', designation: 'Social Media Head', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/keerthi-varman.webp?v=1' },
+      { name: 'TEJAS', designation: 'Marketing Head', photo: \'/team-2/leads/tejas-subhash-chalwadi.webp\' },
+      { name: 'Zaid Nasim', designation: 'Sponsorship', photo: \'/team-2/zaid-nasim.webp\' },
+      { name: 'Suharshitha', designation: 'Sponsorship', photo: \'/team-2/pulla-suharshitha.webp\' },
+      { name: 'Madhav Dahiphale', designation: 'Sponsorship', photo: \'/team-2/dahiphale-madhav-hanmant.webp\' },
+      { name: 'Keerthi varman', designation: 'Social Media Head', photo: \'/team-2/leads/keerthi-varman.webp\' },
     ]
   },
   {
     name: 'Events & Hospitality',
     members: [
-      { name: 'Prakar', designation: 'Event Management Head', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/prakar.webp?v=1' },
-      { name: 'Pradnesh Fernandez A', designation: 'Hospitality Head', photo: 'https://cdn.jsdelivr.net/gh/rd6260/h2f_26@main/public/team-2/leads/pradnesh-fernandez-a.webp?v=1' },
+      { name: 'Prakar', designation: 'Event Management Head', photo: \'/team-2/leads/prakar.webp\' },
+      { name: 'Pradnesh Fernandez A', designation: 'Hospitality Head', photo: \'/team-2/leads/pradnesh-fernandez-a.webp\' },
     ]
   },
 ];
