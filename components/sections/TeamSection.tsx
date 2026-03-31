@@ -19,8 +19,8 @@ const departments: DepartmentGroup[] = [
   {
     name: 'Leads',
     members: [
+      { name: 'Prajin', designation: 'Technical Secretary', photo: '/team-2/leads/prajin.webp' },
       { name: 'Prem', designation: 'Program Director', photo: '/team-2/leads/thirupati-koppera-prem-sagar.webp' },
-      { name: 'Prajin', designation: 'Head Organizer', photo: '/team-2/leads/prajin.webp' },
       { name: 'Sai Sathwik', designation: 'Head Operations', photo: '/team-2/leads/cheera-sai-sathwik.webp' },
       { name: 'Aarya A Sajjan', designation: 'IIC Council Member', photo: '/team-2/leads/aarya.webp' },
       { name: 'Sharvani P', designation: 'IIC Council Member', photo: '/team-2/leads/sharvani-p.webp' },
