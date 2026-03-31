@@ -24,7 +24,7 @@ const departments: DepartmentGroup[] = [
       { name: 'Sai Sathwik', designation: 'Head Operations', photo: '/team-2/leads/cheera-sai-sathwik.webp' },
       { name: 'Aarya A Sajjan', designation: 'IIC Council Member', photo: '/team-2/leads/aarya.webp' },
       { name: 'Sharvani P', designation: 'IIC Council Member', photo: '/team-2/leads/sharvani-p.webp' },
-      { name: 'R Swati', designation: 'Chief of Staff', photo: '/team-2/leads/ravva-swati.webp' },
+      { name: 'R Swati', designation: 'Chief of Staff', photo: '/team-2/leads/ravva-swati.jpg' },
       { name: 'Shrisha', designation: 'IIC Council Member', photo: '/team-2/leads/shrisha-shrikant-rananaware.webp' },
     ]
   },
@@ -48,10 +48,10 @@ const departments: DepartmentGroup[] = [
     name: 'Design',
     members: [
       { name: 'Lakshmi prasad', designation: 'Design Head', photo: '/team-2/leads/lakshmi-prasad.webp' },
-      { name: 'Syed Mahdee Husain', designation: 'Design', photo: '/team-2/leads/syed-mahdee-husain.webp' },
+      { name: 'Syed Mahdee Husain', designation: 'Design', photo: '/team-2/leads/syed-mahdee-husain.jpg' },
       { name: 'Sree Samhita', designation: 'Design', photo: '/team-2/sree-samhita-gundimeda.webp' },
       { name: 'Devika Dhantala', designation: 'Design', photo: '/team-2/dhantala-devika.webp' },
-      { name: 'Prathyusha Reddy', designation: 'Design', photo: '/team/prathyusha_reddy.webp' },
+      { name: 'Prathyusha Reddy', designation: 'Design', photo: '/team/prathyusha_reddy.jpg' },
       { name: 'Pundru Madhulika', designation: 'Design', photo: '/team-2/pundru-madhulika.webp' },
       { name: 'Shrujana pyla', designation: 'Design', photo: '/team-2/pyla-shrujana.webp' },
     ]
@@ -67,11 +67,11 @@ const departments: DepartmentGroup[] = [
   {
     name: 'Marketing & Sponsorship',
     members: [
-      { name: 'TEJAS', designation: 'Marketing Head', photo: '/team-2/leads/tejas-subhash-chalwadi.webp' },
+      { name: 'TEJAS', designation: 'Marketing Head', photo: '/team-2/leads/tejas-subhash-chalwadi.jpeg' },
       { name: 'Zaid Nasim', designation: 'Sponsorship', photo: '/team-2/zaid-nasim.webp' },
       { name: 'Suharshitha', designation: 'Sponsorship', photo: '/team-2/pulla-suharshitha.webp' },
       { name: 'Madhav Dahiphale', designation: 'Sponsorship', photo: '/team-2/dahiphale-madhav-hanmant.webp' },
-      { name: 'Keerthi varman', designation: 'Social Media Head', photo: '/team-2/leads/keerthi-varman.webp' },
+      { name: 'Keerthi varman', designation: 'Social Media Head', photo: '/team-2/leads/keerthi-varman.png' },
     ]
   },
   {
