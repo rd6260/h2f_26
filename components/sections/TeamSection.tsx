@@ -23,7 +23,7 @@ const departments: DepartmentGroup[] = [
       { name: 'Prem', designation: 'Program Director', photo: '/team-2/leads/thirupati-koppera-prem-sagar.webp' },
       { name: 'Sai Sathwik', designation: 'Head Operations', photo: '/team-2/leads/cheera-sai-sathwik.webp' },
       { name: 'Aarya A Sajjan', designation: 'IIC Council Member', photo: '/team-2/leads/aarya.webp' },
-      { name: 'Sharvani P', designation: 'IIC Council Member', photo: '/team-2/leads/sharvani-p.webp' },
+      { name: 'Sharvani P', designation: 'IIC Council Member', photo: '/team-2/leads/sharvani.png' },
       { name: 'R Swati', designation: 'Chief of Staff', photo: '/team-2/leads/ravva-swati.jpg' },
       { name: 'Shrisha', designation: 'IIC Council Member', photo: '/team-2/leads/shrisha-shrikant-rananaware.webp' },
     ]
