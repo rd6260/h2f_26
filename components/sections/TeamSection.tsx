@@ -78,6 +78,7 @@ const departments: DepartmentGroup[] = [
     name: 'Events & Hospitality',
     members: [
       { name: 'Prakar', designation: 'Event Management Head', photo: '/team-2/leads/prakar.webp' },
+      { name: 'Charan', designation: 'Event management', photo: '/team-2/charan.png' },
       { name: 'Pradnesh Fernandez A', designation: 'Hospitality Head', photo: '/team-2/leads/pradnesh-fernandez-a.webp' },
     ]
   },
